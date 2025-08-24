@@ -1,3 +1,20 @@
+# Week 3 Querying Part 4
+
+## Operators
+
+(Notes go here)
+
+## ORDER BY
+
+(Notes on ASC/DESC go here)
+
+## Aggregates
+
+(Notes on SUM, AVG, MIN, MAX, COUNT, DISTINCT… go here)
+
+## My Thoughts
+
+(A short reflection after finishing)
 Week 1 Querying Part 1
 
  0:00–4:13 — Getting started
