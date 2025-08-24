@@ -1,1 +1,38 @@
 w3 setup check: first run OK
+w3 setup check: first run OK
+Q1: Books under 200 pages (title, author, pages)
+┌───────────────────────────────────────┬─────────────────────────┬───────┐
+│                 title                 │         author          │ pages │
+├───────────────────────────────────────┼─────────────────────────┼───────┤
+│ The War of the Poor                   │ Éric Vuillard           │ 69    │
+│ Boulder                               │ Eva Baltasar            │ 112   │
+│ The Death of Murat Idrissi            │ Tommy Wieringa          │ 112   │
+│ Paradais                              │ Fernanda Melchor        │ 118   │
+│ Die, My Love                          │ Ariana Harwicz          │ 123   │
+│ The Employees                         │ Olga Ravn               │ 136   │
+│ Faces on the Tip of My Tongue         │ Emmanuelle Pagano       │ 136   │
+│ Elena Knows                           │ Claudia Piñeiro         │ 143   │
+│ Minor Detail                          │ Adania Shibli           │ 144   │
+│ Happy Stories, Mostly                 │ Norman Erikson Pasaribu │ 151   │
+│ After the Sun                         │ Jonas Eika              │ 158   │
+│ Four Soldiers                         │ Hubert Mingarelli       │ 160   │
+│ The Dinner Guest                      │ Gabriela Ybarra         │ 160   │
+│ The White Book                        │ Han Kang                │ 161   │
+│ Jokes for the Gunmen                  │ Mazen Maarouf           │ 162   │
+│ The Pear Field                        │ Nana Ekvtimishvili      │ 163   │
+│ Heaven                                │ Mieko Kawakami          │ 167   │
+│ Wretchedness                          │ Andrzej Tichy           │ 176   │
+│ The Pine Islands                      │ Marion Poschmann        │ 180   │
+│ The Gospel According to the New World │ Maryse Condé            │ 184   │
+│ The Dangers of Smoking in Bed         │ Mariana Enríquez        │ 187   │
+│ When We Cease to Understand the World │ Benajamín Labatut       │ 192   │
+│ At Night All Blood is Black           │ David Diop              │ 192   │
+│ At Dusk                               │ Hwang Sok-yong          │ 192   │
+│ The Remainder                         │ Alia Trabucco Zerán     │ 193   │
+└───────────────────────────────────────┴─────────────────────────┴───────┘
+Q2: COUNT of books under 200 pages
+┌─────────────────┐
+│ under_200_count │
+├─────────────────┤
+│ 25              │
+└─────────────────┘
