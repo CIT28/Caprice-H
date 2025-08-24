@@ -1,0 +1,156 @@
+Part 4 setup: first run OK
+Operators #1: Books from 2023
+┌───────────────────────────────────────┬────────────────────┬──────┐
+│                 title                 │       author       │ year │
+├───────────────────────────────────────┼────────────────────┼──────┤
+│ Boulder                               │ Eva Baltasar       │ 2023 │
+│ Whale                                 │ Cheon Myeong-Kwan  │ 2023 │
+│ The Gospel According to the New World │ Maryse Condé       │ 2023 │
+│ Standing Heavy                        │ Gauz               │ 2023 │
+│ Time Shelter                          │ Georgi Gospodinov  │ 2023 │
+│ Is Mother Dead                        │ Vigdis Hjorth      │ 2023 │
+│ Jimi Hendrix Live in Lviv             │ Andrey Kurkov      │ 2023 │
+│ The Birthday Party                    │ Laurent Mauvignier │ 2023 │
+│ While We Were Dreaming                │ Clemens Meyer      │ 2023 │
+│ Pyre                                  │ Perumal Murugan    │ 2023 │
+└───────────────────────────────────────┴────────────────────┴──────┘
+Operators #2: 2023 books not in hardcover
+┌────────────────────────────────────────┬───────────┬──────┐
+│                 title                  │  format   │ year │
+├────────────────────────────────────────┼───────────┼──────┤
+│ Boulder                                │ paperback │ 2023 │
+│ Whale                                  │ paperback │ 2023 │
+│ The Gospel According to the New World  │ paperback │ 2023 │
+│ Standing Heavy                         │ paperback │ 2023 │
+│ Is Mother Dead                         │ paperback │ 2023 │
+│ The Birthday Party                     │ paperback │ 2023 │
+│ While We Were Dreaming                 │ paperback │ 2023 │
+│ Pyre                                   │ paperback │ 2023 │
+│ Still Born                             │ paperback │ 2023 │
+│ A System So Magnificent It Is Blinding │ paperback │ 2023 │
+└────────────────────────────────────────┴───────────┴──────┘
+Operators #3: Books under 200 pages
+┌───────────────────────────────┬─────────────────────────┬───────┐
+│             title             │         author          │ pages │
+├───────────────────────────────┼─────────────────────────┼───────┤
+│ The War of the Poor           │ Éric Vuillard           │ 69    │
+│ Boulder                       │ Eva Baltasar            │ 112   │
+│ The Death of Murat Idrissi    │ Tommy Wieringa          │ 112   │
+│ Paradais                      │ Fernanda Melchor        │ 118   │
+│ Die, My Love                  │ Ariana Harwicz          │ 123   │
+│ The Employees                 │ Olga Ravn               │ 136   │
+│ Faces on the Tip of My Tongue │ Emmanuelle Pagano       │ 136   │
+│ Elena Knows                   │ Claudia Piñeiro         │ 143   │
+│ Minor Detail                  │ Adania Shibli           │ 144   │
+│ Happy Stories, Mostly         │ Norman Erikson Pasaribu │ 151   │
+└───────────────────────────────┴─────────────────────────┴───────┘
+Operators #4: Books between 2019 and 2021 (inclusive)
+┌────────────────────────────────────────────┬──────┐
+│                   title                    │ year │
+├────────────────────────────────────────────┼──────┤
+│ At Dusk                                    │ 2019 │
+│ Celestial Bodies                           │ 2019 │
+│ Drive Your Plow Over the Bones of the Dead │ 2019 │
+│ Four Soldiers                              │ 2019 │
+│ Jokes for the Gunmen                       │ 2019 │
+│ Love in the New Millennium                 │ 2019 │
+│ Mouthful of Birds                          │ 2019 │
+│ The Death of Murat Idrissi                 │ 2019 │
+│ The Faculty of Dreams                      │ 2019 │
+│ The Pine Islands                           │ 2019 │
+│ The Remainder                              │ 2019 │
+│ The Shape of the Ruins                     │ 2019 │
+│ The Years                                  │ 2019 │
+│ Faces on the Tip of My Tongue              │ 2020 │
+│ Hurricane Season                           │ 2020 │
+└────────────────────────────────────────────┴──────┘
+Operators #5: Titles containing the word Love
+┌────────────────────────────┐
+│           title            │
+├────────────────────────────┤
+│ Love in the Big City       │
+│ More Than I Love My Life   │
+│ Love in the New Millennium │
+│ Die, My Love               │
+└────────────────────────────┘
+Operators #6: Books that have a translator listed
+┌────────────────────────────────────────────┬────────────────────────────────────────────────┐
+│                   title                    │                   translator                   │
+├────────────────────────────────────────────┼────────────────────────────────────────────────┤
+│ Boulder                                    │ Nicole d'Amonville Alegría                     │
+│ Whale                                      │ Jae Won Chung                                  │
+│ The Gospel According to the New World      │ Richard Philcox                                │
+│ Standing Heavy                             │ Frank Wynne                                    │
+│ Time Shelter                               │ Angela Rodel                                   │
+│ Is Mother Dead                             │ Charlotte Barslund                             │
+│ Jimi Hendrix Live in Lviv                  │ Reuben Woolley                                 │
+│ The Birthday Party                         │ Daniel Levin Becker                            │
+│ While We Were Dreaming                     │ Katy Derbyshire                                │
+│ Pyre                                       │ Aniruddhan Vasudevan                           │
+│ Still Born                                 │ Rosalind Harvey                                │
+│ A System So Magnificent It Is Blinding     │ Nichola Smalley                                │
+│ Ninth Building                             │ Jeremy Tiang                                   │
+│ Paradais                                   │ Sophie Hughes                                  │
+│ Heaven                                     │ Sam Bett and David Boyd                        │
+│ Love in the Big City                       │ Anton Hur                                      │
+│ Happy Stories, Mostly                      │ Tiffany Tsao                                   │
+│ Elena Knows                                │ Frances Riddle                                 │
+│ The Book of Mother                         │ Leslie Camhi                                   │
+│ More Than I Love My Life                   │ Jessica Cohen                                  │
+│ Phenotypes                                 │ Daniel Hahn                                    │
+│ A New Name: Septology VI-VII               │ Damion Searls                                  │
+│ After the Sun                              │ Sherilyn Nicolette Hellberg                    │
+│ Tomb of Sand                               │ Daisy Rockwell                                 │
+│ The Books of Jacob                         │ Jennifer Croft                                 │
+│ Cursed Bunny                               │ Anton Hur                                      │
+│ The War of the Poor                        │ Mark Polizzotti                                │
+│ When We Cease to Understand the World      │ Adrian Nathan West                             │
+│ Wretchedness                               │ Nichola Smalley                                │
+│ An Inventory of Losses                     │ Jackie Smith                                   │
+│ At Night All Blood is Black                │ Anna Moschovakis                               │
+│ I Live in the Slums                        │ Karen Gernant and Chen Zeping                  │
+│ In Memory of Memory                        │ Sasha Dugdale                                  │
+│ Minor Detail                               │ Elisabeth Jaquette                             │
+│ Summer Brother                             │ David Doherty                                  │
+│ The Dangers of Smoking in Bed              │ Megan McDowell                                 │
+│ The Employees                              │ Martin Aitken                                  │
+│ The Pear Field                             │ Elizabeth Heighway                             │
+│ The Adventures of China Iron               │ Fiona Mackintosh and Iona Macintyre            │
+│ The Discomfort of Evening                  │ Michele Hutchinson                             │
+│ The Eighth Life                            │ Charlotte Collins and Ruth Martin              │
+│ The Memory Police                          │ Stephen Snyder                                 │
+│ The Other Name: Septology I-II             │ Damion Searls                                  │
+│ Tyll                                       │ Ross Benjamin                                  │
+│ Faces on the Tip of My Tongue              │ Sophie Lewis and Jennifer Higgins              │
+│ Hurricane Season                           │ Sophie Hughes                                  │
+│ Little Eyes                                │ Megan McDowell                                 │
+│ Mac and His Problem                        │ Margaret Jull Costa and Sophie Hughes          │
+│ Red Dog                                    │ Michiel Heyns                                  │
+│ Serotonin                                  │ Shaun Whiteside                                │
+│ At Dusk                                    │ Sora Kim-Russell                               │
+│ Celestial Bodies                           │ Marilyn Booth                                  │
+│ Drive Your Plow Over the Bones of the Dead │ Antonia Lloyd-Jones                            │
+│ Four Soldiers                              │ Sam Taylor                                     │
+│ Jokes for the Gunmen                       │ Jonathan Wright                                │
+│ Love in the New Millennium                 │ Eileen Myles and Annelise Finegan Wasmoen      │
+│ Mouthful of Birds                          │ Megan McDowell                                 │
+│ The Death of Murat Idrissi                 │ Sam Garrett                                    │
+│ The Faculty of Dreams                      │ Deborah Bragan-Turner                          │
+│ The Pine Islands                           │ Jen Calleja                                    │
+│ The Remainder                              │ Sophie Hughes                                  │
+│ The Shape of the Ruins                     │ Anne McLean                                    │
+│ The Years                                  │ Alison L. Strayer                              │
+│ Frankenstein in Baghdad                    │ Jonathan Wright                                │
+│ Go, Went, Gone                             │ Susan Bernofsky                                │
+│ Like a Fading Shadow                       │ Camilo A. Ramirez                              │
+│ The 7th Function of Language               │ Sam Taylor                                     │
+│ The Dinner Guest                           │ Natasha Wimmer                                 │
+│ The Flying Mountain                        │ Simon Pare                                     │
+│ The Impostor                               │ Frank Wynne                                    │
+│ The Stolen Bicycle                         │ Darryl Sterk                                   │
+│ The White Book                             │ Deborah Smith                                  │
+│ The World Goes On                          │ Ottilie Mulzet, George Szirtes, and John Batki │
+│ Vernon Subutex 1                           │ Frank Wynne                                    │
+│ Die, My Love                               │ Sarah Moses and Carolina Orloff                │
+│ Flights                                    │ Jennifer Croft                                 │
+└────────────────────────────────────────────┴────────────────────────────────────────────────┘
