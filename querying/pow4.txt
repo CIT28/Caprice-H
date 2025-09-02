@@ -1,4 +1,3 @@
-Part 4 setup: first run OK
 Operators #1: Books from 2023
 ┌───────────────────────────────────────┬────────────────────┬──────┐
 │                 title                 │       author       │ year │
@@ -154,3 +153,130 @@ Operators #6: Books that have a translator listed
 │ Die, My Love                               │ Sarah Moses and Carolina Orloff                │
 │ Flights                                    │ Jennifer Croft                                 │
 └────────────────────────────────────────────┴────────────────────────────────────────────────┘
+ORDER BY #1: oldest→newest; tie-break title A→Z (what this query does)
+Die, My Love|2018
+Flights|2018
+Frankenstein in Baghdad|2018
+Go, Went, Gone|2018
+Like a Fading Shadow|2018
+The 7th Function of Language|2018
+The Dinner Guest|2018
+The Flying Mountain|2018
+The Impostor|2018
+The Stolen Bicycle|2018
+The White Book|2018
+The World Goes On|2018
+Vernon Subutex 1|2018
+At Dusk|2019
+Celestial Bodies|2019
+ORDER BY #2: Author A→Z with title A→Z tie-break (what this query does)
+Adania Shibli|Minor Detail|2021
+Ahmed Saadawi|Frankenstein in Baghdad|2018
+Alia Trabucco Zerán|The Remainder|2019
+Amanda Svensson|A System So Magnificent It Is Blinding|2023
+Andrey Kurkov|Jimi Hendrix Live in Lviv|2023
+Andrzej Tichy|Wretchedness|2021
+Annie Ernaux|The Years|2019
+Antonio Muñoz Molina|Like a Fading Shadow|2018
+Ariana Harwicz|Die, My Love|2018
+Benajamín Labatut|When We Cease to Understand the World|2021
+Bora Chung|Cursed Bunny|2022
+Can Xue|I Live in the Slums|2021
+Can Xue|Love in the New Millennium|2019
+Cheon Myeong-Kwan|Whale|2023
+Christoph Ransmayr|The Flying Mountain|2018
+ORDER BY #3: Longest books first; show top 10 (what this query does)
+The Eighth Life|944
+The Books of Jacob|920
+Tomb of Sand|739
+A System So Magnificent It Is Blinding|544
+While We Were Dreaming|528
+The Shape of the Ruins|512
+In Memory of Memory|510
+The Birthday Party|454
+Red Dog|432
+The Impostor|430
+ORDER BY #4: Bring translated books to the top, then sort (what this query does)
+When We Cease to Understand the World|Adrian Nathan West
+The Years|Alison L. Strayer
+Time Shelter|Angela Rodel
+Pyre|Aniruddhan Vasudevan
+At Night All Blood is Black|Anna Moschovakis
+The Shape of the Ruins|Anne McLean
+Cursed Bunny|Anton Hur
+Love in the Big City|Anton Hur
+Drive Your Plow Over the Bones of the Dead|Antonia Lloyd-Jones
+Like a Fading Shadow|Camilo A. Ramirez
+Is Mother Dead|Charlotte Barslund
+The Eighth Life|Charlotte Collins and Ruth Martin
+Tomb of Sand|Daisy Rockwell
+A New Name: Septology VI-VII|Damion Searls
+The Other Name: Septology I-II|Damion Searls
+Phenotypes|Daniel Hahn
+The Birthday Party|Daniel Levin Becker
+The Stolen Bicycle|Darryl Sterk
+Summer Brother|David Doherty
+The Faculty of Dreams|Deborah Bragan-Turner
+ORDER BY #5: Newest→oldest by year; show 10 (what this query does)
+A System So Magnificent It Is Blinding|2023
+Boulder|2023
+Is Mother Dead|2023
+Jimi Hendrix Live in Lviv|2023
+Ninth Building|2023
+Pyre|2023
+Standing Heavy|2023
+Still Born|2023
+The Birthday Party|2023
+The Gospel According to the New World|2023
+A1: COUNT(*) total books (what this query does)
+78
+A2: COUNT(*) books in 2023 (what this query does)
+13
+A3: MIN(year), MAX(year) present (what this query does)
+2018|2023
+A4: AVG(pages) overall, 1 decimal (what this query does)
+286.5
+A5: SUM(pages) for 2023 (what this query does)
+4188
+A6: COUNT(DISTINCT author) (what this query does)
+72
+A7: Top 10 authors by number of titles (what this query does)
+Olga Tokarczuk|3
+Can Xue|2
+Fernanda Melchor|2
+Jon Fosse|2
+Samanta Schweblin|2
+Adania Shibli|1
+Ahmed Saadawi|1
+Alia Trabucco Zerán|1
+Amanda Svensson|1
+Andrey Kurkov|1
+A8: AVG(pages) by year (what this query does)
+2018|312.2
+2019|239.2
+2020|327.6
+2021|222.6
+2022|295.1
+2023|322.2
+A9: MAX(LENGTH(title)) longest title length (what this query does)
+42
+A10: Years with >= 10 titles using HAVING (what this query does)
+2023|13
+2022|13
+2021|13
+2020|13
+2019|13
+2018|13
+A11: Authors with >1000 total pages (what this query does)
+Olga Tokarczuk|1600
+A12: MIN(title), MAX(title) lexicographic (what this query does)
+A New Name: Septology VI-VII|Wretchedness
+A13: AVG(LENGTH(title)) by year (what this query does)
+2018|16.6
+2019|19.1
+2020|19.2
+2021|19.5
+2022|15.5
+2023|16.9
+A14: COUNT(DISTINCT translator) where present (what this query does)
+64

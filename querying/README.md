@@ -1,20 +1,3 @@
-# Week 3 Querying Part 4
-
-## Operators
-
-(Notes go here)
-
-## ORDER BY
-
-(Notes on ASC/DESC go here)
-
-## Aggregates
-
-(Notes on SUM, AVG, MIN, MAX, COUNT, DISTINCT… go here)
-
-## My Thoughts
-
-(A short reflection after finishing)
 Week 1 Querying Part 1
 
  0:00–4:13 — Getting started
@@ -77,3 +60,7 @@ Questions I still have:
 Why do some examples show "double quotes" and some show 'single quotes'?
 When should I use SELECT * vs selecting specific columns?
 Does row order really matter if I don’t use ORDER BY?
+
+# Week 2 Querying Part 3
+Practiced filtering (WHERE), sorting (ORDER BY), DISTINCT, aggregation (COUNT, AVG), and LIMIT.
+Recorded outputs in pow.txt with `.output '| cat >> pow.txt'` to append between commits.
