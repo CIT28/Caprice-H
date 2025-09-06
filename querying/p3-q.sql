@@ -17,14 +17,31 @@
 ---SELECT "title", "format" FROM "longlist" WHERE "format" != 'hardcover';
 ---SELECT "title", "format" FROM "longlist" WHERE "format" <> 'hardcover';  
 ---SELECT "title", "format" FROM "longlist" WHERE NOT "format" <> 'hardcover';
+.print 'WHERE querys' 
+---SELECT "title", "author" FROM "longlist" WHERE "year" = 2022 OR "year" = 2023;
+---SELECT "title", "format" FROM "longlist" WHERE ("year" = 2022 OR "year" = 2023) AND "format" != 'hardcover';
+---SELECT "title", "translator" FROM "longlist" WHERE "translator" IS NULL;
+---SELECT "title", "translator" FROM "longlist" WHERE "translator" IS NOT NULL;
+.print 'NULL querys' 
+SELECT "title" FROM "longlist" WHERE "title" LIKE '%love%';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'The%';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'The %';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'The%love%';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'P_re';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'T___';
+SELECT "title" FROM "longlist" WHERE "title" LIKE 'T____';
+SELECT "title", "year"
+FROM "longlist"
+WHERE "year" = 2019 OR "year" = 2020 OR "year" = 2021 OR "year" = 2022;
+SELECT "title", "year"
+FROM "longlist" WHERE "year" >= 2019 AND "year" <= 2022;
 
-SELECT "title", "author" FROM "longlist" WHERE "year" = 2022 OR "year" = 2023;
-.print 'WHERE querys'  
-SELECT "title", "format" FROM "longlist" WHERE ("year" = 2022 OR "year" = 2023) AND "format" != 'hardcover';
 
+.print 'WHERE and LIKE, % and _'  
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
 -- changes back to stdout    
 .output stdout  
 
 -- bash command sqlite3 longlist.db < p3-q.sql
+
