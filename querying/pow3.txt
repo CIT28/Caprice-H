@@ -1,0 +1,548 @@
+second query
+┌────────────────────────────────────────┬────────────────────┐
+│                 title                  │       author       │
+├────────────────────────────────────────┼────────────────────┤
+│ Boulder                                │ Eva Baltasar       │
+│ Whale                                  │ Cheon Myeong-Kwan  │
+│ The Gospel According to the New World  │ Maryse Condé       │
+│ Standing Heavy                         │ Gauz               │
+│ Time Shelter                           │ Georgi Gospodinov  │
+│ Is Mother Dead                         │ Vigdis Hjorth      │
+│ Jimi Hendrix Live in Lviv              │ Andrey Kurkov      │
+│ The Birthday Party                     │ Laurent Mauvignier │
+│ While We Were Dreaming                 │ Clemens Meyer      │
+│ Pyre                                   │ Perumal Murugan    │
+│ Still Born                             │ Guadalupe Nettel   │
+│ A System So Magnificent It Is Blinding │ Amanda Svensson    │
+│ Ninth Building                         │ Zou Jingzhi        │
+└────────────────────────────────────────┴────────────────────┘
+┌──────────────────────────────┬─────────────────────────┐
+│            title             │         author          │
+├──────────────────────────────┼─────────────────────────┤
+│ Paradais                     │ Fernanda Melchor        │
+│ Heaven                       │ Mieko Kawakami          │
+│ Love in the Big City         │ Sang Young Park         │
+│ Happy Stories, Mostly        │ Norman Erikson Pasaribu │
+│ Elena Knows                  │ Claudia Piñeiro         │
+│ The Book of Mother           │ Violaine Huisman        │
+│ More Than I Love My Life     │ David Grossman          │
+│ Phenotypes                   │ Paulo Scott             │
+│ A New Name: Septology VI-VII │ Jon Fosse               │
+│ After the Sun                │ Jonas Eika              │
+│ Tomb of Sand                 │ Geentanjali Shree       │
+│ The Books of Jacob           │ Olga Tokarczuk          │
+│ Cursed Bunny                 │ Bora Chung              │
+└──────────────────────────────┴─────────────────────────┘
+┌───────────────────────────────────────┬────────────────────┐
+│                 title                 │       author       │
+├───────────────────────────────────────┼────────────────────┤
+│ The War of the Poor                   │ Éric Vuillard      │
+│ When We Cease to Understand the World │ Benajamín Labatut  │
+│ Wretchedness                          │ Andrzej Tichy      │
+│ An Inventory of Losses                │ Judith Schalansky  │
+│ At Night All Blood is Black           │ David Diop         │
+│ I Live in the Slums                   │ Can Xue            │
+│ In Memory of Memory                   │ Maria Stepanova    │
+│ Minor Detail                          │ Adania Shibli      │
+│ Summer Brother                        │ Jaap Robben        │
+│ The Dangers of Smoking in Bed         │ Mariana Enríquez   │
+│ The Employees                         │ Olga Ravn          │
+│ The Pear Field                        │ Nana Ekvtimishvili │
+│ The Perfect Nine                      │ Ngũgĩ wa Thiong'o  │
+└───────────────────────────────────────┴────────────────────┘
+┌────────────────────────────────────────────┬───────────┐
+│                   title                    │  format   │
+├────────────────────────────────────────────┼───────────┤
+│ Boulder                                    │ paperback │
+│ Whale                                      │ paperback │
+│ The Gospel According to the New World      │ paperback │
+│ Standing Heavy                             │ paperback │
+│ Is Mother Dead                             │ paperback │
+│ The Birthday Party                         │ paperback │
+│ While We Were Dreaming                     │ paperback │
+│ Pyre                                       │ paperback │
+│ Still Born                                 │ paperback │
+│ A System So Magnificent It Is Blinding     │ paperback │
+│ Ninth Building                             │ paperback │
+│ Paradais                                   │ paperback │
+│ Heaven                                     │ paperback │
+│ Love in the Big City                       │ paperback │
+│ Happy Stories, Mostly                      │ paperback │
+│ Elena Knows                                │ paperback │
+│ The Book of Mother                         │ paperback │
+│ More Than I Love My Life                   │ paperback │
+│ Phenotypes                                 │ paperback │
+│ A New Name: Septology VI-VII               │ paperback │
+│ After the Sun                              │ paperback │
+│ Tomb of Sand                               │ paperback │
+│ The Books of Jacob                         │ paperback │
+│ Cursed Bunny                               │ paperback │
+│ Wretchedness                               │ paperback │
+│ In Memory of Memory                        │ paperback │
+│ Minor Detail                               │ paperback │
+│ Summer Brother                             │ paperback │
+│ The Dangers of Smoking in Bed              │ paperback │
+│ The Employees                              │ paperback │
+│ The Pear Field                             │ paperback │
+│ The Adventures of China Iron               │ paperback │
+│ The Discomfort of Evening                  │ paperback │
+│ The Enlightenment of The Greengage Tree    │ paperback │
+│ The Memory Police                          │ paperback │
+│ The Other Name: Septology I-II             │ paperback │
+│ Faces on the Tip of My Tongue              │ paperback │
+│ Hurricane Season                           │ paperback │
+│ Mac and His Problem                        │ paperback │
+│ At Dusk                                    │ paperback │
+│ Celestial Bodies                           │ paperback │
+│ Drive Your Plow Over the Bones of the Dead │ paperback │
+│ Jokes for the Gunmen                       │ paperback │
+│ Mouthful of Birds                          │ paperback │
+│ The Faculty of Dreams                      │ paperback │
+│ The Remainder                              │ paperback │
+│ The Years                                  │ paperback │
+│ Frankenstein in Baghdad                    │ paperback │
+│ The Dinner Guest                           │ paperback │
+│ The Stolen Bicycle                         │ paperback │
+│ The White Book                             │ paperback │
+│ The World Goes On                          │ paperback │
+│ Vernon Subutex 1                           │ paperback │
+│ Die, My Love                               │ paperback │
+│ Flights                                    │ paperback │
+└────────────────────────────────────────────┴───────────┘
+┌────────────────────────────────────────────┬───────────┐
+│                   title                    │  format   │
+├────────────────────────────────────────────┼───────────┤
+│ Boulder                                    │ paperback │
+│ Whale                                      │ paperback │
+│ The Gospel According to the New World      │ paperback │
+│ Standing Heavy                             │ paperback │
+│ Is Mother Dead                             │ paperback │
+│ The Birthday Party                         │ paperback │
+│ While We Were Dreaming                     │ paperback │
+│ Pyre                                       │ paperback │
+│ Still Born                                 │ paperback │
+│ A System So Magnificent It Is Blinding     │ paperback │
+│ Ninth Building                             │ paperback │
+│ Paradais                                   │ paperback │
+│ Heaven                                     │ paperback │
+│ Love in the Big City                       │ paperback │
+│ Happy Stories, Mostly                      │ paperback │
+│ Elena Knows                                │ paperback │
+│ The Book of Mother                         │ paperback │
+│ More Than I Love My Life                   │ paperback │
+│ Phenotypes                                 │ paperback │
+│ A New Name: Septology VI-VII               │ paperback │
+│ After the Sun                              │ paperback │
+│ Tomb of Sand                               │ paperback │
+│ The Books of Jacob                         │ paperback │
+│ Cursed Bunny                               │ paperback │
+│ Wretchedness                               │ paperback │
+│ In Memory of Memory                        │ paperback │
+│ Minor Detail                               │ paperback │
+│ Summer Brother                             │ paperback │
+│ The Dangers of Smoking in Bed              │ paperback │
+│ The Employees                              │ paperback │
+│ The Pear Field                             │ paperback │
+│ The Adventures of China Iron               │ paperback │
+│ The Discomfort of Evening                  │ paperback │
+│ The Enlightenment of The Greengage Tree    │ paperback │
+│ The Memory Police                          │ paperback │
+│ The Other Name: Septology I-II             │ paperback │
+│ Faces on the Tip of My Tongue              │ paperback │
+│ Hurricane Season                           │ paperback │
+│ Mac and His Problem                        │ paperback │
+│ At Dusk                                    │ paperback │
+│ Celestial Bodies                           │ paperback │
+│ Drive Your Plow Over the Bones of the Dead │ paperback │
+│ Jokes for the Gunmen                       │ paperback │
+│ Mouthful of Birds                          │ paperback │
+│ The Faculty of Dreams                      │ paperback │
+│ The Remainder                              │ paperback │
+│ The Years                                  │ paperback │
+│ Frankenstein in Baghdad                    │ paperback │
+│ The Dinner Guest                           │ paperback │
+│ The Stolen Bicycle                         │ paperback │
+│ The White Book                             │ paperback │
+│ The World Goes On                          │ paperback │
+│ Vernon Subutex 1                           │ paperback │
+│ Die, My Love                               │ paperback │
+│ Flights                                    │ paperback │
+└────────────────────────────────────────────┴───────────┘
+┌───────────────────────────────────────┬───────────┐
+│                 title                 │  format   │
+├───────────────────────────────────────┼───────────┤
+│ Time Shelter                          │ hardcover │
+│ Jimi Hendrix Live in Lviv             │ hardcover │
+│ The War of the Poor                   │ hardcover │
+│ When We Cease to Understand the World │ hardcover │
+│ An Inventory of Losses                │ hardcover │
+│ At Night All Blood is Black           │ hardcover │
+│ I Live in the Slums                   │ hardcover │
+│ The Perfect Nine                      │ hardcover │
+│ The Eighth Life                       │ hardcover │
+│ Tyll                                  │ hardcover │
+│ Little Eyes                           │ hardcover │
+│ Red Dog                               │ hardcover │
+│ Serotonin                             │ hardcover │
+│ Four Soldiers                         │ hardcover │
+│ Love in the New Millennium            │ hardcover │
+│ The Death of Murat Idrissi            │ hardcover │
+│ The Pine Islands                      │ hardcover │
+│ The Shape of the Ruins                │ hardcover │
+│ Go, Went, Gone                        │ hardcover │
+│ Like a Fading Shadow                  │ hardcover │
+│ The 7th Function of Language          │ hardcover │
+│ The Flying Mountain                   │ hardcover │
+│ The Impostor                          │ hardcover │
+└───────────────────────────────────────┴───────────┘
+WHERE querys
+second query
+┌────────────────────────────────────────┬─────────────────────────┐
+│                 title                  │         author          │
+├────────────────────────────────────────┼─────────────────────────┤
+│ Boulder                                │ Eva Baltasar            │
+│ Whale                                  │ Cheon Myeong-Kwan       │
+│ The Gospel According to the New World  │ Maryse Condé            │
+│ Standing Heavy                         │ Gauz                    │
+│ Time Shelter                           │ Georgi Gospodinov       │
+│ Is Mother Dead                         │ Vigdis Hjorth           │
+│ Jimi Hendrix Live in Lviv              │ Andrey Kurkov           │
+│ The Birthday Party                     │ Laurent Mauvignier      │
+│ While We Were Dreaming                 │ Clemens Meyer           │
+│ Pyre                                   │ Perumal Murugan         │
+│ Still Born                             │ Guadalupe Nettel        │
+│ A System So Magnificent It Is Blinding │ Amanda Svensson         │
+│ Ninth Building                         │ Zou Jingzhi             │
+│ Paradais                               │ Fernanda Melchor        │
+│ Heaven                                 │ Mieko Kawakami          │
+│ Love in the Big City                   │ Sang Young Park         │
+│ Happy Stories, Mostly                  │ Norman Erikson Pasaribu │
+│ Elena Knows                            │ Claudia Piñeiro         │
+│ The Book of Mother                     │ Violaine Huisman        │
+│ More Than I Love My Life               │ David Grossman          │
+│ Phenotypes                             │ Paulo Scott             │
+│ A New Name: Septology VI-VII           │ Jon Fosse               │
+│ After the Sun                          │ Jonas Eika              │
+│ Tomb of Sand                           │ Geentanjali Shree       │
+│ The Books of Jacob                     │ Olga Tokarczuk          │
+│ Cursed Bunny                           │ Bora Chung              │
+└────────────────────────────────────────┴─────────────────────────┘
+┌────────────────────────────────────────┬───────────┐
+│                 title                  │  format   │
+├────────────────────────────────────────┼───────────┤
+│ Boulder                                │ paperback │
+│ Whale                                  │ paperback │
+│ The Gospel According to the New World  │ paperback │
+│ Standing Heavy                         │ paperback │
+│ Is Mother Dead                         │ paperback │
+│ The Birthday Party                     │ paperback │
+│ While We Were Dreaming                 │ paperback │
+│ Pyre                                   │ paperback │
+│ Still Born                             │ paperback │
+│ A System So Magnificent It Is Blinding │ paperback │
+│ Ninth Building                         │ paperback │
+│ Paradais                               │ paperback │
+│ Heaven                                 │ paperback │
+│ Love in the Big City                   │ paperback │
+│ Happy Stories, Mostly                  │ paperback │
+│ Elena Knows                            │ paperback │
+│ The Book of Mother                     │ paperback │
+│ More Than I Love My Life               │ paperback │
+│ Phenotypes                             │ paperback │
+│ A New Name: Septology VI-VII           │ paperback │
+│ After the Sun                          │ paperback │
+│ Tomb of Sand                           │ paperback │
+│ The Books of Jacob                     │ paperback │
+│ Cursed Bunny                           │ paperback │
+└────────────────────────────────────────┴───────────┘
+WHERE querys
+second query
+NULL querys
+second query
+NULL querys
+second query
+┌─────────────────────────────────────────┬────────────┐
+│                  title                  │ translator │
+├─────────────────────────────────────────┼────────────┤
+│ The Perfect Nine                        │            │
+│ The Enlightenment of The Greengage Tree │            │
+└─────────────────────────────────────────┴────────────┘
+┌────────────────────────────────────────────┬────────────────────────────────────────────────┐
+│                   title                    │                   translator                   │
+├────────────────────────────────────────────┼────────────────────────────────────────────────┤
+│ Boulder                                    │ Nicole d'Amonville Alegría                     │
+│ Whale                                      │ Jae Won Chung                                  │
+│ The Gospel According to the New World      │ Richard Philcox                                │
+│ Standing Heavy                             │ Frank Wynne                                    │
+│ Time Shelter                               │ Angela Rodel                                   │
+│ Is Mother Dead                             │ Charlotte Barslund                             │
+│ Jimi Hendrix Live in Lviv                  │ Reuben Woolley                                 │
+│ The Birthday Party                         │ Daniel Levin Becker                            │
+│ While We Were Dreaming                     │ Katy Derbyshire                                │
+│ Pyre                                       │ Aniruddhan Vasudevan                           │
+│ Still Born                                 │ Rosalind Harvey                                │
+│ A System So Magnificent It Is Blinding     │ Nichola Smalley                                │
+│ Ninth Building                             │ Jeremy Tiang                                   │
+│ Paradais                                   │ Sophie Hughes                                  │
+│ Heaven                                     │ Sam Bett and David Boyd                        │
+│ Love in the Big City                       │ Anton Hur                                      │
+│ Happy Stories, Mostly                      │ Tiffany Tsao                                   │
+│ Elena Knows                                │ Frances Riddle                                 │
+│ The Book of Mother                         │ Leslie Camhi                                   │
+│ More Than I Love My Life                   │ Jessica Cohen                                  │
+│ Phenotypes                                 │ Daniel Hahn                                    │
+│ A New Name: Septology VI-VII               │ Damion Searls                                  │
+│ After the Sun                              │ Sherilyn Nicolette Hellberg                    │
+│ Tomb of Sand                               │ Daisy Rockwell                                 │
+│ The Books of Jacob                         │ Jennifer Croft                                 │
+│ Cursed Bunny                               │ Anton Hur                                      │
+│ The War of the Poor                        │ Mark Polizzotti                                │
+│ When We Cease to Understand the World      │ Adrian Nathan West                             │
+│ Wretchedness                               │ Nichola Smalley                                │
+│ An Inventory of Losses                     │ Jackie Smith                                   │
+│ At Night All Blood is Black                │ Anna Moschovakis                               │
+│ I Live in the Slums                        │ Karen Gernant and Chen Zeping                  │
+│ In Memory of Memory                        │ Sasha Dugdale                                  │
+│ Minor Detail                               │ Elisabeth Jaquette                             │
+│ Summer Brother                             │ David Doherty                                  │
+│ The Dangers of Smoking in Bed              │ Megan McDowell                                 │
+│ The Employees                              │ Martin Aitken                                  │
+│ The Pear Field                             │ Elizabeth Heighway                             │
+│ The Adventures of China Iron               │ Fiona Mackintosh and Iona Macintyre            │
+│ The Discomfort of Evening                  │ Michele Hutchinson                             │
+│ The Eighth Life                            │ Charlotte Collins and Ruth Martin              │
+│ The Memory Police                          │ Stephen Snyder                                 │
+│ The Other Name: Septology I-II             │ Damion Searls                                  │
+│ Tyll                                       │ Ross Benjamin                                  │
+│ Faces on the Tip of My Tongue              │ Sophie Lewis and Jennifer Higgins              │
+│ Hurricane Season                           │ Sophie Hughes                                  │
+│ Little Eyes                                │ Megan McDowell                                 │
+│ Mac and His Problem                        │ Margaret Jull Costa and Sophie Hughes          │
+│ Red Dog                                    │ Michiel Heyns                                  │
+│ Serotonin                                  │ Shaun Whiteside                                │
+│ At Dusk                                    │ Sora Kim-Russell                               │
+│ Celestial Bodies                           │ Marilyn Booth                                  │
+│ Drive Your Plow Over the Bones of the Dead │ Antonia Lloyd-Jones                            │
+│ Four Soldiers                              │ Sam Taylor                                     │
+│ Jokes for the Gunmen                       │ Jonathan Wright                                │
+│ Love in the New Millennium                 │ Eileen Myles and Annelise Finegan Wasmoen      │
+│ Mouthful of Birds                          │ Megan McDowell                                 │
+│ The Death of Murat Idrissi                 │ Sam Garrett                                    │
+│ The Faculty of Dreams                      │ Deborah Bragan-Turner                          │
+│ The Pine Islands                           │ Jen Calleja                                    │
+│ The Remainder                              │ Sophie Hughes                                  │
+│ The Shape of the Ruins                     │ Anne McLean                                    │
+│ The Years                                  │ Alison L. Strayer                              │
+│ Frankenstein in Baghdad                    │ Jonathan Wright                                │
+│ Go, Went, Gone                             │ Susan Bernofsky                                │
+│ Like a Fading Shadow                       │ Camilo A. Ramirez                              │
+│ The 7th Function of Language               │ Sam Taylor                                     │
+│ The Dinner Guest                           │ Natasha Wimmer                                 │
+│ The Flying Mountain                        │ Simon Pare                                     │
+│ The Impostor                               │ Frank Wynne                                    │
+│ The Stolen Bicycle                         │ Darryl Sterk                                   │
+│ The White Book                             │ Deborah Smith                                  │
+│ The World Goes On                          │ Ottilie Mulzet, George Szirtes, and John Batki │
+│ Vernon Subutex 1                           │ Frank Wynne                                    │
+│ Die, My Love                               │ Sarah Moses and Carolina Orloff                │
+│ Flights                                    │ Jennifer Croft                                 │
+└────────────────────────────────────────────┴────────────────────────────────────────────────┘
+NULL querys
+second query
+WHERE querys
+NULL querys
+┌────────────────────────────┐
+│           title            │
+├────────────────────────────┤
+│ Love in the Big City       │
+│ More Than I Love My Life   │
+│ Love in the New Millennium │
+│ Die, My Love               │
+└────────────────────────────┘
+┌─────────────────────────────────────────┐
+│                  title                  │
+├─────────────────────────────────────────┤
+│ The Gospel According to the New World   │
+│ The Birthday Party                      │
+│ The Book of Mother                      │
+│ The Books of Jacob                      │
+│ The War of the Poor                     │
+│ The Dangers of Smoking in Bed           │
+│ The Employees                           │
+│ The Pear Field                          │
+│ The Perfect Nine                        │
+│ The Adventures of China Iron            │
+│ The Discomfort of Evening               │
+│ The Eighth Life                         │
+│ The Enlightenment of The Greengage Tree │
+│ The Memory Police                       │
+│ The Other Name: Septology I-II          │
+│ The Death of Murat Idrissi              │
+│ The Faculty of Dreams                   │
+│ The Pine Islands                        │
+│ The Remainder                           │
+│ The Shape of the Ruins                  │
+│ The Years                               │
+│ The 7th Function of Language            │
+│ The Dinner Guest                        │
+│ The Flying Mountain                     │
+│ The Impostor                            │
+│ The Stolen Bicycle                      │
+│ The White Book                          │
+│ The World Goes On                       │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│                  title                  │
+├─────────────────────────────────────────┤
+│ The Gospel According to the New World   │
+│ The Birthday Party                      │
+│ The Book of Mother                      │
+│ The Books of Jacob                      │
+│ The War of the Poor                     │
+│ The Dangers of Smoking in Bed           │
+│ The Employees                           │
+│ The Pear Field                          │
+│ The Perfect Nine                        │
+│ The Adventures of China Iron            │
+│ The Discomfort of Evening               │
+│ The Eighth Life                         │
+│ The Enlightenment of The Greengage Tree │
+│ The Memory Police                       │
+│ The Other Name: Septology I-II          │
+│ The Death of Murat Idrissi              │
+│ The Faculty of Dreams                   │
+│ The Pine Islands                        │
+│ The Remainder                           │
+│ The Shape of the Ruins                  │
+│ The Years                               │
+│ The 7th Function of Language            │
+│ The Dinner Guest                        │
+│ The Flying Mountain                     │
+│ The Impostor                            │
+│ The Stolen Bicycle                      │
+│ The White Book                          │
+│ The World Goes On                       │
+└─────────────────────────────────────────┘
+┌───────┐
+│ title │
+├───────┤
+│ Pyre  │
+└───────┘
+┌───────┐
+│ title │
+├───────┤
+│ Tyll  │
+└───────┘
+┌────────────────────────────────────────────┬──────┐
+│                   title                    │ year │
+├────────────────────────────────────────────┼──────┤
+│ Paradais                                   │ 2022 │
+│ Heaven                                     │ 2022 │
+│ Love in the Big City                       │ 2022 │
+│ Happy Stories, Mostly                      │ 2022 │
+│ Elena Knows                                │ 2022 │
+│ The Book of Mother                         │ 2022 │
+│ More Than I Love My Life                   │ 2022 │
+│ Phenotypes                                 │ 2022 │
+│ A New Name: Septology VI-VII               │ 2022 │
+│ After the Sun                              │ 2022 │
+│ Tomb of Sand                               │ 2022 │
+│ The Books of Jacob                         │ 2022 │
+│ Cursed Bunny                               │ 2022 │
+│ The War of the Poor                        │ 2021 │
+│ When We Cease to Understand the World      │ 2021 │
+│ Wretchedness                               │ 2021 │
+│ An Inventory of Losses                     │ 2021 │
+│ At Night All Blood is Black                │ 2021 │
+│ I Live in the Slums                        │ 2021 │
+│ In Memory of Memory                        │ 2021 │
+│ Minor Detail                               │ 2021 │
+│ Summer Brother                             │ 2021 │
+│ The Dangers of Smoking in Bed              │ 2021 │
+│ The Employees                              │ 2021 │
+│ The Pear Field                             │ 2021 │
+│ The Perfect Nine                           │ 2021 │
+│ The Adventures of China Iron               │ 2020 │
+│ The Discomfort of Evening                  │ 2020 │
+│ The Eighth Life                            │ 2020 │
+│ The Enlightenment of The Greengage Tree    │ 2020 │
+│ The Memory Police                          │ 2020 │
+│ The Other Name: Septology I-II             │ 2020 │
+│ Tyll                                       │ 2020 │
+│ Faces on the Tip of My Tongue              │ 2020 │
+│ Hurricane Season                           │ 2020 │
+│ Little Eyes                                │ 2020 │
+│ Mac and His Problem                        │ 2020 │
+│ Red Dog                                    │ 2020 │
+│ Serotonin                                  │ 2020 │
+│ At Dusk                                    │ 2019 │
+│ Celestial Bodies                           │ 2019 │
+│ Drive Your Plow Over the Bones of the Dead │ 2019 │
+│ Four Soldiers                              │ 2019 │
+│ Jokes for the Gunmen                       │ 2019 │
+│ Love in the New Millennium                 │ 2019 │
+│ Mouthful of Birds                          │ 2019 │
+│ The Death of Murat Idrissi                 │ 2019 │
+│ The Faculty of Dreams                      │ 2019 │
+│ The Pine Islands                           │ 2019 │
+│ The Remainder                              │ 2019 │
+│ The Shape of the Ruins                     │ 2019 │
+│ The Years                                  │ 2019 │
+└────────────────────────────────────────────┴──────┘
+┌────────────────────────────────────────────┬──────┐
+│                   title                    │ year │
+├────────────────────────────────────────────┼──────┤
+│ Paradais                                   │ 2022 │
+│ Heaven                                     │ 2022 │
+│ Love in the Big City                       │ 2022 │
+│ Happy Stories, Mostly                      │ 2022 │
+│ Elena Knows                                │ 2022 │
+│ The Book of Mother                         │ 2022 │
+│ More Than I Love My Life                   │ 2022 │
+│ Phenotypes                                 │ 2022 │
+│ A New Name: Septology VI-VII               │ 2022 │
+│ After the Sun                              │ 2022 │
+│ Tomb of Sand                               │ 2022 │
+│ The Books of Jacob                         │ 2022 │
+│ Cursed Bunny                               │ 2022 │
+│ The War of the Poor                        │ 2021 │
+│ When We Cease to Understand the World      │ 2021 │
+│ Wretchedness                               │ 2021 │
+│ An Inventory of Losses                     │ 2021 │
+│ At Night All Blood is Black                │ 2021 │
+│ I Live in the Slums                        │ 2021 │
+│ In Memory of Memory                        │ 2021 │
+│ Minor Detail                               │ 2021 │
+│ Summer Brother                             │ 2021 │
+│ The Dangers of Smoking in Bed              │ 2021 │
+│ The Employees                              │ 2021 │
+│ The Pear Field                             │ 2021 │
+│ The Perfect Nine                           │ 2021 │
+│ The Adventures of China Iron               │ 2020 │
+│ The Discomfort of Evening                  │ 2020 │
+│ The Eighth Life                            │ 2020 │
+│ The Enlightenment of The Greengage Tree    │ 2020 │
+│ The Memory Police                          │ 2020 │
+│ The Other Name: Septology I-II             │ 2020 │
+│ Tyll                                       │ 2020 │
+│ Faces on the Tip of My Tongue              │ 2020 │
+│ Hurricane Season                           │ 2020 │
+│ Little Eyes                                │ 2020 │
+│ Mac and His Problem                        │ 2020 │
+│ Red Dog                                    │ 2020 │
+│ Serotonin                                  │ 2020 │
+│ At Dusk                                    │ 2019 │
+│ Celestial Bodies                           │ 2019 │
+│ Drive Your Plow Over the Bones of the Dead │ 2019 │
+│ Four Soldiers                              │ 2019 │
+│ Jokes for the Gunmen                       │ 2019 │
+│ Love in the New Millennium                 │ 2019 │
+│ Mouthful of Birds                          │ 2019 │
+│ The Death of Murat Idrissi                 │ 2019 │
+│ The Faculty of Dreams                      │ 2019 │
+│ The Pine Islands                           │ 2019 │
+│ The Remainder                              │ 2019 │
+│ The Shape of the Ruins                     │ 2019 │
+│ The Years                                  │ 2019 │
+└────────────────────────────────────────────┴──────┘
+WHERE and LIKE, % and _

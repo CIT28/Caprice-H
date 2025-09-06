@@ -1,48 +1,21 @@
----.mode box
-
----.output '| cat >> pow.txt'
-
----.print 'first query'
-
----SELECT * FROM "longlist";
-
----.output stdout
----.output '| cat >> pow.txt'
----.print 'select command — q1'
----SELECT * FROM "longlist";
-
----.print ''
-----.print 'select command — q2'
-
----SELECT rowid, * FROM "longlist" LIMIT 5;
-
----.print ''
----.print 'select command — q3'
----SELECT * FROM "longlist" LIMIT 10;
-
----.output stdout
-
----.mode box
----.output '| cat >> pow.txt'
----.print 'select command — q1'
----SELECT * FROM "longlist";
-
----.print ''
----.print 'select command — q2'
----SELECT title, author FROM "longlist";
-
----.print ''
----.print 'select command — q3'
----SELECT title, year FROM "longlist" LIMIT 10;
-
----.output stdout
-
+-- starting the pow workflow
+-- changes terminal output for readability 
+.mode box
+  
+-- changes terminal output from standard output (stdout) to pow.txt file
 .output '| cat >> pow.txt'
-.print 'limit command — q1'
-SELECT title, year FROM "longlist" LIMIT 5;
+  
+-- updates the pow.txt with content in single quotes
+.print 'first query'  
+  
+-- SQL command (query) to view all the column contents in the longlist table   
+-- Copy your SQL command below here
 
-.print ''
-.print 'limit command — q2'
-SELECT title, author FROM "longlist" LIMIT 10;
+SELECT * FROM "longlist";
+  
+-- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
-.output stdout
+-- changes back to stdout    
+.output stdout  
+
+-- bash command sqlite3 longlist.db < p2-q.sql
