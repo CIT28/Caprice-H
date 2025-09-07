@@ -280,3 +280,211 @@ A13: AVG(LENGTH(title)) by year (what this query does)
 2023|16.9
 A14: COUNT(DISTINCT translator) where present (what this query does)
 64
+second query
+WHERE querys
+NULL querys
+WHERE and LIKE, % and _
+┌────────────────────────────────────────────┬──────┐
+│                   title                    │ year │
+├────────────────────────────────────────────┼──────┤
+│ Paradais                                   │ 2022 │
+│ Heaven                                     │ 2022 │
+│ Love in the Big City                       │ 2022 │
+│ Happy Stories, Mostly                      │ 2022 │
+│ Elena Knows                                │ 2022 │
+│ The Book of Mother                         │ 2022 │
+│ More Than I Love My Life                   │ 2022 │
+│ Phenotypes                                 │ 2022 │
+│ A New Name: Septology VI-VII               │ 2022 │
+│ After the Sun                              │ 2022 │
+│ Tomb of Sand                               │ 2022 │
+│ The Books of Jacob                         │ 2022 │
+│ Cursed Bunny                               │ 2022 │
+│ The War of the Poor                        │ 2021 │
+│ When We Cease to Understand the World      │ 2021 │
+│ Wretchedness                               │ 2021 │
+│ An Inventory of Losses                     │ 2021 │
+│ At Night All Blood is Black                │ 2021 │
+│ I Live in the Slums                        │ 2021 │
+│ In Memory of Memory                        │ 2021 │
+│ Minor Detail                               │ 2021 │
+│ Summer Brother                             │ 2021 │
+│ The Dangers of Smoking in Bed              │ 2021 │
+│ The Employees                              │ 2021 │
+│ The Pear Field                             │ 2021 │
+│ The Perfect Nine                           │ 2021 │
+│ The Adventures of China Iron               │ 2020 │
+│ The Discomfort of Evening                  │ 2020 │
+│ The Eighth Life                            │ 2020 │
+│ The Enlightenment of The Greengage Tree    │ 2020 │
+│ The Memory Police                          │ 2020 │
+│ The Other Name: Septology I-II             │ 2020 │
+│ Tyll                                       │ 2020 │
+│ Faces on the Tip of My Tongue              │ 2020 │
+│ Hurricane Season                           │ 2020 │
+│ Little Eyes                                │ 2020 │
+│ Mac and His Problem                        │ 2020 │
+│ Red Dog                                    │ 2020 │
+│ Serotonin                                  │ 2020 │
+│ At Dusk                                    │ 2019 │
+│ Celestial Bodies                           │ 2019 │
+│ Drive Your Plow Over the Bones of the Dead │ 2019 │
+│ Four Soldiers                              │ 2019 │
+│ Jokes for the Gunmen                       │ 2019 │
+│ Love in the New Millennium                 │ 2019 │
+│ Mouthful of Birds                          │ 2019 │
+│ The Death of Murat Idrissi                 │ 2019 │
+│ The Faculty of Dreams                      │ 2019 │
+│ The Pine Islands                           │ 2019 │
+│ The Remainder                              │ 2019 │
+│ The Shape of the Ruins                     │ 2019 │
+│ The Years                                  │ 2019 │
+└────────────────────────────────────────────┴──────┘
+Q1: titles and years where year is between 2019 and 2022 using >= and <=
+┌────────────────────────────────────────────┬──────┐
+│                   title                    │ year │
+├────────────────────────────────────────────┼──────┤
+│ Paradais                                   │ 2022 │
+│ Heaven                                     │ 2022 │
+│ Love in the Big City                       │ 2022 │
+│ Happy Stories, Mostly                      │ 2022 │
+│ Elena Knows                                │ 2022 │
+│ The Book of Mother                         │ 2022 │
+│ More Than I Love My Life                   │ 2022 │
+│ Phenotypes                                 │ 2022 │
+│ A New Name: Septology VI-VII               │ 2022 │
+│ After the Sun                              │ 2022 │
+│ Tomb of Sand                               │ 2022 │
+│ The Books of Jacob                         │ 2022 │
+│ Cursed Bunny                               │ 2022 │
+│ The War of the Poor                        │ 2021 │
+│ When We Cease to Understand the World      │ 2021 │
+│ Wretchedness                               │ 2021 │
+│ An Inventory of Losses                     │ 2021 │
+│ At Night All Blood is Black                │ 2021 │
+│ I Live in the Slums                        │ 2021 │
+│ In Memory of Memory                        │ 2021 │
+│ Minor Detail                               │ 2021 │
+│ Summer Brother                             │ 2021 │
+│ The Dangers of Smoking in Bed              │ 2021 │
+│ The Employees                              │ 2021 │
+│ The Pear Field                             │ 2021 │
+│ The Perfect Nine                           │ 2021 │
+│ The Adventures of China Iron               │ 2020 │
+│ The Discomfort of Evening                  │ 2020 │
+│ The Eighth Life                            │ 2020 │
+│ The Enlightenment of The Greengage Tree    │ 2020 │
+│ The Memory Police                          │ 2020 │
+│ The Other Name: Septology I-II             │ 2020 │
+│ Tyll                                       │ 2020 │
+│ Faces on the Tip of My Tongue              │ 2020 │
+│ Hurricane Season                           │ 2020 │
+│ Little Eyes                                │ 2020 │
+│ Mac and His Problem                        │ 2020 │
+│ Red Dog                                    │ 2020 │
+│ Serotonin                                  │ 2020 │
+│ At Dusk                                    │ 2019 │
+│ Celestial Bodies                           │ 2019 │
+│ Drive Your Plow Over the Bones of the Dead │ 2019 │
+│ Four Soldiers                              │ 2019 │
+│ Jokes for the Gunmen                       │ 2019 │
+│ Love in the New Millennium                 │ 2019 │
+│ Mouthful of Birds                          │ 2019 │
+│ The Death of Murat Idrissi                 │ 2019 │
+│ The Faculty of Dreams                      │ 2019 │
+│ The Pine Islands                           │ 2019 │
+│ The Remainder                              │ 2019 │
+│ The Shape of the Ruins                     │ 2019 │
+│ The Years                                  │ 2019 │
+└────────────────────────────────────────────┴──────┘
+Q2: same as Q1 but using BETWEEN (inclusive)
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ Time Shelter                          │ 4.05   │
+│ Pyre                                  │ 4.04   │
+│ Still Born                            │ 4.14   │
+│ Elena Knows                           │ 4.1    │
+│ More Than I Love My Life              │ 4.05   │
+│ A New Name: Septology VI-VII          │ 4.5    │
+│ The Books of Jacob                    │ 4.06   │
+│ When We Cease to Understand the World │ 4.14   │
+│ The Eighth Life                       │ 4.52   │
+│ The Other Name: Septology I-II        │ 4.19   │
+│ Hurricane Season                      │ 4.08   │
+│ The Years                             │ 4.18   │
+│ The Flying Mountain                   │ 4.1    │
+└───────────────────────────────────────┴────────┘
+Q3: titles with rating greater than 4.0
+┌───────────────────────────────────────┬────────┬───────┐
+│                 title                 │ rating │ votes │
+├───────────────────────────────────────┼────────┼───────┤
+│ When We Cease to Understand the World │ 4.14   │ 23251 │
+│ The Eighth Life                       │ 4.52   │ 16350 │
+│ Hurricane Season                      │ 4.08   │ 22551 │
+│ The Years                             │ 4.18   │ 16888 │
+└───────────────────────────────────────┴────────┴───────┘
+Q4: titles with rating > 4.0 AND votes > 10000
+┌────────────────────────────────────────────┬───────┐
+│                   title                    │ pages │
+├────────────────────────────────────────────┼───────┤
+│ Boulder                                    │ 112   │
+│ The Gospel According to the New World      │ 184   │
+│ Standing Heavy                             │ 252   │
+│ Pyre                                       │ 224   │
+│ Still Born                                 │ 200   │
+│ Ninth Building                             │ 272   │
+│ Paradais                                   │ 118   │
+│ Heaven                                     │ 167   │
+│ Love in the Big City                       │ 217   │
+│ Happy Stories, Mostly                      │ 151   │
+│ Elena Knows                                │ 143   │
+│ The Book of Mother                         │ 224   │
+│ More Than I Love My Life                   │ 288   │
+│ Phenotypes                                 │ 232   │
+│ A New Name: Septology VI-VII               │ 228   │
+│ After the Sun                              │ 158   │
+│ Cursed Bunny                               │ 251   │
+│ The War of the Poor                        │ 69    │
+│ When We Cease to Understand the World      │ 192   │
+│ Wretchedness                               │ 176   │
+│ An Inventory of Losses                     │ 256   │
+│ At Night All Blood is Black                │ 192   │
+│ Minor Detail                               │ 144   │
+│ Summer Brother                             │ 285   │
+│ The Dangers of Smoking in Bed              │ 187   │
+│ The Employees                              │ 136   │
+│ The Pear Field                             │ 163   │
+│ The Perfect Nine                           │ 240   │
+│ The Adventures of China Iron               │ 200   │
+│ The Discomfort of Evening                  │ 282   │
+│ The Enlightenment of The Greengage Tree    │ 256   │
+│ The Memory Police                          │ 277   │
+│ Faces on the Tip of My Tongue              │ 136   │
+│ Hurricane Season                           │ 229   │
+│ Little Eyes                                │ 256   │
+│ Mac and His Problem                        │ 224   │
+│ At Dusk                                    │ 192   │
+│ Celestial Bodies                           │ 243   │
+│ Drive Your Plow Over the Bones of the Dead │ 270   │
+│ Four Soldiers                              │ 160   │
+│ Jokes for the Gunmen                       │ 162   │
+│ Love in the New Millennium                 │ 288   │
+│ Mouthful of Birds                          │ 228   │
+│ The Death of Murat Idrissi                 │ 112   │
+│ The Pine Islands                           │ 180   │
+│ The Remainder                              │ 193   │
+│ The Years                                  │ 232   │
+│ Frankenstein in Baghdad                    │ 272   │
+│ The Dinner Guest                           │ 160   │
+│ The White Book                             │ 161   │
+│ Die, My Love                               │ 123   │
+└────────────────────────────────────────────┴───────┘
+Q5: titles with fewer than 300 pages
+┌───────┐
+│ title │
+├───────┤
+│ Pyre  │
+└───────┘
+titles that contain the word Pyre case-insensitive LIKE
+title equals pyre exactly
