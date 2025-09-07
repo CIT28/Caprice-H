@@ -7,3 +7,5 @@ The first query finds all books on the longlist that do not have a translator, w
 
 ## WHERE and LIKE, % and _ 
 The first query retrieves the title of a book from the "longlist" table where the title contains the word "love". The LIKE operator is used with the % wildcard to search for the word anywhere within the string. The second query retrieves the title and year from the same table, but it filters the results to only include years between 2019 and 2022, inclusive. The >= and <= operators are used to create a range, which is more efficient than listing out each individual year with OR. Having done these queries gave it easir for me to understand what each operators mean and how they filter correctly.
+
+# Week 3 Querying Part 4
