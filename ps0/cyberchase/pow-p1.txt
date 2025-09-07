@@ -586,3 +586,199 @@ Row count
 ├──────┤
 │ 31   │
 └──────┘
+testing setup
+titles of all episodes from season 1
+┌─────────────────────────────────────┐
+│                title                │
+├─────────────────────────────────────┤
+│ Lost My Marbles                     │
+│ Castleblanca                        │
+│ R-Fair City                         │
+│ Snow Day to be Exact                │
+│ Sensible Flats                      │
+│ Zeus on the Loose                   │
+│ The Poddleville Case                │
+│ And They Counted Happily Ever After │
+│ Clock Like An Egyptian              │
+│ Secrets of Symmetria                │
+│ A Day at the Spa                    │
+│ Of All The Luck                     │
+│ Eureeka                             │
+│ Cool It                             │
+│ Find Those Gleamers                 │
+│ Codename: Icky                      │
+│ Return to Sensible Flats            │
+│ Problem Solving in Shangri-La       │
+│ Send in the Clones                  │
+│ Trading Places                      │
+│ Less Than Zero                      │
+│ Model Behavior                      │
+│ Fortress of Attitude                │
+│ Size Me Up                          │
+│ A Battle of Equals                  │
+│ Out of Sync                         │
+└─────────────────────────────────────┘
+The row count
+┌──────┐
+│ rows │
+├──────┤
+│ 26   │
+└──────┘
+P2: First episode of every season (season, title)
+┌────────┬────────────────────────────────────┐
+│ season │               title                │
+├────────┼────────────────────────────────────┤
+│ 1      │ Lost My Marbles                    │
+│ 2      │ Hugs & Witches                     │
+│ 3      │ EcoHaven CSE                       │
+│ 4      │ Balancing Act                      │
+│ 5      │ The Halloween Howl                 │
+│ 6      │ Digit's B-Day Surprise             │
+│ 7      │ Weather Watchers Gone With The Fog │
+│ 8      │ The Hacker's Challenge             │
+│ 9      │ An Urchin Matter                   │
+│ 10     │ Fit to be Heroes                   │
+│ 11     │ Watts of Halloween Trouble         │
+│ 12     │ Space Waste Odyssey                │
+│ 13     │ Duck Stop                          │
+│ 14     │ Clean-Up on Isle 8                 │
+└────────┴────────────────────────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 14   │
+└──────┘
+production code for the episode "Hackerized!"
+┌─────────────────┐
+│ production_code │
+├─────────────────┤
+│ CYB091          │
+└─────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 1    │
+└──────┘
+titles of episodes with no listed topic
+┌──────────────────────────────────┐
+│              title               │
+├──────────────────────────────────┤
+│ Space Waste Odyssey              │
+│ Space Waste Odyssey              │
+│ Giving Thanks Day                │
+│ A Garden Grows in Botlyn         │
+│ Missing Bats in Sensible Flats   │
+│ Water Woes                       │
+│ Soil Turmoil                     │
+│ Hacker Hugs a Tree               │
+│ Pursuit of the Prism of Power    │
+│ Composting in the Clutch         │
+│ A Camping Conundrum              │
+│ Journey of a Thousand Food Miles │
+│ Duck Stop                        │
+│ The Great Outdoors               │
+│ Coral Grief                      │
+│ Sustainable by Design            │
+│ Hacker's Bright Idea             │
+│ Buzz and the Tree                │
+│ The Lilting Loons                │
+│ Living in Disharmony             │
+│ Traffic Trouble                  │
+│ A Garden is Born                 │
+│ Clean-Up on Isle 8               │
+│ Weather or Not                   │
+│ Weather or Not                   │
+│ Trees, Please                    │
+└──────────────────────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 26   │
+└──────┘
+title of the episode aired on 2004-12-31
+┌─────────────────┐
+│      title      │
+├─────────────────┤
+│ Starlight Night │
+└─────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 1    │
+└──────┘
+Season 6 (2008) episodes released early in 2007 (titles)
+┌────────────────────────┐
+│         title          │
+├────────────────────────┤
+│ Digit's B-Day Surprise │
+│ When Penguins Fly      │
+└────────────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 2    │
+└──────┘
+titles and topics for episodes teaching fractions
+┌───────────────────────────────────────┬────────────────────────────────────────────┐
+│                 title                 │                   topic                    │
+├───────────────────────────────────────┼────────────────────────────────────────────┤
+│ Zeus on the Loose                     │ Fractions                                  │
+│ Harriet Hippo & the Mean Green        │ Equivalent Fractions                       │
+│ Shari Spotter and the Cosmic Crumpets │ Mixed-Number Fractions                     │
+│ A Fraction of a Chance                │ Fractions 101                              │
+│ Peace, Love, and Hackerness           │ Measuring with Mixed Number Fractions      │
+│ Trash Creep                           │ Fractions, Effects of Trash, and Recycling │
+└───────────────────────────────────────┴────────────────────────────────────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 6    │
+└──────┘
+episodes released between 2018 and 2023
+┌─────┬──────────────────────────────────┬────────────┐
+│ id  │              title               │  air_date  │
+├─────┼──────────────────────────────────┼────────────┤
+│ 110 │ Housewarming Party               │ 2018-04-16 │
+│ 111 │ Invasion of the Funky Flower     │ 2018-04-17 │
+│ 112 │ A Renewable Hope                 │ 2018-04-18 │
+│ 113 │ The Migration Situation          │ 2018-04-19 │
+│ 114 │ Back to Canalia's Future         │ 2018-04-20 │
+│ 115 │ Space Waste Odyssey              │ 2019-11-29 │
+│ 116 │ Space Waste Odyssey              │ 2019-04-19 │
+│ 117 │ Giving Thanks Day                │ 2019-11-22 │
+│ 118 │ A Garden Grows in Botlyn         │ 2020-02-14 │
+│ 119 │ Missing Bats in Sensible Flats   │ 2020-04-17 │
+│ 120 │ Water Woes                       │ 2020-04-17 │
+│ 121 │ Soil Turmoil                     │ 2020-04-17 │
+│ 122 │ Hacker Hugs a Tree               │ 2020-04-17 │
+│ 123 │ Pursuit of the Prism of Power    │ 2020-05-08 │
+│ 124 │ Composting in the Clutch         │ 2020-05-08 │
+│ 125 │ A Camping Conundrum              │ 2020-05-08 │
+│ 126 │ Journey of a Thousand Food Miles │ 2020-05-08 │
+│ 127 │ Duck Stop                        │ 2022-02-25 │
+│ 128 │ The Great Outdoors               │ 2022-02-25 │
+│ 129 │ Coral Grief                      │ 2022-02-25 │
+│ 130 │ Sustainable by Design            │ 2022-02-25 │
+│ 131 │ Hacker's Bright Idea             │ 2022-04-29 │
+│ 132 │ Buzz and the Tree                │ 2022-04-29 │
+│ 133 │ The Lilting Loons                │ 2022-04-29 │
+│ 134 │ Living in Disharmony             │ 2022-04-29 │
+│ 135 │ Traffic Trouble                  │ 2022-05-20 │
+│ 136 │ A Garden is Born                 │ 2022-05-20 │
+│ 137 │ Clean-Up on Isle 8               │ 2023-04-21 │
+│ 138 │ Weather or Not                   │ 2023-05-10 │
+│ 139 │ Weather or Not                   │ 2023-05-11 │
+│ 140 │ Trees, Please                    │ 2023-04-28 │
+└─────┴──────────────────────────────────┴────────────┘
+Row count
+┌──────┐
+│ rows │
+├──────┤
+│ 31   │
+└──────┘
