@@ -26,3 +26,14 @@ When a value is missing or unknown in a database, it's considered NULL. You can'
 I'm getting really comfortable with ORDER BY and LIMIT. I know that ORDER BY sorts my results, and by default, it sorts them from lowest to highest. But I can change that with DESC to see the highest ratings first, which is exactly what I want for a "best of" list. The LIMIT clause is awesome because it keeps my results from getting too long, so I only see the top 10.
 
 I think the biggest breakthrough for me was figuring out how to sort by multiple things. I noticed that some books had the same rating, and that bothered me. But by adding "votes" DESC to my ORDER BY clause, I've taught the query to break the tie by showing the book with more votes first. It's a small change, but it makes the results so much better.
+
+
+## Aggregates
+
+Aggregate functions in SQL are tools for summarizing data. The AVG function calculates the mean of a column, and pairing it with ROUND improves readability by limiting decimals, often with an alias to label the result. MIN and MAX return the smallest and largest values, which also apply to text columns alphabetically, making them useful for finding the first and last titles in a dataset. 
+SUM adds up values across rows, while COUNT(*) counts all rows in a table. Using COUNT(col) instead only includes rows where that column is not NULL, which is helpful for fields like translators that may be missing data. 
+The DISTINCT keyword eliminates duplicates, and combining it with COUNT allows you to measure the number of unique values in a column, such as how many publishers are represented. 
+
+## My thoughts
+
+Working through aggregates clarified how summaries differ from row-by-row filters. I found it especially helpful to see that `COUNT(*)` and `COUNT(col)` answer different questions (rows vs. non-NULL values), and that `DISTINCT` is essential when you want unique entities (like publishers). Using `MIN`/`MAX` on text was a good reminder that SQL orders strings alphabetically, not by length. Adding `.print` before each query made the POW output readable and easy to grade, and aliases improved the clarity of single-value results. Together, these functions allow you to calculate averages, totals, extremes, row counts, and unique counts, making them essential for analyzing and understanding data patterns. 

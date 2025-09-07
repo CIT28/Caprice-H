@@ -792,3 +792,661 @@ Exact match rating
 │ Wretchedness                               │
 └────────────────────────────────────────────┘
 titles in alphabetical order
+second query
+WHERE querys
+NULL querys
+WHERE and LIKE, % and _
+Q1: titles and years where year is between 2019 and 2022 using >= and <=
+Q2: same as Q1 but using BETWEEN (inclusive)
+Q3: titles with rating greater than 4.0
+Q4: titles with rating > 4.0 AND votes > 10000
+Q5: titles with fewer than 300 pages
+titles that contain the word Pyre case-insensitive LIKE
+title equals pyre exactly
+Q1 Lowest 10 ratings
+Q2 Top 10 ratings
+top 10 ratings, tie break by votes
+top 10 ratings with votes shown
+Exact match rating
+titles in alphabetical order
+┌──────────────────┐
+│  AVG("rating")   │
+├──────────────────┤
+│ 3.75371794871795 │
+└──────────────────┘
+Get the average rating
+┌─────────────────────────┐
+│ ROUND(AVG("rating"), 2) │
+├─────────────────────────┤
+│ 3.75                    │
+└─────────────────────────┘
+Get the average rating rounded to 2 decimal places
+┌────────────────┐
+│ average rating │
+├────────────────┤
+│ 3.75           │
+└────────────────┘
+Average rating rounded to 2 decimals with alias
+┌───────────────┐
+│ MIN("rating") │
+├───────────────┤
+│ 3.05          │
+└───────────────┘
+Minimum rating
+┌───────────────┐
+│ MAX("rating") │
+├───────────────┤
+│ 4.52          │
+└───────────────┘
+Maximum rating
+┌────────────────────────────────────────────┬───────┐
+│                   title                    │ votes │
+├────────────────────────────────────────────┼───────┤
+│ Boulder                                    │ 2779  │
+│ Whale                                      │ 175   │
+│ The Gospel According to the New World      │ 114   │
+│ Standing Heavy                             │ 322   │
+│ Time Shelter                               │ 3142  │
+│ Is Mother Dead                             │ 2455  │
+│ Jimi Hendrix Live in Lviv                  │ 167   │
+│ The Birthday Party                         │ 529   │
+│ While We Were Dreaming                     │ 705   │
+│ Pyre                                       │ 1302  │
+│ Still Born                                 │ 7647  │
+│ A System So Magnificent It Is Blinding     │ 1401  │
+│ Ninth Building                             │ 40    │
+│ Paradais                                   │ 8109  │
+│ Heaven                                     │ 26217 │
+│ Love in the Big City                       │ 5156  │
+│ Happy Stories, Mostly                      │ 872   │
+│ Elena Knows                                │ 8212  │
+│ The Book of Mother                         │ 1726  │
+│ More Than I Love My Life                   │ 3705  │
+│ Phenotypes                                 │ 839   │
+│ A New Name: Septology VI-VII               │ 479   │
+│ After the Sun                              │ 1684  │
+│ Tomb of Sand                               │ 1823  │
+│ The Books of Jacob                         │ 5664  │
+│ Cursed Bunny                               │ 10039 │
+│ The War of the Poor                        │ 2096  │
+│ When We Cease to Understand the World      │ 23251 │
+│ Wretchedness                               │ 308   │
+│ An Inventory of Losses                     │ 1329  │
+│ At Night All Blood is Black                │ 18032 │
+│ I Live in the Slums                        │ 95    │
+│ In Memory of Memory                        │ 1554  │
+│ Minor Detail                               │ 3948  │
+│ Summer Brother                             │ 2265  │
+│ The Dangers of Smoking in Bed              │ 25161 │
+│ The Employees                              │ 7357  │
+│ The Pear Field                             │ 1077  │
+│ The Perfect Nine                           │ 956   │
+│ The Adventures of China Iron               │ 3412  │
+│ The Discomfort of Evening                  │ 27310 │
+│ The Eighth Life                            │ 16350 │
+│ The Enlightenment of The Greengage Tree    │ 3777  │
+│ The Memory Police                          │ 67938 │
+│ The Other Name: Septology I-II             │ 1245  │
+│ Tyll                                       │ 10839 │
+│ Faces on the Tip of My Tongue              │ 222   │
+│ Hurricane Season                           │ 22551 │
+│ Little Eyes                                │ 16462 │
+│ Mac and His Problem                        │ 606   │
+│ Red Dog                                    │ 198   │
+│ Serotonin                                  │ 23852 │
+│ At Dusk                                    │ 1402  │
+│ Celestial Bodies                           │ 13710 │
+│ Drive Your Plow Over the Bones of the Dead │ 80110 │
+│ Four Soldiers                              │ 623   │
+│ Jokes for the Gunmen                       │ 503   │
+│ Love in the New Millennium                 │ 266   │
+│ Mouthful of Birds                          │ 10576 │
+│ The Death of Murat Idrissi                 │ 2053  │
+│ The Faculty of Dreams                      │ 2914  │
+│ The Pine Islands                           │ 1738  │
+│ The Remainder                              │ 1012  │
+│ The Shape of the Ruins                     │ 2466  │
+│ The Years                                  │ 16888 │
+│ Frankenstein in Baghdad                    │ 14760 │
+│ Go, Went, Gone                             │ 7736  │
+│ Like a Fading Shadow                       │ 592   │
+│ The 7th Function of Language               │ 5638  │
+│ The Dinner Guest                           │ 893   │
+│ The Flying Mountain                        │ 323   │
+│ The Impostor                               │ 2139  │
+│ The Stolen Bicycle                         │ 1467  │
+│ The White Book                             │ 14052 │
+│ The World Goes On                          │ 772   │
+│ Vernon Subutex 1                           │ 12250 │
+│ Die, My Love                               │ 4567  │
+│ Flights                                    │ 27229 │
+└────────────────────────────────────────────┴───────┘
+all titles with their vote counts
+┌──────────────┐
+│ SUM("votes") │
+├──────────────┤
+│ 604173       │
+└──────────────┘
+Total votes across all books
+┌──────────┐
+│ COUNT(*) │
+├──────────┤
+│ 78       │
+└──────────┘
+total number of books in the table
+┌─────────────────────┐
+│ COUNT("translator") │
+├─────────────────────┤
+│ 76                  │
+└─────────────────────┘
+all the books with a translator
+┌──────────────┬──────────────────────────────┐
+│ MAX("title") │         MIN("title")         │
+├──────────────┼──────────────────────────────┤
+│ Wretchedness │ A New Name: Septology VI-VII │
+└──────────────┴──────────────────────────────┘
+first and last title alphabetically
+┌────────────────────┐
+│ COUNT("publisher") │
+├────────────────────┤
+│ 78                 │
+└────────────────────┘
+books with a publisher listed
+bad spelling publisher listed
+┌─────────────────────────┐
+│        publisher        │
+├─────────────────────────┤
+│ Literatura Random House │
+│ Europa Editions         │
+│ World Editions          │
+│ MacLehose Press         │
+│ W&N                     │
+│ Verso Fiction           │
+│ MacLehose Press         │
+│ Transit Books           │
+│ Fitzcarraldo Editions   │
+│ Pushkin Press           │
+│ Fitzcarraldo Editions   │
+│ Scribe UK               │
+│ Honford Star            │
+│ Fitzcarraldo Editions   │
+│ Picador                 │
+│ Tilted Axis Press       │
+│ Tilted Axis Press       │
+│ Charco Press            │
+│ Scribner                │
+│ Jonathan Cape           │
+│ And Other Stories       │
+│ Fitzcarraldo Editions   │
+│ Lolli Editions          │
+│ Tilted Axis Press       │
+│ Fitzcarraldo Editions   │
+│ Honford Star            │
+│ Picador                 │
+│ Pushkin Press           │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Pushkin Press           │
+│ Yale University Press   │
+│ Fitzcarraldo Editions   │
+│ Fitzcarraldo Editions   │
+│ World Editions          │
+│ Granta Books            │
+│ Lolli Editions          │
+│ Peirene Press           │
+│ The New Press           │
+│ Charco Press            │
+│ Faber & Faber           │
+│ Scribe UK               │
+│ Europa Editions         │
+│ Harvill Secker          │
+│ Fitzcarraldo Editions   │
+│ Riverrun                │
+│ Peirene Press           │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Harvill Secker          │
+│ Pushkin Press           │
+│ William Heinemann       │
+│ Scribe UK               │
+│ Sandstone Press         │
+│ Fitzcarraldo Editions   │
+│ Portobello Books        │
+│ Portobello Books        │
+│ Yale University Press   │
+│ Oneworld                │
+│ Scribe UK               │
+│ MacLehose Press         │
+│ Serpent's Tail          │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ Harvill Secker          │
+│ Harvill Secker          │
+│ Seagull Books           │
+│ MacLehose Press         │
+│ Text Publishing         │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ MacLehose Press         │
+│ Charco Press            │
+│ Fitzcarraldo Editions   │
+└─────────────────────────┘
+publisher listed
+┌─────────────────────────┐
+│        publisher        │
+├─────────────────────────┤
+│ Literatura Random House │
+│ Europa Editions         │
+│ World Editions          │
+│ MacLehose Press         │
+│ W&N                     │
+│ Verso Fiction           │
+│ Transit Books           │
+│ Fitzcarraldo Editions   │
+│ Pushkin Press           │
+│ Scribe UK               │
+│ Honford Star            │
+│ Picador                 │
+│ Tilted Axis Press       │
+│ Charco Press            │
+│ Scribner                │
+│ Jonathan Cape           │
+│ And Other Stories       │
+│ Lolli Editions          │
+│ Yale University Press   │
+│ Granta Books            │
+│ Peirene Press           │
+│ The New Press           │
+│ Faber & Faber           │
+│ Harvill Secker          │
+│ Riverrun                │
+│ Oneworld                │
+│ William Heinemann       │
+│ Sandstone Press         │
+│ Portobello Books        │
+│ Serpent's Tail          │
+│ Tuskar Rock             │
+│ Seagull Books           │
+│ Text Publishing         │
+└─────────────────────────┘
+list of unique publishers
+┌─────────────────────────────┐
+│ COUNT(DISTINCT "publisher") │
+├─────────────────────────────┤
+│ 33                          │
+└─────────────────────────────┘
+Q19: Total number of unique publishers
+second query
+WHERE querys
+NULL querys
+WHERE and LIKE, % and _
+Q1: titles and years where year is between 2019 and 2022 using >= and <=
+Q2: same as Q1 but using BETWEEN (inclusive)
+Q3: titles with rating greater than 4.0
+Q4: titles with rating > 4.0 AND votes > 10000
+Q5: titles with fewer than 300 pages
+titles that contain the word Pyre case-insensitive LIKE
+title equals pyre exactly
+Q1 Lowest 10 ratings
+Q2 Top 10 ratings
+top 10 ratings, tie break by votes
+top 10 ratings with votes shown
+Exact match rating
+titles in alphabetical order
+┌──────────────────┐
+│  AVG("rating")   │
+├──────────────────┤
+│ 3.75371794871795 │
+└──────────────────┘
+Get the average rating
+┌─────────────────────────┐
+│ ROUND(AVG("rating"), 2) │
+├─────────────────────────┤
+│ 3.75                    │
+└─────────────────────────┘
+Get the average rating rounded to 2 decimal places
+┌────────────────┐
+│ average rating │
+├────────────────┤
+│ 3.75           │
+└────────────────┘
+Average rating rounded to 2 decimals with alias
+┌───────────────┐
+│ MIN("rating") │
+├───────────────┤
+│ 3.05          │
+└───────────────┘
+Minimum rating
+┌───────────────┐
+│ MAX("rating") │
+├───────────────┤
+│ 4.52          │
+└───────────────┘
+Maximum rating
+┌────────────────────────────────────────────┬───────┐
+│                   title                    │ votes │
+├────────────────────────────────────────────┼───────┤
+│ Boulder                                    │ 2779  │
+│ Whale                                      │ 175   │
+│ The Gospel According to the New World      │ 114   │
+│ Standing Heavy                             │ 322   │
+│ Time Shelter                               │ 3142  │
+│ Is Mother Dead                             │ 2455  │
+│ Jimi Hendrix Live in Lviv                  │ 167   │
+│ The Birthday Party                         │ 529   │
+│ While We Were Dreaming                     │ 705   │
+│ Pyre                                       │ 1302  │
+│ Still Born                                 │ 7647  │
+│ A System So Magnificent It Is Blinding     │ 1401  │
+│ Ninth Building                             │ 40    │
+│ Paradais                                   │ 8109  │
+│ Heaven                                     │ 26217 │
+│ Love in the Big City                       │ 5156  │
+│ Happy Stories, Mostly                      │ 872   │
+│ Elena Knows                                │ 8212  │
+│ The Book of Mother                         │ 1726  │
+│ More Than I Love My Life                   │ 3705  │
+│ Phenotypes                                 │ 839   │
+│ A New Name: Septology VI-VII               │ 479   │
+│ After the Sun                              │ 1684  │
+│ Tomb of Sand                               │ 1823  │
+│ The Books of Jacob                         │ 5664  │
+│ Cursed Bunny                               │ 10039 │
+│ The War of the Poor                        │ 2096  │
+│ When We Cease to Understand the World      │ 23251 │
+│ Wretchedness                               │ 308   │
+│ An Inventory of Losses                     │ 1329  │
+│ At Night All Blood is Black                │ 18032 │
+│ I Live in the Slums                        │ 95    │
+│ In Memory of Memory                        │ 1554  │
+│ Minor Detail                               │ 3948  │
+│ Summer Brother                             │ 2265  │
+│ The Dangers of Smoking in Bed              │ 25161 │
+│ The Employees                              │ 7357  │
+│ The Pear Field                             │ 1077  │
+│ The Perfect Nine                           │ 956   │
+│ The Adventures of China Iron               │ 3412  │
+│ The Discomfort of Evening                  │ 27310 │
+│ The Eighth Life                            │ 16350 │
+│ The Enlightenment of The Greengage Tree    │ 3777  │
+│ The Memory Police                          │ 67938 │
+│ The Other Name: Septology I-II             │ 1245  │
+│ Tyll                                       │ 10839 │
+│ Faces on the Tip of My Tongue              │ 222   │
+│ Hurricane Season                           │ 22551 │
+│ Little Eyes                                │ 16462 │
+│ Mac and His Problem                        │ 606   │
+│ Red Dog                                    │ 198   │
+│ Serotonin                                  │ 23852 │
+│ At Dusk                                    │ 1402  │
+│ Celestial Bodies                           │ 13710 │
+│ Drive Your Plow Over the Bones of the Dead │ 80110 │
+│ Four Soldiers                              │ 623   │
+│ Jokes for the Gunmen                       │ 503   │
+│ Love in the New Millennium                 │ 266   │
+│ Mouthful of Birds                          │ 10576 │
+│ The Death of Murat Idrissi                 │ 2053  │
+│ The Faculty of Dreams                      │ 2914  │
+│ The Pine Islands                           │ 1738  │
+│ The Remainder                              │ 1012  │
+│ The Shape of the Ruins                     │ 2466  │
+│ The Years                                  │ 16888 │
+│ Frankenstein in Baghdad                    │ 14760 │
+│ Go, Went, Gone                             │ 7736  │
+│ Like a Fading Shadow                       │ 592   │
+│ The 7th Function of Language               │ 5638  │
+│ The Dinner Guest                           │ 893   │
+│ The Flying Mountain                        │ 323   │
+│ The Impostor                               │ 2139  │
+│ The Stolen Bicycle                         │ 1467  │
+│ The White Book                             │ 14052 │
+│ The World Goes On                          │ 772   │
+│ Vernon Subutex 1                           │ 12250 │
+│ Die, My Love                               │ 4567  │
+│ Flights                                    │ 27229 │
+└────────────────────────────────────────────┴───────┘
+all titles with their vote counts
+┌──────────────┐
+│ SUM("votes") │
+├──────────────┤
+│ 604173       │
+└──────────────┘
+Total votes across all books
+┌──────────┐
+│ COUNT(*) │
+├──────────┤
+│ 78       │
+└──────────┘
+total number of books in the table
+┌─────────────────────┐
+│ COUNT("translator") │
+├─────────────────────┤
+│ 76                  │
+└─────────────────────┘
+all the books with a translator
+┌──────────────┬──────────────────────────────┐
+│ MAX("title") │         MIN("title")         │
+├──────────────┼──────────────────────────────┤
+│ Wretchedness │ A New Name: Septology VI-VII │
+└──────────────┴──────────────────────────────┘
+first and last title alphabetically
+┌────────────────────┐
+│ COUNT("publisher") │
+├────────────────────┤
+│ 78                 │
+└────────────────────┘
+books with a publisher listed
+┌─────────────────────────┐
+│        publisher        │
+├─────────────────────────┤
+│ Literatura Random House │
+│ Europa Editions         │
+│ World Editions          │
+│ MacLehose Press         │
+│ W&N                     │
+│ Verso Fiction           │
+│ MacLehose Press         │
+│ Transit Books           │
+│ Fitzcarraldo Editions   │
+│ Pushkin Press           │
+│ Fitzcarraldo Editions   │
+│ Scribe UK               │
+│ Honford Star            │
+│ Fitzcarraldo Editions   │
+│ Picador                 │
+│ Tilted Axis Press       │
+│ Tilted Axis Press       │
+│ Charco Press            │
+│ Scribner                │
+│ Jonathan Cape           │
+│ And Other Stories       │
+│ Fitzcarraldo Editions   │
+│ Lolli Editions          │
+│ Tilted Axis Press       │
+│ Fitzcarraldo Editions   │
+│ Honford Star            │
+│ Picador                 │
+│ Pushkin Press           │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Pushkin Press           │
+│ Yale University Press   │
+│ Fitzcarraldo Editions   │
+│ Fitzcarraldo Editions   │
+│ World Editions          │
+│ Granta Books            │
+│ Lolli Editions          │
+│ Peirene Press           │
+│ The New Press           │
+│ Charco Press            │
+│ Faber & Faber           │
+│ Scribe UK               │
+│ Europa Editions         │
+│ Harvill Secker          │
+│ Fitzcarraldo Editions   │
+│ Riverrun                │
+│ Peirene Press           │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Harvill Secker          │
+│ Pushkin Press           │
+│ William Heinemann       │
+│ Scribe UK               │
+│ Sandstone Press         │
+│ Fitzcarraldo Editions   │
+│ Portobello Books        │
+│ Portobello Books        │
+│ Yale University Press   │
+│ Oneworld                │
+│ Scribe UK               │
+│ MacLehose Press         │
+│ Serpent's Tail          │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ Harvill Secker          │
+│ Harvill Secker          │
+│ Seagull Books           │
+│ MacLehose Press         │
+│ Text Publishing         │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ MacLehose Press         │
+│ Charco Press            │
+│ Fitzcarraldo Editions   │
+└─────────────────────────┘
+bad spelling publisher listed
+┌─────────────────────────┐
+│        publisher        │
+├─────────────────────────┤
+│ Literatura Random House │
+│ Europa Editions         │
+│ World Editions          │
+│ MacLehose Press         │
+│ W&N                     │
+│ Verso Fiction           │
+│ MacLehose Press         │
+│ Transit Books           │
+│ Fitzcarraldo Editions   │
+│ Pushkin Press           │
+│ Fitzcarraldo Editions   │
+│ Scribe UK               │
+│ Honford Star            │
+│ Fitzcarraldo Editions   │
+│ Picador                 │
+│ Tilted Axis Press       │
+│ Tilted Axis Press       │
+│ Charco Press            │
+│ Scribner                │
+│ Jonathan Cape           │
+│ And Other Stories       │
+│ Fitzcarraldo Editions   │
+│ Lolli Editions          │
+│ Tilted Axis Press       │
+│ Fitzcarraldo Editions   │
+│ Honford Star            │
+│ Picador                 │
+│ Pushkin Press           │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Pushkin Press           │
+│ Yale University Press   │
+│ Fitzcarraldo Editions   │
+│ Fitzcarraldo Editions   │
+│ World Editions          │
+│ Granta Books            │
+│ Lolli Editions          │
+│ Peirene Press           │
+│ The New Press           │
+│ Charco Press            │
+│ Faber & Faber           │
+│ Scribe UK               │
+│ Europa Editions         │
+│ Harvill Secker          │
+│ Fitzcarraldo Editions   │
+│ Riverrun                │
+│ Peirene Press           │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Harvill Secker          │
+│ Pushkin Press           │
+│ William Heinemann       │
+│ Scribe UK               │
+│ Sandstone Press         │
+│ Fitzcarraldo Editions   │
+│ Portobello Books        │
+│ Portobello Books        │
+│ Yale University Press   │
+│ Oneworld                │
+│ Scribe UK               │
+│ MacLehose Press         │
+│ Serpent's Tail          │
+│ And Other Stories       │
+│ MacLehose Press         │
+│ Fitzcarraldo Editions   │
+│ Oneworld                │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ Harvill Secker          │
+│ Harvill Secker          │
+│ Seagull Books           │
+│ MacLehose Press         │
+│ Text Publishing         │
+│ Portobello Books        │
+│ Tuskar Rock             │
+│ MacLehose Press         │
+│ Charco Press            │
+│ Fitzcarraldo Editions   │
+└─────────────────────────┘
+publisher listed
+┌─────────────────────────┐
+│        publisher        │
+├─────────────────────────┤
+│ Literatura Random House │
+│ Europa Editions         │
+│ World Editions          │
+│ MacLehose Press         │
+│ W&N                     │
+│ Verso Fiction           │
+│ Transit Books           │
+│ Fitzcarraldo Editions   │
+│ Pushkin Press           │
+│ Scribe UK               │
+│ Honford Star            │
+│ Picador                 │
+│ Tilted Axis Press       │
+│ Charco Press            │
+│ Scribner                │
+│ Jonathan Cape           │
+│ And Other Stories       │
+│ Lolli Editions          │
+│ Yale University Press   │
+│ Granta Books            │
+│ Peirene Press           │
+│ The New Press           │
+│ Faber & Faber           │
+│ Harvill Secker          │
+│ Riverrun                │
+│ Oneworld                │
+│ William Heinemann       │
+│ Sandstone Press         │
+│ Portobello Books        │
+│ Serpent's Tail          │
+│ Tuskar Rock             │
+│ Seagull Books           │
+│ Text Publishing         │
+└─────────────────────────┘
+list of unique publishers
+┌─────────────────────────────┐
+│ COUNT(DISTINCT "publisher") │
+├─────────────────────────────┤
+│ 33                          │
+└─────────────────────────────┘
+Q19: Total number of unique publishers

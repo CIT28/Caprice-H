@@ -50,19 +50,48 @@
 .print 'titles that contain the word Pyre case-insensitive LIKE'
 ---SELECT "title" FROM "longlist" WHERE "title" = 'pyre';
 .print 'title equals pyre exactly'
-SELECT "title", "rating" FROM "longlist" ORDER BY "rating" LIMIT 10;
+---SELECT "title", "rating" FROM "longlist" ORDER BY "rating" LIMIT 10;
 .print 'Q1 Lowest 10 ratings'
-SELECT "title", "rating" FROM "longlist" ORDER BY "rating" DESC LIMIT 10;
+---SELECT "title", "rating" FROM "longlist" ORDER BY "rating" DESC LIMIT 10;
 .print 'Q2 Top 10 ratings'
-SELECT "title", "rating" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
+---SELECT "title", "rating" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
 .print 'top 10 ratings, tie break by votes'
-SELECT "title", "rating", "votes" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
+---SELECT "title", "rating", "votes" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
 .print 'top 10 ratings with votes shown'
-SELECT "title", "rating" FROM "longlist" WHERE "rating" = 4.932;
+---SELECT "title", "rating" FROM "longlist" WHERE "rating" = 4.932;
 .print 'Exact match rating'
-SELECT "title" FROM "longlist" ORDER BY "title";
+---SELECT "title" FROM "longlist" ORDER BY "title";
 .print 'titles in alphabetical order'
-
+SELECT AVG("rating") FROM "longlist";
+.print 'Get the average rating'
+SELECT ROUND(AVG("rating"), 2) FROM "longlist";
+.print 'Get the average rating rounded to 2 decimal places'
+SELECT ROUND(AVG("rating"), 2) AS "average rating" FROM "longlist";
+.print 'Average rating rounded to 2 decimals with alias'
+SELECT MIN("rating") FROM "longlist";
+.print 'Minimum rating'
+SELECT MAX("rating") FROM "longlist";
+.print 'Maximum rating'
+SELECT "title", "votes" FROM "longlist";
+.print 'all titles with their vote counts'
+SELECT SUM("votes") FROM "longlist";
+.print 'Total votes across all books'
+SELECT COUNT(*) FROM "longlist";
+.print 'total number of books in the table'
+SELECT COUNT("translator") FROM "longlist";
+.print 'all the books with a translator'
+SELECT MAX("title"), MIN("title") FROM "longlist";
+.print 'first and last title alphabetically'
+SELECT COUNT("publisher") FROM "longlist";
+.print 'books with a publisher listed'
+SELECT "publisher" FROM "longlist";
+.print 'bad spelling publisher listed'
+SELECT "publisher" FROM "longlist";
+.print 'publisher listed'
+SELECT DISTINCT "publisher" FROM "longlist";
+.print 'list of unique publishers'
+SELECT COUNT(DISTINCT "publisher") FROM "longlist";
+.print 'Q19: Total number of unique publishers'
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
 -- changes back to stdout    
