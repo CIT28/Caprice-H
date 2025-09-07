@@ -488,3 +488,307 @@ Q5: titles with fewer than 300 pages
 └───────┘
 titles that contain the word Pyre case-insensitive LIKE
 title equals pyre exactly
+second query
+WHERE querys
+NULL querys
+WHERE and LIKE, % and _
+Q1: titles and years where year is between 2019 and 2022 using >= and <=
+Q2: same as Q1 but using BETWEEN (inclusive)
+Q3: titles with rating greater than 4.0
+Q4: titles with rating > 4.0 AND votes > 10000
+Q5: titles with fewer than 300 pages
+titles that contain the word Pyre case-insensitive LIKE
+title equals pyre exactly
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Gospel According to the New World │ 3.05   │
+│ The Pine Islands                      │ 3.16   │
+│ Love in the New Millennium            │ 3.17   │
+│ After the Sun                         │ 3.25   │
+│ I Live in the Slums                   │ 3.29   │
+│ The War of the Poor                   │ 3.36   │
+│ An Inventory of Losses                │ 3.36   │
+│ The Death of Murat Idrissi            │ 3.36   │
+│ The Dinner Guest                      │ 3.41   │
+│ Red Dog                               │ 3.42   │
+└───────────────────────────────────────┴────────┘
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Eighth Life                       │ 4.52   │
+│ A New Name: Septology VI-VII          │ 4.5    │
+│ The Other Name: Septology I-II        │ 4.19   │
+│ The Years                             │ 4.18   │
+│ Still Born                            │ 4.14   │
+│ When We Cease to Understand the World │ 4.14   │
+│ Elena Knows                           │ 4.1    │
+│ The Flying Mountain                   │ 4.1    │
+│ Hurricane Season                      │ 4.08   │
+│ The Books of Jacob                    │ 4.06   │
+└───────────────────────────────────────┴────────┘
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Eighth Life                       │ 4.52   │
+│ A New Name: Septology VI-VII          │ 4.5    │
+│ The Other Name: Septology I-II        │ 4.19   │
+│ The Years                             │ 4.18   │
+│ When We Cease to Understand the World │ 4.14   │
+│ Still Born                            │ 4.14   │
+│ Elena Knows                           │ 4.1    │
+│ The Flying Mountain                   │ 4.1    │
+│ Hurricane Season                      │ 4.08   │
+│ The Books of Jacob                    │ 4.06   │
+└───────────────────────────────────────┴────────┘
+┌───────────────────────────────────────┬────────┬───────┐
+│                 title                 │ rating │ votes │
+├───────────────────────────────────────┼────────┼───────┤
+│ The Eighth Life                       │ 4.52   │ 16350 │
+│ A New Name: Septology VI-VII          │ 4.5    │ 479   │
+│ The Other Name: Septology I-II        │ 4.19   │ 1245  │
+│ The Years                             │ 4.18   │ 16888 │
+│ When We Cease to Understand the World │ 4.14   │ 23251 │
+│ Still Born                            │ 4.14   │ 7647  │
+│ Elena Knows                           │ 4.1    │ 8212  │
+│ The Flying Mountain                   │ 4.1    │ 323   │
+│ Hurricane Season                      │ 4.08   │ 22551 │
+│ The Books of Jacob                    │ 4.06   │ 5664  │
+└───────────────────────────────────────┴────────┴───────┘
+┌────────────────────────────────────────────┐
+│                   title                    │
+├────────────────────────────────────────────┤
+│ A New Name: Septology VI-VII               │
+│ A System So Magnificent It Is Blinding     │
+│ After the Sun                              │
+│ An Inventory of Losses                     │
+│ At Dusk                                    │
+│ At Night All Blood is Black                │
+│ Boulder                                    │
+│ Celestial Bodies                           │
+│ Cursed Bunny                               │
+│ Die, My Love                               │
+│ Drive Your Plow Over the Bones of the Dead │
+│ Elena Knows                                │
+│ Faces on the Tip of My Tongue              │
+│ Flights                                    │
+│ Four Soldiers                              │
+│ Frankenstein in Baghdad                    │
+│ Go, Went, Gone                             │
+│ Happy Stories, Mostly                      │
+│ Heaven                                     │
+│ Hurricane Season                           │
+│ I Live in the Slums                        │
+│ In Memory of Memory                        │
+│ Is Mother Dead                             │
+│ Jimi Hendrix Live in Lviv                  │
+│ Jokes for the Gunmen                       │
+│ Like a Fading Shadow                       │
+│ Little Eyes                                │
+│ Love in the Big City                       │
+│ Love in the New Millennium                 │
+│ Mac and His Problem                        │
+│ Minor Detail                               │
+│ More Than I Love My Life                   │
+│ Mouthful of Birds                          │
+│ Ninth Building                             │
+│ Paradais                                   │
+│ Phenotypes                                 │
+│ Pyre                                       │
+│ Red Dog                                    │
+│ Serotonin                                  │
+│ Standing Heavy                             │
+│ Still Born                                 │
+│ Summer Brother                             │
+│ The 7th Function of Language               │
+│ The Adventures of China Iron               │
+│ The Birthday Party                         │
+│ The Book of Mother                         │
+│ The Books of Jacob                         │
+│ The Dangers of Smoking in Bed              │
+│ The Death of Murat Idrissi                 │
+│ The Dinner Guest                           │
+│ The Discomfort of Evening                  │
+│ The Eighth Life                            │
+│ The Employees                              │
+│ The Enlightenment of The Greengage Tree    │
+│ The Faculty of Dreams                      │
+│ The Flying Mountain                        │
+│ The Gospel According to the New World      │
+│ The Impostor                               │
+│ The Memory Police                          │
+│ The Other Name: Septology I-II             │
+│ The Pear Field                             │
+│ The Perfect Nine                           │
+│ The Pine Islands                           │
+│ The Remainder                              │
+│ The Shape of the Ruins                     │
+│ The Stolen Bicycle                         │
+│ The War of the Poor                        │
+│ The White Book                             │
+│ The World Goes On                          │
+│ The Years                                  │
+│ Time Shelter                               │
+│ Tomb of Sand                               │
+│ Tyll                                       │
+│ Vernon Subutex 1                           │
+│ Whale                                      │
+│ When We Cease to Understand the World      │
+│ While We Were Dreaming                     │
+│ Wretchedness                               │
+└────────────────────────────────────────────┘
+second query
+WHERE querys
+NULL querys
+WHERE and LIKE, % and _
+Q1: titles and years where year is between 2019 and 2022 using >= and <=
+Q2: same as Q1 but using BETWEEN (inclusive)
+Q3: titles with rating greater than 4.0
+Q4: titles with rating > 4.0 AND votes > 10000
+Q5: titles with fewer than 300 pages
+titles that contain the word Pyre case-insensitive LIKE
+title equals pyre exactly
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Gospel According to the New World │ 3.05   │
+│ The Pine Islands                      │ 3.16   │
+│ Love in the New Millennium            │ 3.17   │
+│ After the Sun                         │ 3.25   │
+│ I Live in the Slums                   │ 3.29   │
+│ The War of the Poor                   │ 3.36   │
+│ An Inventory of Losses                │ 3.36   │
+│ The Death of Murat Idrissi            │ 3.36   │
+│ The Dinner Guest                      │ 3.41   │
+│ Red Dog                               │ 3.42   │
+└───────────────────────────────────────┴────────┘
+Q1 Lowest 10 ratings
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Eighth Life                       │ 4.52   │
+│ A New Name: Septology VI-VII          │ 4.5    │
+│ The Other Name: Septology I-II        │ 4.19   │
+│ The Years                             │ 4.18   │
+│ Still Born                            │ 4.14   │
+│ When We Cease to Understand the World │ 4.14   │
+│ Elena Knows                           │ 4.1    │
+│ The Flying Mountain                   │ 4.1    │
+│ Hurricane Season                      │ 4.08   │
+│ The Books of Jacob                    │ 4.06   │
+└───────────────────────────────────────┴────────┘
+Q2 Top 10 ratings
+┌───────────────────────────────────────┬────────┐
+│                 title                 │ rating │
+├───────────────────────────────────────┼────────┤
+│ The Eighth Life                       │ 4.52   │
+│ A New Name: Septology VI-VII          │ 4.5    │
+│ The Other Name: Septology I-II        │ 4.19   │
+│ The Years                             │ 4.18   │
+│ When We Cease to Understand the World │ 4.14   │
+│ Still Born                            │ 4.14   │
+│ Elena Knows                           │ 4.1    │
+│ The Flying Mountain                   │ 4.1    │
+│ Hurricane Season                      │ 4.08   │
+│ The Books of Jacob                    │ 4.06   │
+└───────────────────────────────────────┴────────┘
+top 10 ratings, tie break by votes
+┌───────────────────────────────────────┬────────┬───────┐
+│                 title                 │ rating │ votes │
+├───────────────────────────────────────┼────────┼───────┤
+│ The Eighth Life                       │ 4.52   │ 16350 │
+│ A New Name: Septology VI-VII          │ 4.5    │ 479   │
+│ The Other Name: Septology I-II        │ 4.19   │ 1245  │
+│ The Years                             │ 4.18   │ 16888 │
+│ When We Cease to Understand the World │ 4.14   │ 23251 │
+│ Still Born                            │ 4.14   │ 7647  │
+│ Elena Knows                           │ 4.1    │ 8212  │
+│ The Flying Mountain                   │ 4.1    │ 323   │
+│ Hurricane Season                      │ 4.08   │ 22551 │
+│ The Books of Jacob                    │ 4.06   │ 5664  │
+└───────────────────────────────────────┴────────┴───────┘
+top 10 ratings with votes shown
+Exact match rating
+┌────────────────────────────────────────────┐
+│                   title                    │
+├────────────────────────────────────────────┤
+│ A New Name: Septology VI-VII               │
+│ A System So Magnificent It Is Blinding     │
+│ After the Sun                              │
+│ An Inventory of Losses                     │
+│ At Dusk                                    │
+│ At Night All Blood is Black                │
+│ Boulder                                    │
+│ Celestial Bodies                           │
+│ Cursed Bunny                               │
+│ Die, My Love                               │
+│ Drive Your Plow Over the Bones of the Dead │
+│ Elena Knows                                │
+│ Faces on the Tip of My Tongue              │
+│ Flights                                    │
+│ Four Soldiers                              │
+│ Frankenstein in Baghdad                    │
+│ Go, Went, Gone                             │
+│ Happy Stories, Mostly                      │
+│ Heaven                                     │
+│ Hurricane Season                           │
+│ I Live in the Slums                        │
+│ In Memory of Memory                        │
+│ Is Mother Dead                             │
+│ Jimi Hendrix Live in Lviv                  │
+│ Jokes for the Gunmen                       │
+│ Like a Fading Shadow                       │
+│ Little Eyes                                │
+│ Love in the Big City                       │
+│ Love in the New Millennium                 │
+│ Mac and His Problem                        │
+│ Minor Detail                               │
+│ More Than I Love My Life                   │
+│ Mouthful of Birds                          │
+│ Ninth Building                             │
+│ Paradais                                   │
+│ Phenotypes                                 │
+│ Pyre                                       │
+│ Red Dog                                    │
+│ Serotonin                                  │
+│ Standing Heavy                             │
+│ Still Born                                 │
+│ Summer Brother                             │
+│ The 7th Function of Language               │
+│ The Adventures of China Iron               │
+│ The Birthday Party                         │
+│ The Book of Mother                         │
+│ The Books of Jacob                         │
+│ The Dangers of Smoking in Bed              │
+│ The Death of Murat Idrissi                 │
+│ The Dinner Guest                           │
+│ The Discomfort of Evening                  │
+│ The Eighth Life                            │
+│ The Employees                              │
+│ The Enlightenment of The Greengage Tree    │
+│ The Faculty of Dreams                      │
+│ The Flying Mountain                        │
+│ The Gospel According to the New World      │
+│ The Impostor                               │
+│ The Memory Police                          │
+│ The Other Name: Septology I-II             │
+│ The Pear Field                             │
+│ The Perfect Nine                           │
+│ The Pine Islands                           │
+│ The Remainder                              │
+│ The Shape of the Ruins                     │
+│ The Stolen Bicycle                         │
+│ The War of the Poor                        │
+│ The White Book                             │
+│ The World Goes On                          │
+│ The Years                                  │
+│ Time Shelter                               │
+│ Tomb of Sand                               │
+│ Tyll                                       │
+│ Vernon Subutex 1                           │
+│ Whale                                      │
+│ When We Cease to Understand the World      │
+│ While We Were Dreaming                     │
+│ Wretchedness                               │
+└────────────────────────────────────────────┘
+titles in alphabetical order

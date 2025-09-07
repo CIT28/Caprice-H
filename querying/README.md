@@ -10,7 +10,7 @@ The first query retrieves the title of a book from the "longlist" table where th
 
 # Week 3 Querying Part 4
 
-Comparison & Range
+## Comparison and Range
 
 These operators are all about filtering your data based on a relationship between two values. > and < are used for "greater than" or "less than," while >= and <= include the values themselves. = checks for an exact match, and <> or != checks for values that are not equal. BETWEEN is a handy shortcut for inclusive ranges.
 
@@ -21,3 +21,8 @@ AND, OR, and NOT are the building blocks for combining multiple conditions. AND 
 NULL and Order of Evaluation
 
 When a value is missing or unknown in a database, it's considered NULL. You can't use = or != to check for it, so you have to use IS NULL or IS NOT NULL. Finally, parentheses () are super important because they let you group conditions and control the order in which they are evaluated, ensuring your query does exactly what you intend.
+
+## Order By
+I'm getting really comfortable with ORDER BY and LIMIT. I know that ORDER BY sorts my results, and by default, it sorts them from lowest to highest. But I can change that with DESC to see the highest ratings first, which is exactly what I want for a "best of" list. The LIMIT clause is awesome because it keeps my results from getting too long, so I only see the top 10.
+
+I think the biggest breakthrough for me was figuring out how to sort by multiple things. I noticed that some books had the same rating, and that bothered me. But by adding "votes" DESC to my ORDER BY clause, I've taught the query to break the tie by showing the book with more votes first. It's a small change, but it makes the results so much better.
