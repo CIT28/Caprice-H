@@ -3,7 +3,7 @@
 .mode box
   
 -- changes terminal output from standard output (stdout) to pow.txt file
-.output '| cat >> pow_1.txt'
+.output '| cat >> pow-p1.txt'
   
 -- updates the pow.txt with content in single quotes
 .print 'testing setup'  
