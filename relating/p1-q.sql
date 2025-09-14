@@ -60,6 +60,15 @@ WHERE "publisher_id" = (
     WHERE "publisher" = 'MacLehose Press'
 );
 
+.print 'get all ratings for book with id 33'
+SELECT "rating" FROM "ratings" WHERE "book_id" = 33;
+
+.print 'get the average rating for the book titled "In Memory of Memory"'
+SELECT AVG("rating") 
+FROM "ratings" 
+WHERE "book_id" = (
+    SELECT "id" FROM "books" WHERE "title" = 'In Memory of Memory'
+);
 
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
