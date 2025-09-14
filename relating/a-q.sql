@@ -13,10 +13,14 @@
 -- .print '<----->'  
 ---.tables
 ---.schema
-SELECT * FROM "authors" LIMIT 10;
-SELECT * FROM "books" LIMIT 10;
-SELECT * FROM "authored" LIMIT 10;
-
+-- SELECT * FROM "authors" LIMIT 10;
+-- SELECT * FROM "books" LIMIT 10;
+-- SELECT * FROM "authored" LIMIT 10;
+.print 'Find who wrote the Whale'
+SELECT * FROM "books" WHERE title = 'Whale';
+SELECT * FROM "authored" WHERE "book_id" = 2;
+SELECT * FROM "authors" WHERE "id" = 13;
+.print '<----->'
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
