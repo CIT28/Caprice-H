@@ -51,6 +51,16 @@ SELECT "title"
 FROM "books" 
 WHERE "publisher_id" = 12;
 
+.print 'list titles where publisher matches MacLehose Press'
+SELECT "title"
+FROM "books"
+WHERE "publisher_id" = (
+    SELECT "id"
+    FROM "publishers"
+    WHERE "publisher" = 'MacLehose Press'
+);
+
+
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 

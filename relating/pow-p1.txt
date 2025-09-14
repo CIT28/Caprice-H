@@ -33,3 +33,15 @@ Show all book titles where the publisher id is 12
 │ The Impostor              │
 │ Vernon Subutex 1          │
 └───────────────────────────┘
+list titles where publisher matches MacLehose Press
+┌───────────────────────────┐
+│           title           │
+├───────────────────────────┤
+│ Standing Heavy            │
+│ Jimi Hendrix Live in Lviv │
+│ An Inventory of Losses    │
+│ The Faculty of Dreams     │
+│ The Shape of the Ruins    │
+│ The Impostor              │
+│ Vernon Subutex 1          │
+└───────────────────────────┘
