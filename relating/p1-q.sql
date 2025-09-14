@@ -70,6 +70,38 @@ WHERE "book_id" = (
     SELECT "id" FROM "books" WHERE "title" = 'In Memory of Memory'
 );
 
+.print 'Get the id of the book titled Flights'
+SELECT "id" FROM "books"
+WHERE "title" = 'Flights';
+
+.print 'Get all ratings for the book titled Flights using a subquery'
+SELECT "rating" FROM "ratings"
+WHERE "book_id" = (
+    SELECT "id" FROM "books"
+    WHERE "title" = 'Flights'
+);
+
+.print 'Get the id of the book titled The Birthday Party'
+SELECT "id" FROM "books"
+WHERE "title" = 'The Birthday Party';
+
+.print 'List author_ids for The Birthday Party from the join table'
+SELECT "author_id" FROM "authored"
+WHERE "book_id" = (
+  SELECT "id" FROM "books"
+  WHERE "title" = 'The Birthday Party'
+);
+
+.print 'Get author name for The Birthday Party M:N via subquery'
+SELECT "name" FROM "authors"
+WHERE "id" IN (
+  SELECT "author_id" FROM "authored"
+  WHERE "book_id" = (
+    SELECT "id" FROM "books"
+    WHERE "title" = 'The Birthday Party'
+  )
+);
+
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
