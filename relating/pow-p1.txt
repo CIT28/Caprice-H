@@ -1,0 +1,35 @@
+testing setup
+┌────┐
+│ id │
+├────┤
+│ 5  │
+└────┘
+┌────────────────────────────────────────────┐
+│                   title                    │
+├────────────────────────────────────────────┤
+│ While We Were Dreaming                     │
+│ Still Born                                 │
+│ Paradais                                   │
+│ A New Name: Septology VI-VII               │
+│ The Books of Jacob                         │
+│ In Memory of Memory                        │
+│ Minor Detail                               │
+│ The Other Name: Septology I-II             │
+│ Hurricane Season                           │
+│ Drive Your Plow Over the Bones of the Dead │
+│ The Years                                  │
+│ Flights                                    │
+└────────────────────────────────────────────┘
+List all book titles published by Fitzcarraldo Editions
+Show all book titles where the publisher id is 12
+┌───────────────────────────┐
+│           title           │
+├───────────────────────────┤
+│ Standing Heavy            │
+│ Jimi Hendrix Live in Lviv │
+│ An Inventory of Losses    │
+│ The Faculty of Dreams     │
+│ The Shape of the Ruins    │
+│ The Impostor              │
+│ Vernon Subutex 1          │
+└───────────────────────────┘

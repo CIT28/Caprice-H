@@ -36,9 +36,25 @@
 
 -- .print '<----->'
 
+-- Find the publisher's id once
+SELECT id FROM publishers WHERE "publisher"= 'Fitzcarraldo Editions';
+
+
+SELECT "title" FROM "books" WHERE "publisher_id" = (
+  SELECT "id" FROM "publishers"
+  WHERE "publisher" = 'Fitzcarraldo Editions'
+);
+.print 'List all book titles published by Fitzcarraldo Editions'
+
+.print 'Show all book titles where the publisher id is 12'
+SELECT "title" 
+FROM "books" 
+WHERE "publisher_id" = 12;
+
+
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
 -- changes back to stdout    
 .output stdout  
 
--- bash command sqlite3 longlist.db < pow-p1.sql
+-- bash command sqlite3 longlist.db < p1-q.sql

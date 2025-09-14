@@ -38,3 +38,9 @@ Example! books table has id; ratings table uses book_id as a foreign key to conn
 Junction/Associative Table: used for many-to-many ex. an authored table with author_id + book_id.
 
 Keys make it easier to connect tables, avoid confusion, and keep the data clean without extra duplicates.
+
+## '1:N Subqueries'
+A subquery is a query written inside another query. It’s often used when you need results from one table to filter or match rows in another table.
+
+The subquery (inside the parentheses) always runs first.
+ Its output is then used by the outer query.
