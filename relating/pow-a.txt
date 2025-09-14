@@ -67,3 +67,11 @@ Subquery
 │ 13 │ Cheon Myeong-Kwan │ South Korea │ 1964  │
 └────┴───────────────────┴─────────────┴───────┘
 <----->
+testing setup
+another subquery example
+┌────┬───────────────────┬──────────┬───────┐
+│ id │       name        │ country  │ birth │
+├────┼───────────────────┼──────────┼───────┤
+│ 29 │ Georgi Gospodinov │ Bulgaria │ 1968  │
+└────┴───────────────────┴──────────┴───────┘
+<----->

@@ -21,10 +21,16 @@
 -- SELECT * FROM "books" WHERE title = 'Whale';
 -- SELECT * FROM "authored" WHERE "book_id" = 2;
 -- SELECT * FROM "authors" WHERE "id" = 13;
-.print 'Subquery'
+-- .print 'Subquery'
+-- SELECT * FROM "authors" WHERE "id" = (
+--     SELECT "author_id" FROM "authored" WHERE "book_id" = (
+--         SELECT "id" FROM "books" WHERE "title" = 'Whale'
+--     )
+-- );
+.print 'another subquery example'
 SELECT * FROM "authors" WHERE "id" = (
     SELECT "author_id" FROM "authored" WHERE "book_id" = (
-        SELECT "id" FROM "books" WHERE "title" = 'Whale'
+        SELECT "id" FROM "books" WHERE "title" = 'Time Shelter'
     )
 );
 
