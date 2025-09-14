@@ -10,6 +10,20 @@ A relational database has multiple tables in our case authors, books, publishers
 Relationships are essential for accuracy and efficiency.
 
 ### Entity Relationship Diagrams (ERD)
+ERDs visualize tables (entities) and their relationships.
 
+Entities: authors, books, translators, publishers, ratings.
+
+Crow’s Foot Notation shows relationships:
+
+Circle = zero
+
+Line = one
+
+Crow’s foot = many
+
+Example: An author can write one or many books; a book must have at least one author but can have many.
+
+ERDs help design databases, document relationships, and communicate structure before implementation which is very very important.
 
 ### Keys
