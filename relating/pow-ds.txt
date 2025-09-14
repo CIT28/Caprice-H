@@ -1,1 +1,136 @@
 testing setup
+testing setup
+authored     books        ratings      translators
+authors      publishers   translated 
+CREATE TABLE IF NOT EXISTS "authors" (
+    "id" INTEGER,
+    "name" TEXT,
+    "country" TEXT,
+    "birth" INTEGER,
+    PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "authored" (
+    "author_id" INTEGER,
+    "book_id" INTEGER,
+    FOREIGN KEY("author_id") REFERENCES "authors"("id"),
+    FOREIGN KEY("book_id") REFERENCES "books"("id")
+);
+CREATE TABLE IF NOT EXISTS "books" (
+    "id" INTEGER,
+    "isbn" TEXT,
+    "title" TEXT,
+    "publisher_id" INTEGER,
+    "format" TEXT,
+    "pages" INTEGER,
+    "published" TEXT,
+    "year" INTEGER,
+    PRIMARY KEY("id"),
+    FOREIGN KEY("publisher_id") REFERENCES "publishers"("id")
+);
+CREATE TABLE IF NOT EXISTS "publishers" (
+    "id" INTEGER,
+    "publisher" TEXT,
+    PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "ratings" (
+    "book_id" INTEGER,
+    "rating" INTEGER,
+    FOREIGN KEY("book_id") REFERENCES "books"("id")
+);
+CREATE TABLE IF NOT EXISTS "translators" (
+    "id" INTEGER,
+    "name" TEXT,
+    PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "translated" (
+    "translator_id" INTEGER,
+    "book_id" INTEGER,
+    FOREIGN KEY("translator_id") REFERENCES "translators"("id"),
+    FOREIGN KEY("book_id") REFERENCES "books"("id")
+);
+testing setup
+┌────┬──────────────────────┬───────────┬───────┐
+│ id │         name         │  country  │ birth │
+├────┼──────────────────────┼───────────┼───────┤
+│ 1  │ Adania Shibli        │ Palestine │ 1974  │
+│ 2  │ Ahmed Saadawi        │ Iraq      │ 1973  │
+│ 3  │ Alia Trabucco Zerán  │ Chile     │ 1983  │
+│ 4  │ Amanda Svensson      │ Sweden    │ 1987  │
+│ 5  │ Andrey Kurkov        │ Ukraine   │ 1961  │
+│ 6  │ Andrzej Tichy        │ Sweden    │ 1978  │
+│ 7  │ Annie Ernaux         │ France    │ 1940  │
+│ 8  │ Antonio Muñoz Molina │ Spain     │ 1956  │
+│ 9  │ Ariana Harwicz       │ Argentina │ 1977  │
+│ 10 │ Benajamín Labatut    │ Chile     │ 1980  │
+└────┴──────────────────────┴───────────┴───────┘
+┌────┬───────────────┬───────────────────────────────────────┬──────────────┬───────────┬───────┬────────────┬──────┐
+│ id │     isbn      │                 title                 │ publisher_id │  format   │ pages │ published  │ year │
+├────┼───────────────┼───────────────────────────────────────┼──────────────┼───────────┼───────┼────────────┼──────┤
+│ 1  │ 9788439736967 │ Boulder                               │ 10           │ paperback │ 112   │ 2022-08-02 │ 2023 │
+│ 2  │ 9781628971538 │ Whale                                 │ 3            │ paperback │ 368   │ 2023-01-19 │ 2023 │
+│ 3  │ 9781642861181 │ The Gospel According to the New World │ 32           │ paperback │ 184   │ 2023-03-07 │ 2023 │
+│ 4  │ 9781529414431 │ Standing Heavy                        │ 12           │ paperback │ 252   │ 2022-05-26 │ 2023 │
+│ 5  │ 9781474623025 │ Time Shelter                          │ 30           │ hardcover │ 304   │ 2022-04-21 │ 2023 │
+│ 6  │ 9781839764318 │ Is Mother Dead                        │ 29           │ paperback │ 330   │ 2022-09-27 │ 2023 │
+│ 7  │ 9781529427820 │ Jimi Hendrix Live in Lviv             │ 12           │ hardcover │ 416   │ 2023-04-27 │ 2023 │
+│ 8  │ 9781945492655 │ The Birthday Party                    │ 27           │ paperback │ 454   │ 2023-01-24 │ 2023 │
+│ 9  │ 9781804270288 │ While We Were Dreaming                │ 5            │ paperback │ 528   │ 2023-03-30 │ 2023 │
+│ 10 │ 9781782278627 │ Pyre                                  │ 17           │ paperback │ 224   │ 2022-04-08 │ 2023 │
+└────┴───────────────┴───────────────────────────────────────┴──────────────┴───────────┴───────┴────────────┴──────┘
+┌───────────┬─────────┐
+│ author_id │ book_id │
+├───────────┼─────────┤
+│ 23        │ 1       │
+│ 13        │ 2       │
+│ 49        │ 3       │
+│ 27        │ 4       │
+│ 29        │ 5       │
+│ 66        │ 6       │
+│ 5         │ 7       │
+│ 44        │ 8       │
+│ 16        │ 9       │
+│ 60        │ 10      │
+└───────────┴─────────┘
+testing setup
+┌────┬──────────────────────┬───────────┬───────┐
+│ id │         name         │  country  │ birth │
+├────┼──────────────────────┼───────────┼───────┤
+│ 1  │ Adania Shibli        │ Palestine │ 1974  │
+│ 2  │ Ahmed Saadawi        │ Iraq      │ 1973  │
+│ 3  │ Alia Trabucco Zerán  │ Chile     │ 1983  │
+│ 4  │ Amanda Svensson      │ Sweden    │ 1987  │
+│ 5  │ Andrey Kurkov        │ Ukraine   │ 1961  │
+│ 6  │ Andrzej Tichy        │ Sweden    │ 1978  │
+│ 7  │ Annie Ernaux         │ France    │ 1940  │
+│ 8  │ Antonio Muñoz Molina │ Spain     │ 1956  │
+│ 9  │ Ariana Harwicz       │ Argentina │ 1977  │
+│ 10 │ Benajamín Labatut    │ Chile     │ 1980  │
+└────┴──────────────────────┴───────────┴───────┘
+┌────┬───────────────┬───────────────────────────────────────┬──────────────┬───────────┬───────┬────────────┬──────┐
+│ id │     isbn      │                 title                 │ publisher_id │  format   │ pages │ published  │ year │
+├────┼───────────────┼───────────────────────────────────────┼──────────────┼───────────┼───────┼────────────┼──────┤
+│ 1  │ 9788439736967 │ Boulder                               │ 10           │ paperback │ 112   │ 2022-08-02 │ 2023 │
+│ 2  │ 9781628971538 │ Whale                                 │ 3            │ paperback │ 368   │ 2023-01-19 │ 2023 │
+│ 3  │ 9781642861181 │ The Gospel According to the New World │ 32           │ paperback │ 184   │ 2023-03-07 │ 2023 │
+│ 4  │ 9781529414431 │ Standing Heavy                        │ 12           │ paperback │ 252   │ 2022-05-26 │ 2023 │
+│ 5  │ 9781474623025 │ Time Shelter                          │ 30           │ hardcover │ 304   │ 2022-04-21 │ 2023 │
+│ 6  │ 9781839764318 │ Is Mother Dead                        │ 29           │ paperback │ 330   │ 2022-09-27 │ 2023 │
+│ 7  │ 9781529427820 │ Jimi Hendrix Live in Lviv             │ 12           │ hardcover │ 416   │ 2023-04-27 │ 2023 │
+│ 8  │ 9781945492655 │ The Birthday Party                    │ 27           │ paperback │ 454   │ 2023-01-24 │ 2023 │
+│ 9  │ 9781804270288 │ While We Were Dreaming                │ 5            │ paperback │ 528   │ 2023-03-30 │ 2023 │
+│ 10 │ 9781782278627 │ Pyre                                  │ 17           │ paperback │ 224   │ 2022-04-08 │ 2023 │
+└────┴───────────────┴───────────────────────────────────────┴──────────────┴───────────┴───────┴────────────┴──────┘
+┌───────────┬─────────┐
+│ author_id │ book_id │
+├───────────┼─────────┤
+│ 23        │ 1       │
+│ 13        │ 2       │
+│ 49        │ 3       │
+│ 27        │ 4       │
+│ 29        │ 5       │
+│ 66        │ 6       │
+│ 5         │ 7       │
+│ 44        │ 8       │
+│ 16        │ 9       │
+│ 60        │ 10      │
+└───────────┴─────────┘

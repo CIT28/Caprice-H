@@ -3,15 +3,19 @@
 .mode box
   
 -- changes terminal output from standard output (stdout) to pow.txt file
-.output '| cat >> pow-ds.txt'
-  
+.output '| cat >> pow-a.txt'
+-- .print '<----->'  
 -- updates the pow.txt with content in single quotes
 .print 'testing setup'  
   
 -- SQL command (query) to view all the column contents in the longlist table   
 -- Copy your SQL command below here
-
-
+-- .print '<----->'  
+---.tables
+---.schema
+SELECT * FROM "authors" LIMIT 10;
+SELECT * FROM "books" LIMIT 10;
+SELECT * FROM "authored" LIMIT 10;
 
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
