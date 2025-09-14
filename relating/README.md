@@ -27,3 +27,14 @@ Example: An author can write one or many books; a book must have at least one au
 ERDs help design databases, document relationships, and communicate structure before implementation which is very very important.
 
 ### Keys
+A Primary Key is unique identifier for each row in a table ISBN for books, or an auto-generated ID.
+
+Problems with using ISBN: too long, leading zeros lost, storage issues better to create a shorter numeric ID.
+
+Foreign Key: a primary key from one table included in another table to establish relationships.
+
+Example! books table has id; ratings table uses book_id as a foreign key to connect reviews to the right book.
+
+Junction/Associative Table: used for many-to-many ex. an authored table with author_id + book_id.
+
+Keys make it easier to connect tables, avoid confusion, and keep the data clean without extra duplicates.
