@@ -103,6 +103,27 @@ WHERE "id" IN (
 );
 
 
+.print 'get fernanda melchor’s author id'
+SELECT "id" FROM "authors"
+WHERE "name" = 'Fernanda Melchor';
+
+.print 'get all the book_ids written by fernanda melchor'
+SELECT "book_id" FROM "authored"
+WHERE "author_id" = (
+    SELECT "id" FROM "authors" WHERE "name" = 'Fernanda Melchor'
+);
+
+.print 'list out the titles of books written by fernanda melchor'
+SELECT "title" FROM "books"
+WHERE "id" IN (
+    SELECT "book_id" FROM "authored"
+    WHERE "author_id" = (
+        SELECT "id" FROM "authors" WHERE "name" = 'Fernanda Melchor'
+    )
+);
+
+
+
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
 
 -- changes back to stdout    
