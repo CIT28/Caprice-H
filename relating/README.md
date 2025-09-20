@@ -44,3 +44,14 @@ A subquery is a query written inside another query. It’s often used when you n
 
 The subquery (inside the parentheses) always runs first.
  Its output is then used by the outer query.
+
+# Week 7 Relating Part 2
+
+ ## Week 7 Attendance  
+– To output just the book title and author’s name, I would join the books, authored, and authors tables together.  
+like:  
+
+SELECT "title", "name"
+FROM "books"
+JOIN "authored" ON books.id = authored.book_id
+JOIN "authors" ON authors.id = authored.author_id;
