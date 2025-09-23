@@ -44,4 +44,4 @@
 -- changes back to stdout    
 .output stdout  
 
--- bash command sqlite3 longlist.db < p2-q.sql
+-- bash command sqlite3 sea_lions.db < p2-q.sql
