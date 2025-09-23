@@ -77,3 +77,11 @@ Question? Do we get a separate table back? No,JOINs always return a single resul
 
 Automatically joins on all columns with the same name in both tables and returns one copy of those columns.
 Handy for quick exploring, but risky in production if a new same named column appears.sqlite3 
+
+## Sets
+ Sets in SQL let us combine or compare results from multiple queries.
+`UNION` will combines results, removing duplicates.
+`INTERSECT` will only returns rows found in both results.
+`EXCEPT` always returns rows from the first query that aren’t in the second.
+
+
