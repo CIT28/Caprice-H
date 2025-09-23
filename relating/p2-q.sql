@@ -13,30 +13,16 @@
 -- .print '<----->'  
 ---.tables
 ---.schema
--- SELECT * FROM "authors" LIMIT 10;
--- SELECT * FROM "books" LIMIT 10;
--- SELECT * FROM "authored" LIMIT 10;
--- .print 'Static Queries'
--- .print '<----->'
--- SELECT * FROM "books" WHERE title = 'Whale';
--- SELECT * FROM "authored" WHERE "book_id" = 2;
--- SELECT * FROM "authors" WHERE "id" = 13;
--- .print 'Subquery'
--- SELECT * FROM "authors" WHERE "id" = (
---     SELECT "author_id" FROM "authored" WHERE "book_id" = (
---         SELECT "id" FROM "books" WHERE "title" = 'Whale'
---     )
--- );
--- .print 'another subquery example'
--- SELECT * FROM "authors" WHERE "id" = (
---     SELECT "author_id" FROM "authored" WHERE "book_id" = (
---         SELECT "id" FROM "books" WHERE "title" = 'Time Shelter'
---     )
--- );
+.print 'INNER JOIN sea_lions with migrations on id'
+SELECT * 
+FROM "sea_lions"
+JOIN "migrations"
+ON "migrations"."id" = "sea_lions"."id";
+
 
 -- .print '<----->'
 
--- Find the publisher's id once
+
 
 
 -- After each commit comment out the queries written and then continue to write your queries in this part of the file
@@ -44,4 +30,4 @@
 -- changes back to stdout    
 .output stdout  
 
--- bash command sqlite3 sea_lions.db < p2-q.sql
+-- bash command sqlite3 sea_lions.db < p2-q.sql > pow-p2.txt
