@@ -33,48 +33,76 @@
 -- SELECT * FROM "sea_lions"
 -- NATURAL JOIN "migrations";
 
-.print 'show all translator names'
-SELECT "name" FROM "translators";
+-- .print 'show all translator names'
+-- SELECT "name" FROM "translators";
 
-.print 'show all author names'
-SELECT "name" FROM "authors";
+-- .print 'show all author names'
+-- SELECT "name" FROM "authors";
 
-.print 'combine translator and author names no duplicates'
-SELECT "name" FROM "translators"
-UNION
-SELECT "name" FROM "authors";
+-- .print 'combine translator and author names no duplicates'
+-- SELECT "name" FROM "translators"
+-- UNION
+-- SELECT "name" FROM "authors";
 
-.print 'show authors with label'
-SELECT 'author' AS "profession", "name" FROM "authors";
+-- .print 'show authors with label'
+-- SELECT 'author' AS "profession", "name" FROM "authors";
 
-.print 'combine authors and translators with labels'
-SELECT 'author' AS "profession", "name" FROM "authors"
-UNION
-SELECT 'translator' AS "profession", "name" FROM "translators";
+-- .print 'combine authors and translators with labels'
+-- SELECT 'author' AS "profession", "name" FROM "authors"
+-- UNION
+-- SELECT 'translator' AS "profession", "name" FROM "translators";
 
-.print 'names those that are both authors and translators'
-SELECT "name" FROM "authors"
-INTERSECT
-SELECT "name" FROM "translators";
+-- .print 'names those that are both authors and translators'
+-- SELECT "name" FROM "authors"
+-- INTERSECT
+-- SELECT "name" FROM "translators";
 
-.print 'authors who are not translators'
-SELECT "name" FROM "authors"
-EXCEPT
-SELECT "name" FROM "translators";
+-- .print 'authors who are not translators'
+-- SELECT "name" FROM "authors"
+-- EXCEPT
+-- SELECT "name" FROM "translators";
 
-.print 'find book ids translated by Sophie Hughes'
-SELECT "book_id" FROM "translated" WHERE "translator_id" = (
-    SELECT "id" FROM "translators" WHERE "name" = 'Sophie Hughes'
-);
+-- .print 'find book ids translated by Sophie Hughes'
+-- SELECT "book_id" FROM "translated" WHERE "translator_id" = (
+--     SELECT "id" FROM "translators" WHERE "name" = 'Sophie Hughes'
+-- );
 
-.print 'find the books translated by both Sophie Hughes and Margaret Jull Costa'
-SELECT "book_id" FROM "translated" WHERE "translator_id" = (
-    SELECT "id" FROM "translators" WHERE "name" = 'Sophie Hughes'
-)
-INTERSECT
-SELECT "book_id" FROM "translated" WHERE "translator_id" = (
-    SELECT "id" FROM "translators" WHERE "name" = 'Margaret Jull Costa'
-);
+-- .print 'find the books translated by both Sophie Hughes and Margaret Jull Costa'
+-- SELECT "book_id" FROM "translated" WHERE "translator_id" = (
+--     SELECT "id" FROM "translators" WHERE "name" = 'Sophie Hughes'
+-- )
+-- INTERSECT
+-- SELECT "book_id" FROM "translated" WHERE "translator_id" = (
+--     SELECT "id" FROM "translators" WHERE "name" = 'Margaret Jull Costa'
+-- );
+
+.print 'the average rating of all books'
+SELECT AVG("rating") FROM "ratings";
+
+.print 'the average rating per book_id'
+SELECT "book_id", AVG("rating") AS "average rating"
+FROM "ratings"
+GROUP BY "book_id";
+
+.print 'average rating per book_id rounded to 2 decimals and filtered > 4.0'
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "average rating"
+FROM "ratings"
+GROUP BY "book_id"
+HAVING "average rating" > 4.0;
+
+.print 'count the number of ratings per book_id'
+SELECT "book_id", COUNT("rating")
+FROM "ratings"
+GROUP BY "book_id";
+
+.print 'grab the average rating per book_id, only books > 4.0, order by rating desc'
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "average rating"
+FROM "ratings"
+GROUP BY "book_id"
+HAVING "average rating" > 4.0
+ORDER BY "average rating" DESC;
+
+
 
 
 -- .print '<----->'

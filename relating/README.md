@@ -85,3 +85,10 @@ Handy for quick exploring, but risky in production if a new same named column ap
 `EXCEPT` always returns rows from the first query that aren’t in the second.
 
 
+### GROUP BY
+- `AVG()` will calculates the average of a column
+- `COUNT()` Counts rows
+- `ROUND(value, 2)` Rounds numbers to 2 decimals
+- `GROUP BY` Groups rows that share the same value so agg functions can be used  
+- `HAVING` Filters groups after agg function
+

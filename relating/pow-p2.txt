@@ -1,632 +1,209 @@
 testing setup
-show all translator names
-┌─────────────────────────────┐
-│            name             │
-├─────────────────────────────┤
-│ Adrian Nathan West          │
-│ Alison L. Strayer           │
-│ Angela Rodel                │
-│ Aniruddhan Vasudevan        │
-│ Anna Moschovakis            │
-│ Anne McLean                 │
-│ Annelise Finegan Wasmoen    │
-│ Anton Hur                   │
-│ Antonia Lloyd-Jones         │
-│ Camilo A. Ramirez           │
-│ Carolina Orloff             │
-│ Charlotte Barslund          │
-│ Charlotte Collins           │
-│ Chen Zeping                 │
-│ Daisy Rockwell              │
-│ Damion Searls               │
-│ Daniel Hahn                 │
-│ Daniel Levin Becker         │
-│ Darryl Sterk                │
-│ David Boyd                  │
-│ David Doherty               │
-│ Deborah Bragan-Turner       │
-│ Deborah Smith               │
-│ Eileen Myles                │
-│ Elisabeth Jaquette          │
-│ Elizabeth Heighway          │
-│ Fiona Mackintosh            │
-│ Frances Riddle              │
-│ Frank Wynne                 │
-│ George Szirtes              │
-│ Iona Macintyre              │
-│ Jackie Smith                │
-│ Jae Won Chung               │
-│ Jen Calleja                 │
-│ Jennifer Croft              │
-│ Jennifer Higgins            │
-│ Jeremy Tiang                │
-│ Jessica Cohen               │
-│ John Batki                  │
-│ Jonathan Wright             │
-│ Karen Gernant               │
-│ Katy Derbyshire             │
-│ Leslie Camhi                │
-│ Margaret Jull Costa         │
-│ Marilyn Booth               │
-│ Mark Polizzotti             │
-│ Martin Aitken               │
-│ Megan McDowell              │
-│ Michele Hutchinson          │
-│ Michiel Heyns               │
-│ Natasha Wimmer              │
-│ Nichola Smalley             │
-│ Nicole d'Amonville Alegría  │
-│ Ottilie Mulzet              │
-│ Reuben Woolley              │
-│ Richard Philcox             │
-│ Rosalind Harvey             │
-│ Ross Benjamin               │
-│ Ruth Martin                 │
-│ Sam Bett                    │
-│ Sam Garrett                 │
-│ Sam Taylor                  │
-│ Sarah Moses                 │
-│ Sasha Dugdale               │
-│ Shaun Whiteside             │
-│ Sherilyn Nicolette Hellberg │
-│ Simon Pare                  │
-│ Sophie Hughes               │
-│ Sophie Lewis                │
-│ Sora Kim-Russell            │
-│ Stephen Snyder              │
-│ Susan Bernofsky             │
-│ Tiffany Tsao                │
-│ Ngũgĩ wa Thiong'o           │
-└─────────────────────────────┘
-show all author names
-┌─────────────────────────┐
-│          name           │
-├─────────────────────────┤
-│ Adania Shibli           │
-│ Ahmed Saadawi           │
-│ Alia Trabucco Zerán     │
-│ Amanda Svensson         │
-│ Andrey Kurkov           │
-│ Andrzej Tichy           │
-│ Annie Ernaux            │
-│ Antonio Muñoz Molina    │
-│ Ariana Harwicz          │
-│ Benajamín Labatut       │
-│ Bora Chung              │
-│ Can Xue                 │
-│ Cheon Myeong-Kwan       │
-│ Christoph Ransmayr      │
-│ Claudia Piñeiro         │
-│ Clemens Meyer           │
-│ Daniel Kehlmann         │
-│ David Diop              │
-│ David Grossman          │
-│ Emmanuelle Pagano       │
-│ Enrique Vila-Matas      │
-│ Éric Vuillard           │
-│ Eva Baltasar            │
-│ Fernanda Melchor        │
-│ Gabriela Cabezón Cámara │
-│ Gabriela Ybarra         │
-│ Gauz                    │
-│ Geentanjali Shree       │
-│ Georgi Gospodinov       │
-│ Guadalupe Nettel        │
-│ Han Kang                │
-│ Hubert Mingarelli       │
-│ Hwang Sok-yong          │
-│ Jaap Robben             │
-│ Javier Cercas           │
-│ Jenny Erpenbeck         │
-│ Jokha Alharthi          │
-│ Jon Fosse               │
-│ Jonas Eika              │
-│ Juan Gabriel Vásquez    │
-│ Judith Schalansky       │
-│ László Krasznahorkai    │
-│ Laurent Binet           │
-│ Laurent Mauvignier      │
-│ Maria Stepanova         │
-│ Mariana Enríquez        │
-│ Marieke Lucas Rijneveld │
-│ Marion Poschmann        │
-│ Maryse Condé            │
-│ Mazen Maarouf           │
-│ Michel Houellebecq      │
-│ Mieko Kawakami          │
-│ Nana Ekvtimishvili      │
-│ Ngũgĩ wa Thiong'o       │
-│ Nino Haratischvili      │
-│ Norman Erikson Pasaribu │
-│ Olga Ravn               │
-│ Olga Tokarczuk          │
-│ Paulo Scott             │
-│ Perumal Murugan         │
-│ Samanta Schweblin       │
-│ Sang Young Park         │
-│ Sara Stridsberg         │
-│ Shokoofeh Azar          │
-│ Tommy Wieringa          │
-│ Vigdis Hjorth           │
-│ Violaine Huisman        │
-│ Virginie Despentes      │
-│ Willem Anker            │
-│ Wu Ming-Yi              │
-│ Yōko Ogawa              │
-│ Zou Jingzhi             │
-└─────────────────────────┘
-combine translator and author names no duplicates
-┌─────────────────────────────┐
-│            name             │
-├─────────────────────────────┤
-│ Adania Shibli               │
-│ Adrian Nathan West          │
-│ Ahmed Saadawi               │
-│ Alia Trabucco Zerán         │
-│ Alison L. Strayer           │
-│ Amanda Svensson             │
-│ Andrey Kurkov               │
-│ Andrzej Tichy               │
-│ Angela Rodel                │
-│ Aniruddhan Vasudevan        │
-│ Anna Moschovakis            │
-│ Anne McLean                 │
-│ Annelise Finegan Wasmoen    │
-│ Annie Ernaux                │
-│ Anton Hur                   │
-│ Antonia Lloyd-Jones         │
-│ Antonio Muñoz Molina        │
-│ Ariana Harwicz              │
-│ Benajamín Labatut           │
-│ Bora Chung                  │
-│ Camilo A. Ramirez           │
-│ Can Xue                     │
-│ Carolina Orloff             │
-│ Charlotte Barslund          │
-│ Charlotte Collins           │
-│ Chen Zeping                 │
-│ Cheon Myeong-Kwan           │
-│ Christoph Ransmayr          │
-│ Claudia Piñeiro             │
-│ Clemens Meyer               │
-│ Daisy Rockwell              │
-│ Damion Searls               │
-│ Daniel Hahn                 │
-│ Daniel Kehlmann             │
-│ Daniel Levin Becker         │
-│ Darryl Sterk                │
-│ David Boyd                  │
-│ David Diop                  │
-│ David Doherty               │
-│ David Grossman              │
-│ Deborah Bragan-Turner       │
-│ Deborah Smith               │
-│ Eileen Myles                │
-│ Elisabeth Jaquette          │
-│ Elizabeth Heighway          │
-│ Emmanuelle Pagano           │
-│ Enrique Vila-Matas          │
-│ Eva Baltasar                │
-│ Fernanda Melchor            │
-│ Fiona Mackintosh            │
-│ Frances Riddle              │
-│ Frank Wynne                 │
-│ Gabriela Cabezón Cámara     │
-│ Gabriela Ybarra             │
-│ Gauz                        │
-│ Geentanjali Shree           │
-│ George Szirtes              │
-│ Georgi Gospodinov           │
-│ Guadalupe Nettel            │
-│ Han Kang                    │
-│ Hubert Mingarelli           │
-│ Hwang Sok-yong              │
-│ Iona Macintyre              │
-│ Jaap Robben                 │
-│ Jackie Smith                │
-│ Jae Won Chung               │
-│ Javier Cercas               │
-│ Jen Calleja                 │
-│ Jennifer Croft              │
-│ Jennifer Higgins            │
-│ Jenny Erpenbeck             │
-│ Jeremy Tiang                │
-│ Jessica Cohen               │
-│ John Batki                  │
-│ Jokha Alharthi              │
-│ Jon Fosse                   │
-│ Jonas Eika                  │
-│ Jonathan Wright             │
-│ Juan Gabriel Vásquez        │
-│ Judith Schalansky           │
-│ Karen Gernant               │
-│ Katy Derbyshire             │
-│ Laurent Binet               │
-│ Laurent Mauvignier          │
-│ Leslie Camhi                │
-│ László Krasznahorkai        │
-│ Margaret Jull Costa         │
-│ Maria Stepanova             │
-│ Mariana Enríquez            │
-│ Marieke Lucas Rijneveld     │
-│ Marilyn Booth               │
-│ Marion Poschmann            │
-│ Mark Polizzotti             │
-│ Martin Aitken               │
-│ Maryse Condé                │
-│ Mazen Maarouf               │
-│ Megan McDowell              │
-│ Michel Houellebecq          │
-│ Michele Hutchinson          │
-│ Michiel Heyns               │
-│ Mieko Kawakami              │
-│ Nana Ekvtimishvili          │
-│ Natasha Wimmer              │
-│ Ngũgĩ wa Thiong'o           │
-│ Nichola Smalley             │
-│ Nicole d'Amonville Alegría  │
-│ Nino Haratischvili          │
-│ Norman Erikson Pasaribu     │
-│ Olga Ravn                   │
-│ Olga Tokarczuk              │
-│ Ottilie Mulzet              │
-│ Paulo Scott                 │
-│ Perumal Murugan             │
-│ Reuben Woolley              │
-│ Richard Philcox             │
-│ Rosalind Harvey             │
-│ Ross Benjamin               │
-│ Ruth Martin                 │
-│ Sam Bett                    │
-│ Sam Garrett                 │
-│ Sam Taylor                  │
-│ Samanta Schweblin           │
-│ Sang Young Park             │
-│ Sara Stridsberg             │
-│ Sarah Moses                 │
-│ Sasha Dugdale               │
-│ Shaun Whiteside             │
-│ Sherilyn Nicolette Hellberg │
-│ Shokoofeh Azar              │
-│ Simon Pare                  │
-│ Sophie Hughes               │
-│ Sophie Lewis                │
-│ Sora Kim-Russell            │
-│ Stephen Snyder              │
-│ Susan Bernofsky             │
-│ Tiffany Tsao                │
-│ Tommy Wieringa              │
-│ Vigdis Hjorth               │
-│ Violaine Huisman            │
-│ Virginie Despentes          │
-│ Willem Anker                │
-│ Wu Ming-Yi                  │
-│ Yōko Ogawa                  │
-│ Zou Jingzhi                 │
-│ Éric Vuillard               │
-└─────────────────────────────┘
-show authors with label
-┌────────────┬─────────────────────────┐
-│ profession │          name           │
-├────────────┼─────────────────────────┤
-│ author     │ Adania Shibli           │
-│ author     │ Ahmed Saadawi           │
-│ author     │ Alia Trabucco Zerán     │
-│ author     │ Amanda Svensson         │
-│ author     │ Andrey Kurkov           │
-│ author     │ Andrzej Tichy           │
-│ author     │ Annie Ernaux            │
-│ author     │ Antonio Muñoz Molina    │
-│ author     │ Ariana Harwicz          │
-│ author     │ Benajamín Labatut       │
-│ author     │ Bora Chung              │
-│ author     │ Can Xue                 │
-│ author     │ Cheon Myeong-Kwan       │
-│ author     │ Christoph Ransmayr      │
-│ author     │ Claudia Piñeiro         │
-│ author     │ Clemens Meyer           │
-│ author     │ Daniel Kehlmann         │
-│ author     │ David Diop              │
-│ author     │ David Grossman          │
-│ author     │ Emmanuelle Pagano       │
-│ author     │ Enrique Vila-Matas      │
-│ author     │ Éric Vuillard           │
-│ author     │ Eva Baltasar            │
-│ author     │ Fernanda Melchor        │
-│ author     │ Gabriela Cabezón Cámara │
-│ author     │ Gabriela Ybarra         │
-│ author     │ Gauz                    │
-│ author     │ Geentanjali Shree       │
-│ author     │ Georgi Gospodinov       │
-│ author     │ Guadalupe Nettel        │
-│ author     │ Han Kang                │
-│ author     │ Hubert Mingarelli       │
-│ author     │ Hwang Sok-yong          │
-│ author     │ Jaap Robben             │
-│ author     │ Javier Cercas           │
-│ author     │ Jenny Erpenbeck         │
-│ author     │ Jokha Alharthi          │
-│ author     │ Jon Fosse               │
-│ author     │ Jonas Eika              │
-│ author     │ Juan Gabriel Vásquez    │
-│ author     │ Judith Schalansky       │
-│ author     │ László Krasznahorkai    │
-│ author     │ Laurent Binet           │
-│ author     │ Laurent Mauvignier      │
-│ author     │ Maria Stepanova         │
-│ author     │ Mariana Enríquez        │
-│ author     │ Marieke Lucas Rijneveld │
-│ author     │ Marion Poschmann        │
-│ author     │ Maryse Condé            │
-│ author     │ Mazen Maarouf           │
-│ author     │ Michel Houellebecq      │
-│ author     │ Mieko Kawakami          │
-│ author     │ Nana Ekvtimishvili      │
-│ author     │ Ngũgĩ wa Thiong'o       │
-│ author     │ Nino Haratischvili      │
-│ author     │ Norman Erikson Pasaribu │
-│ author     │ Olga Ravn               │
-│ author     │ Olga Tokarczuk          │
-│ author     │ Paulo Scott             │
-│ author     │ Perumal Murugan         │
-│ author     │ Samanta Schweblin       │
-│ author     │ Sang Young Park         │
-│ author     │ Sara Stridsberg         │
-│ author     │ Shokoofeh Azar          │
-│ author     │ Tommy Wieringa          │
-│ author     │ Vigdis Hjorth           │
-│ author     │ Violaine Huisman        │
-│ author     │ Virginie Despentes      │
-│ author     │ Willem Anker            │
-│ author     │ Wu Ming-Yi              │
-│ author     │ Yōko Ogawa              │
-│ author     │ Zou Jingzhi             │
-└────────────┴─────────────────────────┘
-combine authors and translators with labels
-┌────────────┬─────────────────────────────┐
-│ profession │            name             │
-├────────────┼─────────────────────────────┤
-│ author     │ Adania Shibli               │
-│ author     │ Ahmed Saadawi               │
-│ author     │ Alia Trabucco Zerán         │
-│ author     │ Amanda Svensson             │
-│ author     │ Andrey Kurkov               │
-│ author     │ Andrzej Tichy               │
-│ author     │ Annie Ernaux                │
-│ author     │ Antonio Muñoz Molina        │
-│ author     │ Ariana Harwicz              │
-│ author     │ Benajamín Labatut           │
-│ author     │ Bora Chung                  │
-│ author     │ Can Xue                     │
-│ author     │ Cheon Myeong-Kwan           │
-│ author     │ Christoph Ransmayr          │
-│ author     │ Claudia Piñeiro             │
-│ author     │ Clemens Meyer               │
-│ author     │ Daniel Kehlmann             │
-│ author     │ David Diop                  │
-│ author     │ David Grossman              │
-│ author     │ Emmanuelle Pagano           │
-│ author     │ Enrique Vila-Matas          │
-│ author     │ Eva Baltasar                │
-│ author     │ Fernanda Melchor            │
-│ author     │ Gabriela Cabezón Cámara     │
-│ author     │ Gabriela Ybarra             │
-│ author     │ Gauz                        │
-│ author     │ Geentanjali Shree           │
-│ author     │ Georgi Gospodinov           │
-│ author     │ Guadalupe Nettel            │
-│ author     │ Han Kang                    │
-│ author     │ Hubert Mingarelli           │
-│ author     │ Hwang Sok-yong              │
-│ author     │ Jaap Robben                 │
-│ author     │ Javier Cercas               │
-│ author     │ Jenny Erpenbeck             │
-│ author     │ Jokha Alharthi              │
-│ author     │ Jon Fosse                   │
-│ author     │ Jonas Eika                  │
-│ author     │ Juan Gabriel Vásquez        │
-│ author     │ Judith Schalansky           │
-│ author     │ Laurent Binet               │
-│ author     │ Laurent Mauvignier          │
-│ author     │ László Krasznahorkai        │
-│ author     │ Maria Stepanova             │
-│ author     │ Mariana Enríquez            │
-│ author     │ Marieke Lucas Rijneveld     │
-│ author     │ Marion Poschmann            │
-│ author     │ Maryse Condé                │
-│ author     │ Mazen Maarouf               │
-│ author     │ Michel Houellebecq          │
-│ author     │ Mieko Kawakami              │
-│ author     │ Nana Ekvtimishvili          │
-│ author     │ Ngũgĩ wa Thiong'o           │
-│ author     │ Nino Haratischvili          │
-│ author     │ Norman Erikson Pasaribu     │
-│ author     │ Olga Ravn                   │
-│ author     │ Olga Tokarczuk              │
-│ author     │ Paulo Scott                 │
-│ author     │ Perumal Murugan             │
-│ author     │ Samanta Schweblin           │
-│ author     │ Sang Young Park             │
-│ author     │ Sara Stridsberg             │
-│ author     │ Shokoofeh Azar              │
-│ author     │ Tommy Wieringa              │
-│ author     │ Vigdis Hjorth               │
-│ author     │ Violaine Huisman            │
-│ author     │ Virginie Despentes          │
-│ author     │ Willem Anker                │
-│ author     │ Wu Ming-Yi                  │
-│ author     │ Yōko Ogawa                  │
-│ author     │ Zou Jingzhi                 │
-│ author     │ Éric Vuillard               │
-│ translator │ Adrian Nathan West          │
-│ translator │ Alison L. Strayer           │
-│ translator │ Angela Rodel                │
-│ translator │ Aniruddhan Vasudevan        │
-│ translator │ Anna Moschovakis            │
-│ translator │ Anne McLean                 │
-│ translator │ Annelise Finegan Wasmoen    │
-│ translator │ Anton Hur                   │
-│ translator │ Antonia Lloyd-Jones         │
-│ translator │ Camilo A. Ramirez           │
-│ translator │ Carolina Orloff             │
-│ translator │ Charlotte Barslund          │
-│ translator │ Charlotte Collins           │
-│ translator │ Chen Zeping                 │
-│ translator │ Daisy Rockwell              │
-│ translator │ Damion Searls               │
-│ translator │ Daniel Hahn                 │
-│ translator │ Daniel Levin Becker         │
-│ translator │ Darryl Sterk                │
-│ translator │ David Boyd                  │
-│ translator │ David Doherty               │
-│ translator │ Deborah Bragan-Turner       │
-│ translator │ Deborah Smith               │
-│ translator │ Eileen Myles                │
-│ translator │ Elisabeth Jaquette          │
-│ translator │ Elizabeth Heighway          │
-│ translator │ Fiona Mackintosh            │
-│ translator │ Frances Riddle              │
-│ translator │ Frank Wynne                 │
-│ translator │ George Szirtes              │
-│ translator │ Iona Macintyre              │
-│ translator │ Jackie Smith                │
-│ translator │ Jae Won Chung               │
-│ translator │ Jen Calleja                 │
-│ translator │ Jennifer Croft              │
-│ translator │ Jennifer Higgins            │
-│ translator │ Jeremy Tiang                │
-│ translator │ Jessica Cohen               │
-│ translator │ John Batki                  │
-│ translator │ Jonathan Wright             │
-│ translator │ Karen Gernant               │
-│ translator │ Katy Derbyshire             │
-│ translator │ Leslie Camhi                │
-│ translator │ Margaret Jull Costa         │
-│ translator │ Marilyn Booth               │
-│ translator │ Mark Polizzotti             │
-│ translator │ Martin Aitken               │
-│ translator │ Megan McDowell              │
-│ translator │ Michele Hutchinson          │
-│ translator │ Michiel Heyns               │
-│ translator │ Natasha Wimmer              │
-│ translator │ Ngũgĩ wa Thiong'o           │
-│ translator │ Nichola Smalley             │
-│ translator │ Nicole d'Amonville Alegría  │
-│ translator │ Ottilie Mulzet              │
-│ translator │ Reuben Woolley              │
-│ translator │ Richard Philcox             │
-│ translator │ Rosalind Harvey             │
-│ translator │ Ross Benjamin               │
-│ translator │ Ruth Martin                 │
-│ translator │ Sam Bett                    │
-│ translator │ Sam Garrett                 │
-│ translator │ Sam Taylor                  │
-│ translator │ Sarah Moses                 │
-│ translator │ Sasha Dugdale               │
-│ translator │ Shaun Whiteside             │
-│ translator │ Sherilyn Nicolette Hellberg │
-│ translator │ Simon Pare                  │
-│ translator │ Sophie Hughes               │
-│ translator │ Sophie Lewis                │
-│ translator │ Sora Kim-Russell            │
-│ translator │ Stephen Snyder              │
-│ translator │ Susan Bernofsky             │
-│ translator │ Tiffany Tsao                │
-└────────────┴─────────────────────────────┘
-names those that are both authors and translators
-┌───────────────────┐
-│       name        │
-├───────────────────┤
-│ Ngũgĩ wa Thiong'o │
-└───────────────────┘
-authors who are not translators
-┌─────────────────────────┐
-│          name           │
-├─────────────────────────┤
-│ Adania Shibli           │
-│ Ahmed Saadawi           │
-│ Alia Trabucco Zerán     │
-│ Amanda Svensson         │
-│ Andrey Kurkov           │
-│ Andrzej Tichy           │
-│ Annie Ernaux            │
-│ Antonio Muñoz Molina    │
-│ Ariana Harwicz          │
-│ Benajamín Labatut       │
-│ Bora Chung              │
-│ Can Xue                 │
-│ Cheon Myeong-Kwan       │
-│ Christoph Ransmayr      │
-│ Claudia Piñeiro         │
-│ Clemens Meyer           │
-│ Daniel Kehlmann         │
-│ David Diop              │
-│ David Grossman          │
-│ Emmanuelle Pagano       │
-│ Enrique Vila-Matas      │
-│ Eva Baltasar            │
-│ Fernanda Melchor        │
-│ Gabriela Cabezón Cámara │
-│ Gabriela Ybarra         │
-│ Gauz                    │
-│ Geentanjali Shree       │
-│ Georgi Gospodinov       │
-│ Guadalupe Nettel        │
-│ Han Kang                │
-│ Hubert Mingarelli       │
-│ Hwang Sok-yong          │
-│ Jaap Robben             │
-│ Javier Cercas           │
-│ Jenny Erpenbeck         │
-│ Jokha Alharthi          │
-│ Jon Fosse               │
-│ Jonas Eika              │
-│ Juan Gabriel Vásquez    │
-│ Judith Schalansky       │
-│ Laurent Binet           │
-│ Laurent Mauvignier      │
-│ László Krasznahorkai    │
-│ Maria Stepanova         │
-│ Mariana Enríquez        │
-│ Marieke Lucas Rijneveld │
-│ Marion Poschmann        │
-│ Maryse Condé            │
-│ Mazen Maarouf           │
-│ Michel Houellebecq      │
-│ Mieko Kawakami          │
-│ Nana Ekvtimishvili      │
-│ Nino Haratischvili      │
-│ Norman Erikson Pasaribu │
-│ Olga Ravn               │
-│ Olga Tokarczuk          │
-│ Paulo Scott             │
-│ Perumal Murugan         │
-│ Samanta Schweblin       │
-│ Sang Young Park         │
-│ Sara Stridsberg         │
-│ Shokoofeh Azar          │
-│ Tommy Wieringa          │
-│ Vigdis Hjorth           │
-│ Violaine Huisman        │
-│ Virginie Despentes      │
-│ Willem Anker            │
-│ Wu Ming-Yi              │
-│ Yōko Ogawa              │
-│ Zou Jingzhi             │
-│ Éric Vuillard           │
-└─────────────────────────┘
-find book ids translated by Sophie Hughes
-┌─────────┐
-│ book_id │
-├─────────┤
-│ 14      │
-│ 48      │
-│ 50      │
-│ 63      │
-└─────────┘
-find the books translated by both Sophie Hughes and Margaret Jull Costa
-┌─────────┐
-│ book_id │
-├─────────┤
-│ 50      │
-└─────────┘
+the average rating of all books
+┌─────────────────┐
+│  AVG("rating")  │
+├─────────────────┤
+│ 3.8364408869645 │
+└─────────────────┘
+the average rating per book_id
+┌─────────┬──────────────────┐
+│ book_id │  average rating  │
+├─────────┼──────────────────┤
+│ 1       │ 3.77401943145016 │
+│ 2       │ 3.97142857142857 │
+│ 3       │ 3.04385964912281 │
+│ 4       │ 3.56832298136646 │
+│ 5       │ 4.05919796308084 │
+│ 6       │ 3.76252545824847 │
+│ 7       │ 3.64071856287425 │
+│ 8       │ 3.8241965973535  │
+│ 9       │ 3.99858156028369 │
+│ 10      │ 4.04070660522273 │
+│ 11      │ 4.14057800444619 │
+│ 12      │ 3.61313347608851 │
+│ 13      │ 3.775            │
+│ 14      │ 3.71167838204464 │
+│ 15      │ 3.839493458443   │
+│ 16      │ 3.68502715283165 │
+│ 17      │ 3.80160550458716 │
+│ 18      │ 4.09376522162689 │
+│ 19      │ 3.7856315179606  │
+│ 20      │ 4.04264507422402 │
+│ 21      │ 3.83909415971394 │
+│ 22      │ 4.50104384133612 │
+│ 23      │ 3.24821852731591 │
+│ 24      │ 3.8003291278113  │
+│ 25      │ 4.05420197740113 │
+│ 26      │ 3.88723976491682 │
+│ 27      │ 3.36545801526718 │
+│ 28      │ 4.13681131994323 │
+│ 29      │ 3.45779220779221 │
+│ 30      │ 3.36418359668924 │
+│ 31      │ 3.83701197870453 │
+│ 32      │ 3.29473684210526 │
+│ 33      │ 3.86036036036036 │
+│ 34      │ 3.97821681864235 │
+│ 35      │ 3.71611479028698 │
+│ 36      │ 3.85012519375224 │
+│ 37      │ 3.71809161342939 │
+│ 38      │ 3.69173630454967 │
+│ 39      │ 3.72280334728033 │
+│ 40      │ 3.85580304806565 │
+│ 41      │ 3.4663859392164  │
+│ 42      │ 4.51125382262997 │
+│ 43      │ 3.79507545671168 │
+│ 44      │ 3.7432070417145  │
+│ 45      │ 4.19116465863454 │
+│ 46      │ 3.94621275025371 │
+│ 47      │ 3.56306306306306 │
+│ 48      │ 4.07711409693583 │
+│ 49      │ 3.6069128902928  │
+│ 50      │ 3.48184818481848 │
+│ 51      │ 3.42424242424242 │
+│ 52      │ 3.57865168539326 │
+│ 53      │ 3.69329529243937 │
+│ 54      │ 3.41684901531729 │
+│ 55      │ 3.9620521782549  │
+│ 56      │ 3.82022471910112 │
+│ 57      │ 3.41351888667992 │
+│ 58      │ 3.17669172932331 │
+│ 59      │ 3.75018910741301 │
+│ 60      │ 3.36531904529956 │
+│ 61      │ 3.91866849691146 │
+│ 62      │ 3.15822784810127 │
+│ 63      │ 3.51679841897233 │
+│ 64      │ 3.94525547445255 │
+│ 65      │ 4.17545002368546 │
+│ 66      │ 3.56863143631436 │
+│ 67      │ 3.96096173733195 │
+│ 68      │ 3.56756756756757 │
+│ 69      │ 3.75824760553388 │
+│ 70      │ 3.41433370660694 │
+│ 71      │ 4.10835913312694 │
+│ 72      │ 3.64936886395512 │
+│ 73      │ 3.88207225630539 │
+│ 74      │ 3.83141189866211 │
+│ 75      │ 3.76943005181347 │
+│ 76      │ 3.89371428571429 │
+│ 77      │ 3.53974162469893 │
+│ 78      │ 3.75584854383194 │
+└─────────┴──────────────────┘
+average rating per book_id rounded to 2 decimals and filtered > 4.0
+┌─────────┬────────────────┐
+│ book_id │ average rating │
+├─────────┼────────────────┤
+│ 5       │ 4.06           │
+│ 10      │ 4.04           │
+│ 11      │ 4.14           │
+│ 18      │ 4.09           │
+│ 20      │ 4.04           │
+│ 22      │ 4.5            │
+│ 25      │ 4.05           │
+│ 28      │ 4.14           │
+│ 42      │ 4.51           │
+│ 45      │ 4.19           │
+│ 48      │ 4.08           │
+│ 65      │ 4.18           │
+│ 71      │ 4.11           │
+└─────────┴────────────────┘
+count the number of ratings per book_id
+┌─────────┬─────────────────┐
+│ book_id │ COUNT("rating") │
+├─────────┼─────────────────┤
+│ 1       │ 2779            │
+│ 2       │ 175             │
+│ 3       │ 114             │
+│ 4       │ 322             │
+│ 5       │ 3142            │
+│ 6       │ 2455            │
+│ 7       │ 167             │
+│ 8       │ 529             │
+│ 9       │ 705             │
+│ 10      │ 1302            │
+│ 11      │ 7647            │
+│ 12      │ 1401            │
+│ 13      │ 40              │
+│ 14      │ 8109            │
+│ 15      │ 26217           │
+│ 16      │ 5156            │
+│ 17      │ 872             │
+│ 18      │ 8212            │
+│ 19      │ 1726            │
+│ 20      │ 3705            │
+│ 21      │ 839             │
+│ 22      │ 479             │
+│ 23      │ 1684            │
+│ 24      │ 1823            │
+│ 25      │ 5664            │
+│ 26      │ 10039           │
+│ 27      │ 2096            │
+│ 28      │ 23251           │
+│ 29      │ 308             │
+│ 30      │ 1329            │
+│ 31      │ 18032           │
+│ 32      │ 95              │
+│ 33      │ 1554            │
+│ 34      │ 3948            │
+│ 35      │ 2265            │
+│ 36      │ 25161           │
+│ 37      │ 7357            │
+│ 38      │ 1077            │
+│ 39      │ 956             │
+│ 40      │ 3412            │
+│ 41      │ 27310           │
+│ 42      │ 16350           │
+│ 43      │ 3777            │
+│ 44      │ 67938           │
+│ 45      │ 1245            │
+│ 46      │ 10839           │
+│ 47      │ 222             │
+│ 48      │ 22551           │
+│ 49      │ 16462           │
+│ 50      │ 606             │
+│ 51      │ 198             │
+│ 52      │ 23852           │
+│ 53      │ 1402            │
+│ 54      │ 13710           │
+│ 55      │ 80110           │
+│ 56      │ 623             │
+│ 57      │ 503             │
+│ 58      │ 266             │
+│ 59      │ 10576           │
+│ 60      │ 2053            │
+│ 61      │ 2914            │
+│ 62      │ 1738            │
+│ 63      │ 1012            │
+│ 64      │ 2466            │
+│ 65      │ 16888           │
+│ 66      │ 14760           │
+│ 67      │ 7736            │
+│ 68      │ 592             │
+│ 69      │ 5638            │
+│ 70      │ 893             │
+│ 71      │ 323             │
+│ 72      │ 2139            │
+│ 73      │ 1467            │
+│ 74      │ 14052           │
+│ 75      │ 772             │
+│ 76      │ 12250           │
+│ 77      │ 4567            │
+│ 78      │ 27229           │
+└─────────┴─────────────────┘
+grab the average rating per book_id, only books > 4.0, order by rating desc
+┌─────────┬────────────────┐
+│ book_id │ average rating │
+├─────────┼────────────────┤
+│ 42      │ 4.51           │
+│ 22      │ 4.5            │
+│ 45      │ 4.19           │
+│ 65      │ 4.18           │
+│ 28      │ 4.14           │
+│ 11      │ 4.14           │
+│ 71      │ 4.11           │
+│ 18      │ 4.09           │
+│ 48      │ 4.08           │
+│ 5       │ 4.06           │
+│ 25      │ 4.05           │
+│ 20      │ 4.04           │
+│ 10      │ 4.04           │
+└─────────┴────────────────┘
