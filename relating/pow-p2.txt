@@ -9,3 +9,38 @@ INNER JOIN sea_lions with migrations on id
 │ 11732 │ Mabel │ Zalophus californianus │ 11732 │ 1622     │ 62   │
 │ 11734 │ Rick  │ Zalophus californianus │ 11734 │ 1491     │ 58   │
 └───────┴───────┴────────────────────────┴───────┴──────────┴──────┘
+LEFT OUTER JOIN all sea_lions with any of the matching migrations
+┌───────┬───────┬────────────────────────┬───────┬──────────┬──────┐
+│  id   │ name  │        species         │  id   │ distance │ days │
+├───────┼───────┼────────────────────────┼───────┼──────────┼──────┤
+│ 10484 │ Ayah  │ Zalophus californianus │ 10484 │ 1000     │ 107  │
+│ 11728 │ Spot  │ Zalophus californianus │ 11728 │ 1531     │ 56   │
+│ 11729 │ Tiger │ Zalophus californianus │ 11729 │ 1370     │ 37   │
+│ 11732 │ Mabel │ Zalophus californianus │ 11732 │ 1622     │ 62   │
+│ 11734 │ Rick  │ Zalophus californianus │ 11734 │ 1491     │ 58   │
+│ 11790 │ Jolee │ Zalophus californianus │       │          │      │
+└───────┴───────┴────────────────────────┴───────┴──────────┴──────┘
+every row from both tables, matched when possible
+┌───────┬───────┬────────────────────────┬───────┬──────────┬──────┐
+│  id   │ name  │        species         │  id   │ distance │ days │
+├───────┼───────┼────────────────────────┼───────┼──────────┼──────┤
+│ 10484 │ Ayah  │ Zalophus californianus │ 10484 │ 1000     │ 107  │
+│ 11728 │ Spot  │ Zalophus californianus │ 11728 │ 1531     │ 56   │
+│ 11729 │ Tiger │ Zalophus californianus │ 11729 │ 1370     │ 37   │
+│ 11732 │ Mabel │ Zalophus californianus │ 11732 │ 1622     │ 62   │
+│ 11734 │ Rick  │ Zalophus californianus │ 11734 │ 1491     │ 58   │
+│ 11790 │ Jolee │ Zalophus californianus │       │          │      │
+│       │       │                        │ 11735 │ 2723     │ 82   │
+│       │       │                        │ 11736 │ 1571     │ 52   │
+│       │       │                        │ 11737 │ 1957     │ 92   │
+└───────┴───────┴────────────────────────┴───────┴──────────┴──────┘
+NATURAL JOIN: join on all same-named columns automatically
+┌───────┬───────┬────────────────────────┬──────────┬──────┐
+│  id   │ name  │        species         │ distance │ days │
+├───────┼───────┼────────────────────────┼──────────┼──────┤
+│ 10484 │ Ayah  │ Zalophus californianus │ 1000     │ 107  │
+│ 11728 │ Spot  │ Zalophus californianus │ 1531     │ 56   │
+│ 11729 │ Tiger │ Zalophus californianus │ 1370     │ 37   │
+│ 11732 │ Mabel │ Zalophus californianus │ 1622     │ 62   │
+│ 11734 │ Rick  │ Zalophus californianus │ 1491     │ 58   │
+└───────┴───────┴────────────────────────┴──────────┴──────┘

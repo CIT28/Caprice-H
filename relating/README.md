@@ -57,3 +57,23 @@ JOIN "authored" ON books.id = authored.book_id
 JOIN "authors" ON authors.id = authored.author_id;
 
 # Week 7 Relating Part 2
+## INNER JOIN  
+An INNER JOIN returns only the rows where there is a match in both tables.  If a row in one table does not have an alike row in the other, it will not appear in the result.  
+In SQLite, just writing `JOIN` is the same as `INNER JOIN`.  
+
+
+## LEFT, RIGHT and FULL JOIN (OUTER)
+
+LEFT OUTER JOIN will keep all rows from the left table; bring matching right rows or NULLs when no match.
+
+RIGHT OUTER JOIN will mirror of left, keep all rows from the right table.
+
+
+FULL OUTER JOIN: keep all rows from both sides match where possible, otherwise fill with NULLs.
+
+Question? Do we get a separate table back? No,JOINs always return a single result set produced by combining rows according to the join type.
+
+## NATURAL JOIN
+
+Automatically joins on all columns with the same name in both tables and returns one copy of those columns.
+Handy for quick exploring, but risky in production if a new same named column appears.sqlite3 

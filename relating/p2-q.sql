@@ -19,6 +19,21 @@ FROM "sea_lions"
 JOIN "migrations"
 ON "migrations"."id" = "sea_lions"."id";
 
+.print 'LEFT OUTER JOIN all sea_lions with any of the matching migrations'
+SELECT *
+FROM "sea_lions"
+LEFT JOIN "migrations"
+  ON "migrations"."id" = "sea_lions"."id";
+
+.print 'every row from both tables, matched when possible'
+SELECT * FROM "sea_lions"
+FULL JOIN "migrations" ON "migrations"."id" = "sea_lions"."id";
+
+.print 'NATURAL JOIN: join on all same-named columns automatically'
+SELECT * FROM "sea_lions"
+NATURAL JOIN "migrations";
+
+
 
 -- .print '<----->'
 
