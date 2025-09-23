@@ -55,3 +55,5 @@ SELECT "title", "name"
 FROM "books"
 JOIN "authored" ON books.id = authored.book_id
 JOIN "authors" ON authors.id = authored.author_id;
+
+# Week 7 Relating Part 2
