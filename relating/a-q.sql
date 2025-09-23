@@ -27,12 +27,18 @@
 --         SELECT "id" FROM "books" WHERE "title" = 'Whale'
 --     )
 -- );
-.print 'another subquery example'
-SELECT * FROM "authors" WHERE "id" = (
-    SELECT "author_id" FROM "authored" WHERE "book_id" = (
-        SELECT "id" FROM "books" WHERE "title" = 'Time Shelter'
-    )
-);
+-- .print 'another subquery example'
+-- SELECT * FROM "authors" WHERE "id" = (
+--     SELECT "author_id" FROM "authored" WHERE "book_id" = (
+--         SELECT "id" FROM "books" WHERE "title" = 'Time Shelter'
+--     )
+-- );
+.print 'refactor to implement JOIN'
+SELECT "authors"."name", "books"."title" FROM "authors"
+JOIN "authored" ON "authored"."author_id" = "authors"."id"
+JOIN "books" ON "books"."id" = "authored"."book_id"
+WHERE "books"."title" = 'Whale';
+
 
 .print '<----->'
 

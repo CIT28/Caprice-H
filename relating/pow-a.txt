@@ -75,3 +75,261 @@ another subquery example
 │ 29 │ Georgi Gospodinov │ Bulgaria │ 1968  │
 └────┴───────────────────┴──────────┴───────┘
 <----->
+testing setup
+refactor to implement JOIN
+┌────┬─────────────────────────┬───────────────────────────┬───────┐
+│ id │          name           │          country          │ birth │
+├────┼─────────────────────────┼───────────────────────────┼───────┤
+│ 1  │ Adania Shibli           │ Palestine                 │ 1974  │
+│ 2  │ Ahmed Saadawi           │ Iraq                      │ 1973  │
+│ 3  │ Alia Trabucco Zerán     │ Chile                     │ 1983  │
+│ 4  │ Amanda Svensson         │ Sweden                    │ 1987  │
+│ 5  │ Andrey Kurkov           │ Ukraine                   │ 1961  │
+│ 6  │ Andrzej Tichy           │ Sweden                    │ 1978  │
+│ 7  │ Annie Ernaux            │ France                    │ 1940  │
+│ 8  │ Antonio Muñoz Molina    │ Spain                     │ 1956  │
+│ 9  │ Ariana Harwicz          │ Argentina                 │ 1977  │
+│ 10 │ Benajamín Labatut       │ Chile                     │ 1980  │
+│ 11 │ Bora Chung              │ South Korea               │ 1976  │
+│ 12 │ Can Xue                 │ China                     │ 1953  │
+│ 13 │ Cheon Myeong-Kwan       │ South Korea               │ 1964  │
+│ 14 │ Christoph Ransmayr      │ Austria                   │ 1954  │
+│ 15 │ Claudia Piñeiro         │ Argentina                 │ 1960  │
+│ 16 │ Clemens Meyer           │ Germany                   │ 1977  │
+│ 17 │ Daniel Kehlmann         │ Germany                   │ 1975  │
+│ 18 │ David Diop              │ France                    │ 1966  │
+│ 19 │ David Grossman          │ Israel                    │ 1954  │
+│ 20 │ Emmanuelle Pagano       │ France                    │ 1969  │
+│ 21 │ Enrique Vila-Matas      │ Spain                     │ 1948  │
+│ 22 │ Éric Vuillard           │ France                    │ 1968  │
+│ 23 │ Eva Baltasar            │ Spain                     │ 1978  │
+│ 24 │ Fernanda Melchor        │ Mexico                    │ 1982  │
+│ 25 │ Gabriela Cabezón Cámara │ Argentina                 │ 1968  │
+│ 26 │ Gabriela Ybarra         │ Spain                     │ 1983  │
+│ 27 │ Gauz                    │ Republic of Côte d'Ivoire │ 1971  │
+│ 28 │ Geentanjali Shree       │ India                     │ 1957  │
+│ 29 │ Georgi Gospodinov       │ Bulgaria                  │ 1968  │
+│ 30 │ Guadalupe Nettel        │ Mexico                    │ 1973  │
+│ 31 │ Han Kang                │ South Korea               │ 1970  │
+│ 32 │ Hubert Mingarelli       │ France                    │ 1956  │
+│ 33 │ Hwang Sok-yong          │ South Korea               │ 1943  │
+│ 34 │ Jaap Robben             │ Netherlands               │ 1984  │
+│ 35 │ Javier Cercas           │ Spain                     │ 1962  │
+│ 36 │ Jenny Erpenbeck         │ Germany                   │ 1967  │
+│ 37 │ Jokha Alharthi          │ Oman                      │ 1978  │
+│ 38 │ Jon Fosse               │ Norway                    │ 1959  │
+│ 39 │ Jonas Eika              │ Denmark                   │ 1991  │
+│ 40 │ Juan Gabriel Vásquez    │ Colombia                  │ 1973  │
+│ 41 │ Judith Schalansky       │ Germany                   │ 1980  │
+│ 42 │ László Krasznahorkai    │ Hungary                   │ 1954  │
+│ 43 │ Laurent Binet           │ France                    │ 1972  │
+│ 44 │ Laurent Mauvignier      │ France                    │ 1967  │
+│ 45 │ Maria Stepanova         │ Russia                    │ 1972  │
+│ 46 │ Mariana Enríquez        │ Argentina                 │ 1973  │
+│ 47 │ Marieke Lucas Rijneveld │ Netherlands               │ 1991  │
+│ 48 │ Marion Poschmann        │ Germany                   │ 1969  │
+│ 49 │ Maryse Condé            │ France                    │ 1937  │
+│ 50 │ Mazen Maarouf           │ Lebanon                   │ 1978  │
+│ 51 │ Michel Houellebecq      │ France                    │ 1956  │
+│ 52 │ Mieko Kawakami          │ Japan                     │ 1976  │
+│ 53 │ Nana Ekvtimishvili      │ Georgia                   │ 1978  │
+│ 54 │ Ngũgĩ wa Thiong'o       │ Kenya                     │ 1938  │
+│ 55 │ Nino Haratischvili      │ Georgia                   │ 1983  │
+│ 56 │ Norman Erikson Pasaribu │ Indonesia                 │ 1990  │
+│ 57 │ Olga Ravn               │ Denmark                   │ 1986  │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │
+│ 59 │ Paulo Scott             │ Brazil                    │ 1966  │
+│ 60 │ Perumal Murugan         │ India                     │ 1966  │
+│ 61 │ Samanta Schweblin       │ Argentina                 │ 1978  │
+│ 62 │ Sang Young Park         │ South Korea               │ 1988  │
+│ 63 │ Sara Stridsberg         │ Sweden                    │ 1972  │
+│ 64 │ Shokoofeh Azar          │ Iran                      │ 1972  │
+│ 65 │ Tommy Wieringa          │ Netherlands               │ 1967  │
+│ 66 │ Vigdis Hjorth           │ Norway                    │ 1959  │
+│ 67 │ Violaine Huisman        │ France                    │ 1979  │
+│ 68 │ Virginie Despentes      │ France                    │ 1969  │
+│ 69 │ Willem Anker            │ South Africa              │ 1979  │
+│ 70 │ Wu Ming-Yi              │ Taiwan                    │ 1971  │
+│ 71 │ Yōko Ogawa              │ Japan                     │ 1962  │
+│ 72 │ Zou Jingzhi             │ China                     │ 1952  │
+└────┴─────────────────────────┴───────────────────────────┴───────┘
+<----->
+testing setup
+refactor to implement JOIN
+refactor to implement JOIN
+┌────┬─────────────────────────┬───────────────────────────┬───────┬───────────┬─────────┐
+│ id │          name           │          country          │ birth │ author_id │ book_id │
+├────┼─────────────────────────┼───────────────────────────┼───────┼───────────┼─────────┤
+│ 23 │ Eva Baltasar            │ Spain                     │ 1978  │ 23        │ 1       │
+│ 13 │ Cheon Myeong-Kwan       │ South Korea               │ 1964  │ 13        │ 2       │
+│ 49 │ Maryse Condé            │ France                    │ 1937  │ 49        │ 3       │
+│ 27 │ Gauz                    │ Republic of Côte d'Ivoire │ 1971  │ 27        │ 4       │
+│ 29 │ Georgi Gospodinov       │ Bulgaria                  │ 1968  │ 29        │ 5       │
+│ 66 │ Vigdis Hjorth           │ Norway                    │ 1959  │ 66        │ 6       │
+│ 5  │ Andrey Kurkov           │ Ukraine                   │ 1961  │ 5         │ 7       │
+│ 44 │ Laurent Mauvignier      │ France                    │ 1967  │ 44        │ 8       │
+│ 16 │ Clemens Meyer           │ Germany                   │ 1977  │ 16        │ 9       │
+│ 60 │ Perumal Murugan         │ India                     │ 1966  │ 60        │ 10      │
+│ 30 │ Guadalupe Nettel        │ Mexico                    │ 1973  │ 30        │ 11      │
+│ 4  │ Amanda Svensson         │ Sweden                    │ 1987  │ 4         │ 12      │
+│ 72 │ Zou Jingzhi             │ China                     │ 1952  │ 72        │ 13      │
+│ 24 │ Fernanda Melchor        │ Mexico                    │ 1982  │ 24        │ 14      │
+│ 52 │ Mieko Kawakami          │ Japan                     │ 1976  │ 52        │ 15      │
+│ 62 │ Sang Young Park         │ South Korea               │ 1988  │ 62        │ 16      │
+│ 56 │ Norman Erikson Pasaribu │ Indonesia                 │ 1990  │ 56        │ 17      │
+│ 15 │ Claudia Piñeiro         │ Argentina                 │ 1960  │ 15        │ 18      │
+│ 67 │ Violaine Huisman        │ France                    │ 1979  │ 67        │ 19      │
+│ 19 │ David Grossman          │ Israel                    │ 1954  │ 19        │ 20      │
+│ 59 │ Paulo Scott             │ Brazil                    │ 1966  │ 59        │ 21      │
+│ 38 │ Jon Fosse               │ Norway                    │ 1959  │ 38        │ 22      │
+│ 39 │ Jonas Eika              │ Denmark                   │ 1991  │ 39        │ 23      │
+│ 28 │ Geentanjali Shree       │ India                     │ 1957  │ 28        │ 24      │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 25      │
+│ 11 │ Bora Chung              │ South Korea               │ 1976  │ 11        │ 26      │
+│ 22 │ Éric Vuillard           │ France                    │ 1968  │ 22        │ 27      │
+│ 10 │ Benajamín Labatut       │ Chile                     │ 1980  │ 10        │ 28      │
+│ 6  │ Andrzej Tichy           │ Sweden                    │ 1978  │ 6         │ 29      │
+│ 41 │ Judith Schalansky       │ Germany                   │ 1980  │ 41        │ 30      │
+│ 18 │ David Diop              │ France                    │ 1966  │ 18        │ 31      │
+│ 12 │ Can Xue                 │ China                     │ 1953  │ 12        │ 32      │
+│ 45 │ Maria Stepanova         │ Russia                    │ 1972  │ 45        │ 33      │
+│ 1  │ Adania Shibli           │ Palestine                 │ 1974  │ 1         │ 34      │
+│ 34 │ Jaap Robben             │ Netherlands               │ 1984  │ 34        │ 35      │
+│ 46 │ Mariana Enríquez        │ Argentina                 │ 1973  │ 46        │ 36      │
+│ 57 │ Olga Ravn               │ Denmark                   │ 1986  │ 57        │ 37      │
+│ 53 │ Nana Ekvtimishvili      │ Georgia                   │ 1978  │ 53        │ 38      │
+│ 54 │ Ngũgĩ wa Thiong'o       │ Kenya                     │ 1938  │ 54        │ 39      │
+│ 25 │ Gabriela Cabezón Cámara │ Argentina                 │ 1968  │ 25        │ 40      │
+│ 47 │ Marieke Lucas Rijneveld │ Netherlands               │ 1991  │ 47        │ 41      │
+│ 55 │ Nino Haratischvili      │ Georgia                   │ 1983  │ 55        │ 42      │
+│ 64 │ Shokoofeh Azar          │ Iran                      │ 1972  │ 64        │ 43      │
+│ 71 │ Yōko Ogawa              │ Japan                     │ 1962  │ 71        │ 44      │
+│ 38 │ Jon Fosse               │ Norway                    │ 1959  │ 38        │ 45      │
+│ 17 │ Daniel Kehlmann         │ Germany                   │ 1975  │ 17        │ 46      │
+│ 20 │ Emmanuelle Pagano       │ France                    │ 1969  │ 20        │ 47      │
+│ 24 │ Fernanda Melchor        │ Mexico                    │ 1982  │ 24        │ 48      │
+│ 61 │ Samanta Schweblin       │ Argentina                 │ 1978  │ 61        │ 49      │
+│ 21 │ Enrique Vila-Matas      │ Spain                     │ 1948  │ 21        │ 50      │
+│ 69 │ Willem Anker            │ South Africa              │ 1979  │ 69        │ 51      │
+│ 51 │ Michel Houellebecq      │ France                    │ 1956  │ 51        │ 52      │
+│ 33 │ Hwang Sok-yong          │ South Korea               │ 1943  │ 33        │ 53      │
+│ 37 │ Jokha Alharthi          │ Oman                      │ 1978  │ 37        │ 54      │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 55      │
+│ 32 │ Hubert Mingarelli       │ France                    │ 1956  │ 32        │ 56      │
+│ 50 │ Mazen Maarouf           │ Lebanon                   │ 1978  │ 50        │ 57      │
+│ 12 │ Can Xue                 │ China                     │ 1953  │ 12        │ 58      │
+│ 61 │ Samanta Schweblin       │ Argentina                 │ 1978  │ 61        │ 59      │
+│ 65 │ Tommy Wieringa          │ Netherlands               │ 1967  │ 65        │ 60      │
+│ 63 │ Sara Stridsberg         │ Sweden                    │ 1972  │ 63        │ 61      │
+│ 48 │ Marion Poschmann        │ Germany                   │ 1969  │ 48        │ 62      │
+│ 3  │ Alia Trabucco Zerán     │ Chile                     │ 1983  │ 3         │ 63      │
+│ 40 │ Juan Gabriel Vásquez    │ Colombia                  │ 1973  │ 40        │ 64      │
+│ 7  │ Annie Ernaux            │ France                    │ 1940  │ 7         │ 65      │
+│ 2  │ Ahmed Saadawi           │ Iraq                      │ 1973  │ 2         │ 66      │
+│ 36 │ Jenny Erpenbeck         │ Germany                   │ 1967  │ 36        │ 67      │
+│ 8  │ Antonio Muñoz Molina    │ Spain                     │ 1956  │ 8         │ 68      │
+│ 43 │ Laurent Binet           │ France                    │ 1972  │ 43        │ 69      │
+│ 26 │ Gabriela Ybarra         │ Spain                     │ 1983  │ 26        │ 70      │
+│ 14 │ Christoph Ransmayr      │ Austria                   │ 1954  │ 14        │ 71      │
+│ 35 │ Javier Cercas           │ Spain                     │ 1962  │ 35        │ 72      │
+│ 70 │ Wu Ming-Yi              │ Taiwan                    │ 1971  │ 70        │ 73      │
+│ 31 │ Han Kang                │ South Korea               │ 1970  │ 31        │ 74      │
+│ 42 │ László Krasznahorkai    │ Hungary                   │ 1954  │ 42        │ 75      │
+│ 68 │ Virginie Despentes      │ France                    │ 1969  │ 68        │ 76      │
+│ 9  │ Ariana Harwicz          │ Argentina                 │ 1977  │ 9         │ 77      │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 78      │
+└────┴─────────────────────────┴───────────────────────────┴───────┴───────────┴─────────┘
+<----->
+testing setup
+refactor to implement JOIN
+┌────┬─────────────────────────┬───────────────────────────┬───────┬───────────┬─────────┬────┬───────────────┬────────────────────────────────────────────┬──────────────┬───────────┬───────┬────────────┬──────┐
+│ id │          name           │          country          │ birth │ author_id │ book_id │ id │     isbn      │                   title                    │ publisher_id │  format   │ pages │ published  │ year │
+├────┼─────────────────────────┼───────────────────────────┼───────┼───────────┼─────────┼────┼───────────────┼────────────────────────────────────────────┼──────────────┼───────────┼───────┼────────────┼──────┤
+│ 23 │ Eva Baltasar            │ Spain                     │ 1978  │ 23        │ 1       │ 1  │ 9788439736967 │ Boulder                                    │ 10           │ paperback │ 112   │ 2022-08-02 │ 2023 │
+│ 13 │ Cheon Myeong-Kwan       │ South Korea               │ 1964  │ 13        │ 2       │ 2  │ 9781628971538 │ Whale                                      │ 3            │ paperback │ 368   │ 2023-01-19 │ 2023 │
+│ 49 │ Maryse Condé            │ France                    │ 1937  │ 49        │ 3       │ 3  │ 9781642861181 │ The Gospel According to the New World      │ 32           │ paperback │ 184   │ 2023-03-07 │ 2023 │
+│ 27 │ Gauz                    │ Republic of Côte d'Ivoire │ 1971  │ 27        │ 4       │ 4  │ 9781529414431 │ Standing Heavy                             │ 12           │ paperback │ 252   │ 2022-05-26 │ 2023 │
+│ 29 │ Georgi Gospodinov       │ Bulgaria                  │ 1968  │ 29        │ 5       │ 5  │ 9781474623025 │ Time Shelter                               │ 30           │ hardcover │ 304   │ 2022-04-21 │ 2023 │
+│ 66 │ Vigdis Hjorth           │ Norway                    │ 1959  │ 66        │ 6       │ 6  │ 9781839764318 │ Is Mother Dead                             │ 29           │ paperback │ 330   │ 2022-09-27 │ 2023 │
+│ 5  │ Andrey Kurkov           │ Ukraine                   │ 1961  │ 5         │ 7       │ 7  │ 9781529427820 │ Jimi Hendrix Live in Lviv                  │ 12           │ hardcover │ 416   │ 2023-04-27 │ 2023 │
+│ 44 │ Laurent Mauvignier      │ France                    │ 1967  │ 44        │ 8       │ 8  │ 9781945492655 │ The Birthday Party                         │ 27           │ paperback │ 454   │ 2023-01-24 │ 2023 │
+│ 16 │ Clemens Meyer           │ Germany                   │ 1977  │ 16        │ 9       │ 9  │ 9781804270288 │ While We Were Dreaming                     │ 5            │ paperback │ 528   │ 2023-03-30 │ 2023 │
+│ 60 │ Perumal Murugan         │ India                     │ 1966  │ 60        │ 10      │ 10 │ 9781782278627 │ Pyre                                       │ 17           │ paperback │ 224   │ 2022-04-08 │ 2023 │
+│ 30 │ Guadalupe Nettel        │ Mexico                    │ 1973  │ 30        │ 11      │ 11 │ 9781913097660 │ Still Born                                 │ 5            │ paperback │ 200   │ 2022-06-22 │ 2023 │
+│ 4  │ Amanda Svensson         │ Sweden                    │ 1987  │ 4         │ 12      │ 12 │ 9781914484872 │ A System So Magnificent It Is Blinding     │ 20           │ paperback │ 544   │ 2023-03-09 │ 2023 │
+│ 72 │ Zou Jingzhi             │ China                     │ 1952  │ 72        │ 13      │ 13 │ 9781739822507 │ Ninth Building                             │ 8            │ paperback │ 272   │ 2022-05-16 │ 2023 │
+│ 24 │ Fernanda Melchor        │ Mexico                    │ 1982  │ 24        │ 14      │ 14 │ 9781913097875 │ Paradais                                   │ 5            │ paperback │ 118   │ 2022-03-23 │ 2022 │
+│ 52 │ Mieko Kawakami          │ Japan                     │ 1976  │ 52        │ 15      │ 15 │ 9781509898251 │ Heaven                                     │ 15           │ paperback │ 167   │ 2022-05-12 │ 2022 │
+│ 62 │ Sang Young Park         │ South Korea               │ 1988  │ 62        │ 16      │ 16 │ 9781911284659 │ Love in the Big City                       │ 26           │ paperback │ 217   │ 2021-10-29 │ 2022 │
+│ 56 │ Norman Erikson Pasaribu │ Indonesia                 │ 1990  │ 56        │ 17      │ 17 │ 9781911284635 │ Happy Stories, Mostly                      │ 26           │ paperback │ 151   │ 2021-12-02 │ 2022 │
+│ 15 │ Claudia Piñeiro         │ Argentina                 │ 1960  │ 15        │ 18      │ 18 │ 9781999368432 │ Elena Knows                                │ 2            │ paperback │ 143   │ 2021-07-01 │ 2022 │
+│ 67 │ Violaine Huisman        │ France                    │ 1979  │ 67        │ 19      │ 19 │ 9781982108786 │ The Book of Mother                         │ 21           │ paperback │ 224   │ 2021-09-19 │ 2022 │
+│ 19 │ David Grossman          │ Israel                    │ 1954  │ 19        │ 20      │ 20 │ 9781787332935 │ More Than I Love My Life                   │ 9            │ paperback │ 288   │ 2021-08-26 │ 2022 │
+│ 59 │ Paulo Scott             │ Brazil                    │ 1966  │ 59        │ 21      │ 21 │ 9781913505189 │ Phenotypes                                 │ 1            │ paperback │ 232   │ 2022-01-01 │ 2022 │
+│ 38 │ Jon Fosse               │ Norway                    │ 1959  │ 38        │ 22      │ 22 │ 9781913097721 │ A New Name: Septology VI-VII               │ 5            │ paperback │ 228   │ 2021-09-08 │ 2022 │
+│ 39 │ Jonas Eika              │ Denmark                   │ 1991  │ 39        │ 23      │ 23 │ 9781999992859 │ After the Sun                              │ 11           │ paperback │ 158   │ 2021-08-24 │ 2022 │
+│ 28 │ Geentanjali Shree       │ India                     │ 1957  │ 28        │ 24      │ 24 │ 9781911284611 │ Tomb of Sand                               │ 26           │ paperback │ 739   │ 2021-08-12 │ 2022 │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 25      │ 25 │ 9781910695593 │ The Books of Jacob                         │ 5            │ paperback │ 920   │ 2021-11-15 │ 2022 │
+│ 11 │ Bora Chung              │ South Korea               │ 1976  │ 11        │ 26      │ 26 │ 9781916277182 │ Cursed Bunny                               │ 8            │ paperback │ 251   │ 2021-06-15 │ 2022 │
+│ 22 │ Éric Vuillard           │ France                    │ 1968  │ 22        │ 27      │ 27 │ 9781529038538 │ The War of the Poor                        │ 15           │ hardcover │ 69    │ 2021-01-07 │ 2021 │
+│ 10 │ Benajamín Labatut       │ Chile                     │ 1980  │ 10        │ 28      │ 28 │ 9781782276128 │ When We Cease to Understand the World      │ 17           │ hardcover │ 192   │ 2020-09-03 │ 2021 │
+│ 6  │ Andrzej Tichy           │ Sweden                    │ 1978  │ 6         │ 29      │ 29 │ 9781911508762 │ Wretchedness                               │ 1            │ paperback │ 176   │ 2020-06-02 │ 2021 │
+│ 41 │ Judith Schalansky       │ Germany                   │ 1980  │ 41        │ 30      │ 30 │ 9781529400793 │ An Inventory of Losses                     │ 12           │ hardcover │ 256   │ 2020-08-20 │ 2021 │
+│ 18 │ David Diop              │ France                    │ 1966  │ 18        │ 31      │ 31 │ 9781782275862 │ At Night All Blood is Black                │ 17           │ hardcover │ 192   │ 2020-11-05 │ 2021 │
+│ 12 │ Can Xue                 │ China                     │ 1953  │ 12        │ 32      │ 32 │ 9780300247435 │ I Live in the Slums                        │ 33           │ hardcover │ 344   │ 2020-05-19 │ 2021 │
+│ 45 │ Maria Stepanova         │ Russia                    │ 1972  │ 45        │ 33      │ 33 │ 9781913097530 │ In Memory of Memory                        │ 5            │ paperback │ 510   │ 2021-02-17 │ 2021 │
+│ 1  │ Adania Shibli           │ Palestine                 │ 1974  │ 1         │ 34      │ 34 │ 9781913097172 │ Minor Detail                               │ 5            │ paperback │ 144   │ 2020-05-06 │ 2021 │
+│ 34 │ Jaap Robben             │ Netherlands               │ 1984  │ 34        │ 35      │ 35 │ 9781912987139 │ Summer Brother                             │ 32           │ paperback │ 285   │ 2021-04-08 │ 2021 │
+│ 46 │ Mariana Enríquez        │ Argentina                 │ 1973  │ 46        │ 36      │ 36 │ 9781783786718 │ The Dangers of Smoking in Bed              │ 6            │ paperback │ 187   │ 2021-04-01 │ 2021 │
+│ 57 │ Olga Ravn               │ Denmark                   │ 1986  │ 57        │ 37      │ 37 │ 9781999992880 │ The Employees                              │ 11           │ paperback │ 136   │ 2020-10-01 │ 2021 │
+│ 53 │ Nana Ekvtimishvili      │ Georgia                   │ 1978  │ 53        │ 38      │ 38 │ 9781908670601 │ The Pear Field                             │ 14           │ paperback │ 163   │ 2020-10-30 │ 2021 │
+│ 54 │ Ngũgĩ wa Thiong'o       │ Kenya                     │ 1938  │ 54        │ 39      │ 39 │ 9781620975251 │ The Perfect Nine                           │ 25           │ hardcover │ 240   │ 2020-10-06 │ 2021 │
+│ 25 │ Gabriela Cabezón Cámara │ Argentina                 │ 1968  │ 25        │ 40      │ 40 │ 9781916465664 │ The Adventures of China Iron               │ 2            │ paperback │ 200   │ 2019-11-14 │ 2020 │
+│ 47 │ Marieke Lucas Rijneveld │ Netherlands               │ 1991  │ 47        │ 41      │ 41 │ 9780571349364 │ The Discomfort of Evening                  │ 4            │ paperback │ 282   │ 2020-03-05 │ 2020 │
+│ 55 │ Nino Haratischvili      │ Georgia                   │ 1983  │ 55        │ 42      │ 42 │ 9781911617464 │ The Eighth Life                            │ 20           │ hardcover │ 944   │ 2019-11-14 │ 2020 │
+│ 64 │ Shokoofeh Azar          │ Iran                      │ 1972  │ 64        │ 43      │ 43 │ 9781609455651 │ The Enlightenment of The Greengage Tree    │ 3            │ paperback │ 256   │ 2020-01-17 │ 2020 │
+│ 71 │ Yōko Ogawa              │ Japan                     │ 1962  │ 71        │ 44      │ 44 │ 9781787300750 │ The Memory Police                          │ 7            │ paperback │ 277   │ 2019-08-15 │ 2020 │
+│ 38 │ Jon Fosse               │ Norway                    │ 1959  │ 38        │ 45      │ 45 │ 9781910695913 │ The Other Name: Septology I-II             │ 5            │ paperback │ 351   │ 2019-10-10 │ 2020 │
+│ 17 │ Daniel Kehlmann         │ Germany                   │ 1975  │ 17        │ 46      │ 46 │ 9781529403657 │ Tyll                                       │ 18           │ hardcover │ 352   │ 2020-02-06 │ 2020 │
+│ 20 │ Emmanuelle Pagano       │ France                    │ 1969  │ 20        │ 47      │ 47 │ 9781908670557 │ Faces on the Tip of My Tongue              │ 14           │ paperback │ 136   │ 2019-10-22 │ 2020 │
+│ 24 │ Fernanda Melchor        │ Mexico                    │ 1982  │ 24        │ 48      │ 48 │ 9781913097097 │ Hurricane Season                           │ 5            │ paperback │ 229   │ 2020-02-19 │ 2020 │
+│ 61 │ Samanta Schweblin       │ Argentina                 │ 1978  │ 61        │ 49      │ 49 │ 9781786077929 │ Little Eyes                                │ 13           │ hardcover │ 256   │ 2020-04-16 │ 2020 │
+│ 21 │ Enrique Vila-Matas      │ Spain                     │ 1948  │ 21        │ 50      │ 50 │ 9781787300453 │ Mac and His Problem                        │ 7            │ paperback │ 224   │ 2019-06-06 │ 2020 │
+│ 69 │ Willem Anker            │ South Africa              │ 1979  │ 69        │ 51      │ 51 │ 9781782274223 │ Red Dog                                    │ 17           │ hardcover │ 432   │ 2019-06-06 │ 2020 │
+│ 51 │ Michel Houellebecq      │ France                    │ 1956  │ 51        │ 52      │ 52 │ 9781785152238 │ Serotonin                                  │ 31           │ hardcover │ 320   │ 2019-09-26 │ 2020 │
+│ 33 │ Hwang Sok-yong          │ South Korea               │ 1943  │ 33        │ 53      │ 53 │ 9781911617235 │ At Dusk                                    │ 20           │ paperback │ 192   │ 2018-11-19 │ 2019 │
+│ 37 │ Jokha Alharthi          │ Oman                      │ 1978  │ 37        │ 54      │ 54 │ 9781912240166 │ Celestial Bodies                           │ 19           │ paperback │ 243   │ 2018-05-21 │ 2019 │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 55      │ 55 │ 9781910695715 │ Drive Your Plow Over the Bones of the Dead │ 5            │ paperback │ 270   │ 2019-01-01 │ 2019 │
+│ 32 │ Hubert Mingarelli       │ France                    │ 1956  │ 32        │ 56      │ 56 │ 9781846276507 │ Four Soldiers                              │ 16           │ hardcover │ 160   │ 2018-10-04 │ 2019 │
+│ 50 │ Mazen Maarouf           │ Lebanon                   │ 1978  │ 50        │ 57      │ 57 │ 9781846276675 │ Jokes for the Gunmen                       │ 16           │ paperback │ 162   │ 2019-01-03 │ 2019 │
+│ 12 │ Can Xue                 │ China                     │ 1953  │ 12        │ 58      │ 58 │ 9780300224313 │ Love in the New Millennium                 │ 33           │ hardcover │ 288   │ 2018-11-20 │ 2019 │
+│ 61 │ Samanta Schweblin       │ Argentina                 │ 1978  │ 61        │ 59      │ 59 │ 9781786074560 │ Mouthful of Birds                          │ 13           │ paperback │ 228   │ 2019-02-07 │ 2019 │
+│ 65 │ Tommy Wieringa          │ Netherlands               │ 1967  │ 65        │ 60      │ 60 │ 9781911344889 │ The Death of Murat Idrissi                 │ 20           │ hardcover │ 112   │ 2019-01-10 │ 2019 │
+│ 63 │ Sara Stridsberg         │ Sweden                    │ 1972  │ 63        │ 61      │ 61 │ 9780857054722 │ The Faculty of Dreams                      │ 12           │ paperback │ 338   │ 2019-03-21 │ 2019 │
+│ 48 │ Marion Poschmann        │ Germany                   │ 1969  │ 48        │ 62      │ 62 │ 9781788160919 │ The Pine Islands                           │ 23           │ hardcover │ 180   │ 2019-03-21 │ 2019 │
+│ 3  │ Alia Trabucco Zerán     │ Chile                     │ 1983  │ 3         │ 63      │ 63 │ 9781911508328 │ The Remainder                              │ 1            │ paperback │ 193   │ 2018-10-04 │ 2019 │
+│ 40 │ Juan Gabriel Vásquez    │ Colombia                  │ 1973  │ 40        │ 64      │ 64 │ 9780857056580 │ The Shape of the Ruins                     │ 12           │ hardcover │ 512   │ 2018-05-03 │ 2019 │
+│ 7  │ Annie Ernaux            │ France                    │ 1940  │ 7         │ 65      │ 65 │ 9781910695784 │ The Years                                  │ 5            │ paperback │ 232   │ 2018-06-20 │ 2019 │
+│ 2  │ Ahmed Saadawi           │ Iraq                      │ 1973  │ 2         │ 66      │ 66 │ 9781786070609 │ Frankenstein in Baghdad                    │ 13           │ paperback │ 272   │ 2018-02-01 │ 2018 │
+│ 36 │ Jenny Erpenbeck         │ Germany                   │ 1967  │ 36        │ 67      │ 67 │ 9781846276200 │ Go, Went, Gone                             │ 16           │ hardcover │ 368   │ 2017-08-07 │ 2018 │
+│ 8  │ Antonio Muñoz Molina    │ Spain                     │ 1956  │ 8         │ 68      │ 68 │ 9781781258934 │ Like a Fading Shadow                       │ 28           │ hardcover │ 320   │ 2017-11-02 │ 2018 │
+│ 43 │ Laurent Binet           │ France                    │ 1972  │ 43        │ 69      │ 69 │ 9781910701584 │ The 7th Function of Language               │ 7            │ hardcover │ 390   │ 2017-05-03 │ 2018 │
+│ 26 │ Gabriela Ybarra         │ Spain                     │ 1983  │ 26        │ 70      │ 70 │ 9781910701980 │ The Dinner Guest                           │ 7            │ paperback │ 160   │ 2018-03-01 │ 2018 │
+│ 14 │ Christoph Ransmayr      │ Austria                   │ 1954  │ 14        │ 71      │ 71 │ 9780857424747 │ The Flying Mountain                        │ 22           │ hardcover │ 336   │ 2018-03-31 │ 2018 │
+│ 35 │ Javier Cercas           │ Spain                     │ 1962  │ 35        │ 72      │ 72 │ 9780857056504 │ The Impostor                               │ 12           │ hardcover │ 430   │ 2017-11-02 │ 2018 │
+│ 70 │ Wu Ming-Yi              │ Taiwan                    │ 1971  │ 70        │ 73      │ 73 │ 9781925498554 │ The Stolen Bicycle                         │ 24           │ paperback │ 416   │ 2017-08-28 │ 2018 │
+│ 31 │ Han Kang                │ South Korea               │ 1970  │ 31        │ 74      │ 74 │ 9780525573067 │ The White Book                             │ 16           │ paperback │ 161   │ 2018-04-05 │ 2018 │
+│ 42 │ László Krasznahorkai    │ Hungary                   │ 1954  │ 42        │ 75      │ 75 │ 9781788160124 │ The World Goes On                          │ 28           │ paperback │ 320   │ 2018-05-31 │ 2018 │
+│ 68 │ Virginie Despentes      │ France                    │ 1969  │ 68        │ 76      │ 76 │ 9780857055422 │ Vernon Subutex 1                           │ 12           │ paperback │ 352   │ 2018-03-22 │ 2018 │
+│ 9  │ Ariana Harwicz          │ Argentina                 │ 1977  │ 9         │ 77      │ 77 │ 9781999722784 │ Die, My Love                               │ 2            │ paperback │ 123   │ 2017-09-14 │ 2018 │
+│ 58 │ Olga Tokarczuk          │ Poland                    │ 1962  │ 58        │ 78      │ 78 │ 9781910695432 │ Flights                                    │ 5            │ paperback │ 410   │ 2017-05-17 │ 2018 │
+└────┴─────────────────────────┴───────────────────────────┴───────┴───────────┴─────────┴────┴───────────────┴────────────────────────────────────────────┴──────────────┴───────────┴───────┴────────────┴──────┘
+<----->
+testing setup
+refactor to implement JOIN
+┌───────────────────┬───────┐
+│       name        │ title │
+├───────────────────┼───────┤
+│ Cheon Myeong-Kwan │ Whale │
+└───────────────────┴───────┘
+<----->
