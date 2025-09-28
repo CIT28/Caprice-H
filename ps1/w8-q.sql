@@ -17,7 +17,10 @@ WHERE driver_id = 7
   AND strftime('%Y', timestamp) = '2023';
 
 
-
+.print 'count the residential addresses'
+SELECT COUNT(*) AS "Number of Residential Addresses"
+FROM addresses
+WHERE type = 'Residential';
 
 
 -- go back to stdout (important!)
