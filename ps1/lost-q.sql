@@ -17,11 +17,16 @@
 -- WHERE from_address_id = 432
 --   AND to_address_id = 854;
 
-.print 'all scans for package 384'
-SELECT * 
-FROM scans
-WHERE package_id = 384;
+-- .print 'all scans for package 384'
+-- SELECT * 
+-- FROM scans
+-- WHERE package_id = 384;
 
+.print 'pickup and drop-off timestamps'
+SELECT action, timestamp
+FROM scans
+WHERE package_id = 384
+  AND action IN ('Pick', 'Drop');
 
 -- go back to stdout
 .output stdout
