@@ -26,3 +26,12 @@ WHERE type = 'Business';`
 FROM packages
 GROUP BY contents
 ORDER BY COUNT(*) DESC;`
+
+
+## Static Queries for Lost Letter - Proof of Effect
+
+### Query 1
+`SELECT * 
+FROM packages
+WHERE from_address_id = 432
+  AND to_address_id = 854;`
