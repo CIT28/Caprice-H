@@ -22,6 +22,10 @@ SELECT COUNT(*) AS "Number of Residential Addresses"
 FROM addresses
 WHERE type = 'Residential';
 
+.print 'count the business addresses'
+SELECT COUNT(*) AS "Number of Business Addresses"
+FROM addresses
+WHERE type = 'Business';
 
 -- go back to stdout (important!)
 .output stdout
