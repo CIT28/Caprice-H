@@ -9,6 +9,14 @@
 .print 'find Derek in Drivers table'
 SELECT * FROM drivers WHERE name = 'Derek';
 
+.print 'Derek pick actions in 2023'
+SELECT COUNT(*) AS "Number Pickups for Derek in 2023"
+FROM scans
+WHERE driver_id = 7
+  AND action = 'Pick'
+  AND strftime('%Y', timestamp) = '2023';
+
+
 
 
 
