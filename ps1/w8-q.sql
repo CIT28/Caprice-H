@@ -27,6 +27,11 @@ SELECT COUNT(*) AS "Number of Business Addresses"
 FROM addresses
 WHERE type = 'Business';
 
+.print 'count the package contents sorted'
+SELECT contents, COUNT(*) AS "Number of"
+FROM packages
+GROUP BY contents
+ORDER BY COUNT(*) DESC;
 -- go back to stdout (important!)
 .output stdout
 
