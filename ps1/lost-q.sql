@@ -5,8 +5,14 @@
 -- send output to pow-lost.txt
 .output packages/pow-lost.txt
 
-.print 'find package from Anneke to Varsha'
-SELECT * 
+-- .print 'find package from Anneke to Varsha'
+-- SELECT * 
+-- FROM packages
+-- WHERE from_address_id = 432
+--   AND to_address_id = 854;
+
+.print 'get the package id'
+SELECT id
 FROM packages
 WHERE from_address_id = 432
   AND to_address_id = 854;

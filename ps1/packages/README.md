@@ -35,3 +35,9 @@ ORDER BY COUNT(*) DESC;`
 FROM packages
 WHERE from_address_id = 432
   AND to_address_id = 854;`
+
+  ### Query 2
+`SELECT id
+FROM packages
+WHERE from_address_id = 432
+  AND to_address_id = 854;`
