@@ -41,3 +41,9 @@ WHERE from_address_id = 432
 FROM packages
 WHERE from_address_id = 432
   AND to_address_id = 854;`
+
+
+### Query 3
+`SELECT * 
+FROM scans
+WHERE package_id = 384;`
