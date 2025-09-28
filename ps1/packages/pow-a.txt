@@ -1,0 +1,6 @@
+find Derek in Drivers table
+┌────┬───────┐
+│ id │ name  │
+├────┼───────┤
+│ 7  │ Derek │
+└────┴───────┘

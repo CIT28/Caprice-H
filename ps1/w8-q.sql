@@ -3,15 +3,14 @@
 .mode box
 
 -- send output to pow-p1.txt
-.output pow-ds.txt
+.output packages/pow-a.txt
 
 
--- test the setup
-.print 'testing setup'
+.print 'find Derek in Drivers table'
+SELECT * FROM drivers WHERE name = 'Derek';
 
--- Display all tables in the database
-.print 'Tables in packages.db'
-.tables
+
+
 
 -- go back to stdout (important!)
 .output stdout
