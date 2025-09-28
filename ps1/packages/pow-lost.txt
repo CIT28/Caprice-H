@@ -1,4 +1,4 @@
-pickup and drop-off timestamps
+nested query including Pickup and drop-off timestamps
 ┌────────┬────────────────────────────┐
 │ action │         timestamp          │
 ├────────┼────────────────────────────┤

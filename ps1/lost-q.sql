@@ -22,11 +22,23 @@
 -- FROM scans
 -- WHERE package_id = 384;
 
-.print 'pickup and drop-off timestamps'
+-- .print 'pickup and drop-off timestamps'
+-- SELECT action, timestamp
+-- FROM scans
+-- WHERE package_id = 384
+--   AND action IN ('Pick', 'Drop');
+
+.print 'nested query including Pickup and drop-off timestamps'
 SELECT action, timestamp
 FROM scans
-WHERE package_id = 384
-  AND action IN ('Pick', 'Drop');
+WHERE package_id = (
+    SELECT id
+    FROM packages
+    WHERE from_address_id = 432
+      AND to_address_id = 854
+)
+AND action IN ('Pick', 'Drop');
+
 
 -- go back to stdout
 .output stdout
