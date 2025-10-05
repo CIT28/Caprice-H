@@ -1,4 +1,48 @@
-nested query including Pickup and drop-off timestamps
+to_address_id for 2 Finnegan Street
+┌───────────────┐
+│ to_address_id │
+├───────────────┤
+│ 854           │
+└───────────────┘
+from_address_id for 900 Somerville Avenue
+┌─────────────────┐
+│ from_address_id │
+├─────────────────┤
+│ 432             │
+└─────────────────┘
+from_address_id for 900 Somerville Avenue
+┌─────────────────┐
+│ from_address_id │
+├─────────────────┤
+│ 432             │
+└─────────────────┘
+to_address_id for 2 Finnegan Street
+┌───────────────┐
+│ to_address_id │
+├───────────────┤
+│ 854           │
+└───────────────┘
+package from 900 Somerville Ave -> 2 Finnegan
+┌────────────┬───────────────────────┐
+│ package_id │       contents        │
+├────────────┼───────────────────────┤
+│ 384        │ Congratulatory letter │
+└────────────┴───────────────────────┘
+Pick/Drop timestamps
+┌────────┬────────────────────────────┐
+│ action │         timestamp          │
+├────────┼────────────────────────────┤
+│ Pick   │ 2023-07-11 19:33:55.241794 │
+│ Drop   │ 2023-07-11 23:07:04.432178 │
+└────────┴────────────────────────────┘
+Pick/Drop timestamps (NESTED)
+┌────────┬────────────────────────────┐
+│ action │         timestamp          │
+├────────┼────────────────────────────┤
+│ Pick   │ 2023-07-11 19:33:55.241794 │
+│ Drop   │ 2023-07-11 23:07:04.432178 │
+└────────┴────────────────────────────┘
+Pick/Drop timestamps (NESTED)
 ┌────────┬────────────────────────────┐
 │ action │         timestamp          │
 ├────────┼────────────────────────────┤
