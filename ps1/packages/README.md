@@ -30,32 +30,6 @@ GROUP BY "contents"
 ORDER BY COUNT(*) DESC;`
 
 
-## Static Queries for Lost Letter - Proof of Effect
-
-### Query 1
-`SELECT * 
-FROM packages
-WHERE from_address_id = 432
-  AND to_address_id = 854;`
-
-  ### Query 2
-`SELECT id
-FROM packages
-WHERE from_address_id = 432
-  AND to_address_id = 854;`
-
-
-### Query 3
-`SELECT * 
-FROM scans
-WHERE package_id = 384;`
-
-### Query 4
-`SELECT action, timestamp
-FROM scans
-WHERE package_id = 384
-  AND action IN ('Pick', 'Drop');`
-
 
 # Static Queries for Lost Letter - Proof of Effect
 
@@ -116,3 +90,27 @@ WHERE package_id = 384
 
 ## My Experience
 I originally hard coded the IDs, which skipped the real first step of the problem and didn’t show my process. After feedback, I redid it by starting from the street addresses, deriving the correct IDs, finding the matching package, and then pulling the scans. The static queries now document each step clearly, and the nested query compresses the same logic into one statement. I also fixed my folder placement and POW outputs so everything lives in ps1/packages as required. Now both approaches return the correct Pick/Drop timestamps with no hard coded IDs and a clear record of effort.
+
+# Nested Queries for Devious Delivery - Proof of Effect
+
+`SELECT id, contents FROM packages WHERE contents LIKE '%duck%';`
+
+`SELECT id FROM address LIKE contents = 'Duck' LIMIT 1;`
+
+`SELECT id FROM packages WHERE contents = 'Duck debugger' LIMIT 1;`
+
+`SELECT s.action, s.timestamp, a.address FROM scans s JOIN addresses a ON a.id = s.address_id WHERE s.package_id = (SELECT id FROM packages WHERE contents='Duck debugger' LIMIT 1) ORDER BY s.timestamp;`
+
+`SELECT id FROM packages WHERE contents='Duck debugger';`
+
+`SELECT a."address" FROM "address" a WHERE "id" = (SELECT a."address" FROM "scans" a WHERE a."action" = 'Drop' AND a."address" = (SELECT "id" FROM "packages" LIKE "packages" = 'Duck' LIMIT 1) LIMIT 1);`
+
+`SELECT a."address" FROM "address" a WHERE "Duck" = (SELECT a."address" FROM "scans" a LIKE a."action" = 'Drop' AND a."addresses" = (SELECT "id" FROM "packages" WHERE "packages" = 'Duck') LIMIT 1);`
+
+`SELECT a."addresses" FROM "addresses" a WHERE "id" = (SELECT a."address" FROM "scans" a LIKE a."action" = 'Drop' AND a."addresses" = (SELECT "id" FROM "packages" LIKE "packages" = 'Duck') LIMIT 1);`
+
+`SELECT a."address" FROM "address" a WHERE "id" = (SELECT s."address_id" FROM "scans" s WHERE a."action" = 'Drop' AND a."package_id" = (SELECT "id" FROM "packages" LIKE "contents" = 'Duck' LIMIT 1) LIMIT 1);`
+
+`SELECT a."address" FROM "address" a WHERE "id" = (SELECT a."address_id" FROM "scans" WHERE a."action" = 'Drop' AND a."package_id" = (SELECT "id" FROM "packages" LIKE "address" = 'Duck debugger' LIMIT 1) LIMIT 1);`
+
+`SELECT a."address" FROM "addresses" a WHERE a."id" = (SELECT s."address_id" FROM "scans" s WHERE s."action" = 'Drop' AND s."package_id" = (SELECT "id" FROM "packages" WHERE "contents" = 'Duck debugger' LIMIT 1) LIMIT 1);`
