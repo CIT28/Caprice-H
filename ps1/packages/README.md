@@ -114,3 +114,48 @@ I originally hard coded the IDs, which skipped the real first step of the proble
 `SELECT a."address" FROM "address" a WHERE "id" = (SELECT a."address_id" FROM "scans" WHERE a."action" = 'Drop' AND a."package_id" = (SELECT "id" FROM "packages" LIKE "address" = 'Duck debugger' LIMIT 1) LIMIT 1);`
 
 `SELECT a."address" FROM "addresses" a WHERE a."id" = (SELECT s."address_id" FROM "scans" s WHERE s."action" = 'Drop' AND s."package_id" = (SELECT "id" FROM "packages" WHERE "contents" = 'Duck debugger' LIMIT 1) LIMIT 1);`
+
+# Join Query for Devious Delivery - Proof of Effect
+
+sqlite> SELECT a.address AS "Drop Off Address",
+       a.contents AS "Contents of Package"
+FROM scans s
+JOIN packages a ON p.id = s.packages_id
+JOIN addresses a ON a.id = s.addresses_id
+WHERE s.action = 'Drop'
+  AND p.packages = 'Duck'
+LIMIT 1;
+Parse error: no such column: p.packages
+  id = s.addresses_id WHERE s.action = 'Drop'   AND p.packages = 'Duck' LIMIT 1;
+                                      error here ---^
+
+sqlite> SELECT a.address AS "Drop Off Address",
+       a.contents AS "Contents of Package"
+FROM scans s
+JOIN packages a ON a.id = s.packages_id
+JOIN address a ON a.id = s.address_id
+WHERE s.action = 'Drop'
+  AND p.contents = 'Duck'
+LIMIT 2;
+Parse error: no such table: address    
+
+
+sqlite> SELECT a.address AS "Drop Off Address",
+       p.contents AS "Contents of Package"
+FROM scans s
+JOIN packages p ON p.id = s.package_id
+JOIN addresses a ON a.id = s.address_id
+WHERE s.action = 'Drop'
+  AND p.contents = 'Duck debugger’;
+'  ...> 
+
+sqlite> SELECT a.address AS "Drop Off Address",
+       p.contents AS "Contents of Package"
+FROM scans s
+JOIN packages p ON p.id = s.package_id
+JOIN addresses a ON a.id = s.address_id
+WHERE s.action = 'Drop'
+  AND p.contents = 'Duck debugger'
+ORDER BY s.timestamp
+LIMIT 1;
+7 Humboldt Place|Duck debugger
