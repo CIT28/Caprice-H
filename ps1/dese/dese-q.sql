@@ -108,22 +108,40 @@
 --   GROUP BY d."name"
 -- );
 
-.print 'the two columns we need'
-SELECT s."id" AS "school_id",
-       gr."graduated"
-FROM "schools" s
-JOIN "graduation_rates" gr ON gr."school_id" = s."id"
-ORDER BY gr."graduated" DESC
-LIMIT 15;
+-- .print 'the two columns we need'
+-- SELECT s."id" AS "school_id",
+--        gr."graduated"
+-- FROM "schools" s
+-- JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+-- ORDER BY gr."graduated" DESC
+-- LIMIT 15;
 
 
-.print 'query 3 COUNT'
-SELECT COUNT(*) AS "Q4 COUNT"
+-- .print 'query 3 COUNT'
+-- SELECT COUNT(*) AS "Q4 COUNT"
+-- FROM (
+--   SELECT s."id"
+--   FROM "schools" s
+--   JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+-- ) ;
+
+.print '<----->'
+.print 'query 5 top ZIP codes by number of schools'
+
+SELECT "zip",
+       COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "zip"
+ORDER BY "school_count" DESC, "zip" ASC
+LIMIT 10;
+
+.print 'query 5 COUNT'
+SELECT COUNT(*) AS "Q5 COUNT"
 FROM (
-  SELECT s."id"
-  FROM "schools" s
-  JOIN "graduation_rates" gr ON gr."school_id" = s."id"
-) ;
+  SELECT "zip"
+  FROM "schools"
+  GROUP BY "zip"
+);
 
 
 .output stdout

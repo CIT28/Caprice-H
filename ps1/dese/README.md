@@ -231,3 +231,46 @@ LIMIT 10;
 1598|100
 1720|100
 125|99.7
+
+# Query 5
+* I want to see if the column exists
+!!!Find which ZIP codes have the most schools
+SELECT "id", "zip" FROM "schools" LIMIT 5;
+
+sqlite> SELECT "zip", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "zip"
+LIMIT 10;
+01001|6
+01002|6
+01005|3
+01007|5
+01010|1
+01011|1
+01012|1
+01013|5
+01020|10
+01022|2
+
+sqlite> SELECT "zip", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "zip"
+ORDER BY "schools” DESC, "zip" ASC
+LIMIT 10;
+"  ...> 
+
+sqlite> SELECT "zip", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "zip"
+ORDER BY "school_count" DESC, "zip" ASC
+LIMIT 10;
+01109|18
+01841|17
+02301|16
+02119|15
+02360|15
+01040|14
+01701|14
+01104|13
+01201|13
+01902|13
