@@ -23,19 +23,28 @@
 -- SELECT * FROM "schools" LIMIT 10;
 
 -- .print '<----->'
+-- .print '<----->'
+-- .print 'names + cities of all PUBLIC schools in MA'
+-- SELECT "name", "city"
+-- FROM "schools"
+-- WHERE "type" = 'Public School'
+--   AND "state" = 'MA';
+
+-- .print 'Q1 COUNT'
+-- SELECT COUNT(*) AS "Q1 COUNT"
+-- FROM "schools"
+-- WHERE "type" = 'Public School'
+--   AND "state" = 'MA';
 .print '<----->'
-.print 'names + cities of all PUBLIC schools in MA'
-SELECT "name", "city"
-FROM "schools"
-WHERE "type" = 'Public School'
-  AND "state" = 'MA';
+.print ‘districts no longer operational'
+SELECT "name"
+FROM "districts"
+WHERE "name" LIKE '%(non-op)';
 
-.print 'Q1 COUNT'
-SELECT COUNT(*) AS "Q1 COUNT"
-FROM "schools"
-WHERE "type" = 'Public School'
-  AND "state" = 'MA';
-
+.print ‘q2 COUNT'
+SELECT COUNT(*) AS "Q2 COUNT"
+FROM "districts"
+WHERE "name" LIKE '%(non-op)';
 
 -- .print 'query 1'
 -- .print 'find the names and cities of all public schools in Massachusetts'
