@@ -274,3 +274,202 @@ LIMIT 10;
 01104|13
 01201|13
 01902|13
+# Query 5
+```
+
+Here I'm looking for pairs
+SELECT d."name" AS "district", s."id" AS "school_id"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+LIMIT 10;
+Abby Kelley Foster Charter Public (District)|1
+Abington|2
+Abington|3
+Abington|4
+Abington|5
+Abington|6
+Academy Of the Pacific Rim Charter Public (District)|7
+Acton-Boxborough|8
+Acton-Boxborough|9
+Acton-Boxborough|10
+
+sqlite> SELECT "name" AS "district",
+       COUNT(s."id") AS "school_count"
+FROM "districts" d
+JOIN "schools" ON s."district_id" = d."id"
+GROUP BY "name";
+Parse error: ambiguous column name: name
+  SELECT "name" AS "district",        COUNT(s."id") AS "school_count" FROM "dist
+         ^--- error here
+sqlite> 
+
+SELECT d."name" AS "district",
+       COUNT(s."id") AS "school_count"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY d."name"
+LIMIT 5;
+Abby Kelley Foster Charter Public (District)|1
+Abington|5
+Academy Of the Pacific Rim Charter Public (District)|1
+Acton-Boxborough|9
+Acushnet|2
+
+sqlite> SELECT d."name" AS "district",
+       COUNT(s."id") AS "school_count"
+FROM "districts"
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY "name"
+HAVING COUNT("id") > 5
+ORDER BY "school_count" DESC, "district" ASC;
+Parse error: no such column: d.name
+  SELECT d."name" AS "district",        COUNT(s."id") AS "school_count" FROM "di
+         ^--- error here
+
+sqlite> SELECT d."name" AS "district",
+       COUNT(s."id") AS "school_count"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY d."name"
+HAVING COUNT(s."id") >= 5
+ORDER BY "school_count" DESC, "district" ASC;
+Boston|109
+Springfield|66
+Worcester|46
+Lowell|27
+Lynn|27
+Lawrence|26
+New Bedford|25
+Brockton|24
+Newton|22
+Quincy|19
+Cambridge|17
+Fall River|17
+Haverhill|17
+Chicopee|15
+Pittsfield|15
+Framingham|14
+Brookline|13
+Plymouth|13
+Wachusett|13
+Attleboro|12
+Holyoke|12
+Leominster|12
+Taunton|12
+Westfield|12
+Arlington|11
+Chelsea|11
+Peabody|11
+Revere|11
+Salem|11
+Somerville|11
+Weymouth|11
+Andover|10
+Braintree|10
+Everett|10
+Franklin|10
+Lexington|10
+Waltham|10
+Wellesley|10
+Woburn|10
+Acton-Boxborough|9
+Barnstable|9
+Reading|9
+Shrewsbury|9
+West Springfield|9
+Westford|9
+Agawam|8
+Beverly|8
+Billerica|8
+Bridgewater-Raynham|8
+Chelmsford|8
+Fitchburg|8
+Gloucester|8
+Medford|8
+Melrose|8
+Natick|8
+Needham|8
+North Andover|8
+North Attleborough|8
+Norwood|8
+Stoughton|8
+Walpole|8
+Westwood|8
+Danvers|7
+Dedham|7
+Dudley-Charlton Reg|7
+Falmouth|7
+Malden|7
+Marlborough|7
+Marshfield|7
+North Middlesex|7
+Quabbin|7
+Wakefield|7
+Whitman-Hanson|7
+Wilmington|7
+Winchester|7
+Bellingham|6
+Belmont|6
+Burlington|6
+Canton|6
+Dartmouth|6
+Dennis-Yarmouth|6
+Dracut|6
+Grafton|6
+Greenfield|6
+Hampden-Wilbraham|6
+Hingham|6
+Hopkinton|6
+Longmeadow|6
+Methuen|6
+Milford|6
+Milton|6
+Nashoba|6
+Northampton|6
+Pentucket|6
+Randolph|6
+Scituate|6
+Sharon|6
+Southbridge|6
+Swansea|6
+Tewksbury|6
+Wayland|6
+Westborough|6
+Winchendon|6
+Abington|5
+Amesbury|5
+Ashburnham-Westminster|5
+Ashland|5
+Auburn|5
+Belchertown|5
+Blackstone-Millville|5
+Central Berkshire|5
+Dighton-Rehoboth|5
+East Longmeadow|5
+Foxborough|5
+Freetown-Lakeville|5
+Gill-Montague|5
+Groton-Dunstable|5
+Hamilton-Wenham|5
+Hudson|5
+Institutional Schools|5
+Lunenburg|5
+Lynnfield|5
+Mansfield|5
+Marblehead|5
+Medfield|5
+Middleborough|5
+North Reading|5
+Northborough|5
+Norton|5
+Pembroke|5
+Quaboag Regional|5
+Rockland|5
+Seekonk|5
+Stoneham|5
+Sudbury|5
+Swampscott|5
+Triton|5
+Watertown|5
+Weston|5
+```
