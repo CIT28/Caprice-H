@@ -184,16 +184,26 @@ WHERE "name" LIKE '%(non-op)';
 --   HAVING COUNT(s."id") >= 5
 -- ) ;
 
-.print 'The average district per-pupil expenditure last year'
-SELECT
-    AVG(per_pupil_expenditure) AS "Average District Per-Pupil Expenditure"
-FROM 
-    expenditures;
+-- .print 'The average district per-pupil expenditure last year'
+-- SELECT
+--     AVG(per_pupil_expenditure) AS "Average District Per-Pupil Expenditure"
+-- FROM 
+--     expenditures;
 
-SELECT
-    COUNT(*) AS "Number of Districts"
-FROM 
-    expenditures;
+-- SELECT
+--     COUNT(*) AS "Number of Districts"
+-- FROM 
+--     expenditures;
+
+
+.print '<----->'
+
+SELECT city, COUNT(*) AS number_of_public_schools
+FROM schools
+GROUP BY city
+ORDER BY number_of_public_schools DESC, city ASC
+LIMIT 10;
+
 
 
 .output stdout

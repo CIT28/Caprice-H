@@ -548,7 +548,7 @@ Goshen (non-op)
 ```
 ## Q3 average district Per Pupil Expenditure
 
-The goal is to find the average of district level averages, not a weighted average based on student population.
+```The goal is to find the average of district level averages, not a weighted average based on student population.
 
 sqlite> SELECT
     AVG(per_pupil_expenditure) AS "Average District Per-Pupil Expenditure"
@@ -557,5 +557,62 @@ FROM
 19528.9900252525
 sqlite> 
 This method weights each district equally, regardless of how many students they have. That’s exactly what the Legislature asked for.
+```
+## Q4 top 10 cities by public schools
+ ```
+ Identify which cities have the highest number of public schools, and display the top 10 cities based on school count.
 
-## Q3 average district Per Pupil Expenditure
+
+SELECT city
+FROM schools
+GROUP BY city;
+
+SELECT
+    city, 
+    COUNT(*) AS number_of_public_schools
+FROM 
+    schools
+GROUP BY 
+    city
+ORDER BY 
+    number_of_public_schools DESC, 
+    city ASC
+LIMIT 10;
+Springfield|71
+Worcester|49
+Dorchester|29
+Lawrence|29
+Lowell|29
+Lynn|28
+New Bedford|28
+Brockton|25
+Cambridge|20
+Fall River|20
+
+This query only returns a list of unique cities from the schools table.
+It does not include any count of how many schools are in each city.
+
+SELECT city, COUNT(*) AS number_of_public_schools
+FROM schools
+GROUP BY city;
+*forgot to add LIMIT 10;
+
+sqlite> SELECT city, COUNT(*) AS number_of_public_schools
+FROM schools
+GROUP BY city
+LIMIT 10;
+Abington|5
+Acton|8
+Acushnet|2
+Adams|2
+Agawam|6
+Allston|2
+Amesbury|5
+Amherst|5
+Andover|11
+Arlington|11
+
+This query calculates the total number of public schools in each city.
+This query builds on the first by sorting cities by the number of schools in descending order breaking ties alphabetically by city name. And limiting the result to the top 10 cities.
+
+```
