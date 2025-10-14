@@ -125,6 +125,7 @@ Parse error: near "(": syntax error
                      ^--- error here
 sqlite> 
 
+
 sqlite> SELECT "city", COUNT(*) AS "school_count"
 FROM "schools"
 GROUP BY "city"
@@ -140,3 +141,49 @@ New Bedford|28
 Brockton|25
 Cambridge|20
 Fall River|20
+
+```
+## Query 3
+*Count how many schools each district has and rank by that count.
+* Group by the non-aggregated select column (d."name"), not by a table or an alias that doesn’t exist.
+sqlite> SELECT d."name" AS "district", COUNT("id")
+FROM "districts"
+JOIN "schools"  ON s."district_id" = d."id"
+GROUP BY "name"
+ORDER BY "school_count" DESC, "district" ASC;
+Parse error: no such column: d.name
+  SELECT d."name" AS "district", COUNT("id") FROM "districts" JOIN "schools"  ON
+         ^--- error here
+
+
+sqlite> SELECT d."name" AS "district", COUNT("id") AS "school_count"
+FROM "districts" d
+JOIN "schools" ON "district_id" = d."id"
+GROUP BY s.”name"
+ORDER BY "school_count" DESC, "district" ASC;
+"  ...> 
+
+sqlite> SELECT "name" AS "district", COUNT("id") AS "school_count"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY "name"
+ORDER BY "school_count" DESC, "district" ASC;
+Parse error: ambiguous column name: name
+  SELECT "name" AS "district", COUNT("id") AS "school_count" FROM "districts" d 
+         ^--- error here
+
+sqlite> SELECT s.”name" AS "district", COUNT("id") AS "school_count"
+FROM "districts" d
+JOIN "schools" d ON d.”district_id" = d."id"
+GROUP BY d."name"
+ORDER BY "school_count" DESC, "district" ASC;
+Parse error: near "district": syntax error
+  SELECT s.”name" AS "district", COUNT("id") AS "school_count" FROM "districts
+                        ^--- error here
+
+SELECT d."name" AS "district", COUNT(s."id") AS "school_count"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY d."name"
+ORDER BY "school_count" DESC, "district" ASC;
+```

@@ -78,18 +78,35 @@
 -- );
 
 
+-- .print '<----->'
+-- .print ' top cities by number of schools'
+-- SELECT "city", COUNT(*) AS "school_count"
+-- FROM "schools"
+-- GROUP BY "city"
+-- ORDER BY "school_count" DESC, "city" ASC
+-- LIMIT 10;
+
+-- .print ‘query2 COUNT'
+
+-- SELECT COUNT(*) AS "Q2 COUNT"
+-- FROM ( SELECT "city" FROM "schools" GROUP BY "city" );
+
 .print '<----->'
-.print ' top cities by number of schools'
-SELECT "city", COUNT(*) AS "school_count"
-FROM "schools"
-GROUP BY "city"
-ORDER BY "school_count" DESC, "city" ASC
-LIMIT 10;
+.print ‘schools per district'
+SELECT d."name" AS "district", COUNT(s."id") AS "school_count"
+FROM "districts" d
+JOIN "schools" s ON s."district_id" = d."id"
+GROUP BY d."name"
+ORDER BY "school_count" DESC, "district" ASC;
 
-.print ‘query2 COUNT'
-
-SELECT COUNT(*) AS "Q2 COUNT"
-FROM ( SELECT "city" FROM "schools" GROUP BY "city" );
+.print ‘query 3 COUNT'
+SELECT COUNT(*) AS "Q3 COUNT"
+FROM (
+  SELECT d."name"
+  FROM "districts" d
+  JOIN "schools" s ON s."district_id" = d."id"
+  GROUP BY d."name"
+);
 
 .output stdout
 -- bash command sqlite3 dese.db < dese-q.sql
