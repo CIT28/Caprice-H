@@ -187,3 +187,47 @@ JOIN "schools" s ON s."district_id" = d."id"
 GROUP BY d."name"
 ORDER BY "school_count" DESC, "district" ASC;
 ```
+
+## Query 4
+```
+SELECT "id" FROM "schools" LIMIT 5;
+confirm the join key is?
+
+sqlite> SELECT "id" AS "school_id",
+       "graduated"
+FROM "schools" s
+JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+LIMIT 10;
+Parse error: ambiguous column name: id
+  SELECT "id" AS "school_id",        "graduated" FROM "schools" s JOIN "graduati
+         ^--- error here
+sqlite> 
+
+sqlite> SELECT s."id" AS "school_id",
+       gr."graduated"
+FROM "schools" 
+JOIN "graduation_rates" gr ON "school_id" = "id"
+LIMIT 10;
+Parse error: no such column: s.id
+  SELECT s."id" AS "school_id",        gr."graduated" FROM "schools"  JOIN "grad
+         ^--- error here
+sqlite> 
+
+*the two columns should match on each row.
+
+sqlite> SELECT s."id" AS "school_id",
+       gr."graduated"
+FROM "schools" s
+JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+ORDER BY gr."graduated" DESC
+LIMIT 10;
+141|100
+248|100
+429|100
+624|100
+680|100
+1248|100
+1407|100
+1598|100
+1720|100
+125|99.7

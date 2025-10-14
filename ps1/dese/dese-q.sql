@@ -91,22 +91,40 @@
 -- SELECT COUNT(*) AS "Q2 COUNT"
 -- FROM ( SELECT "city" FROM "schools" GROUP BY "city" );
 
-.print '<----->'
-.print ‘schools per district'
-SELECT d."name" AS "district", COUNT(s."id") AS "school_count"
-FROM "districts" d
-JOIN "schools" s ON s."district_id" = d."id"
-GROUP BY d."name"
-ORDER BY "school_count" DESC, "district" ASC;
+-- .print '<----->'
+-- .print ‘schools per district'
+-- SELECT d."name" AS "district", COUNT(s."id") AS "school_count"
+-- FROM "districts" d
+-- JOIN "schools" s ON s."district_id" = d."id"
+-- GROUP BY d."name"
+-- ORDER BY "school_count" DESC, "district" ASC;
 
-.print ‘query 3 COUNT'
-SELECT COUNT(*) AS "Q3 COUNT"
+-- .print ‘query 3 COUNT'
+-- SELECT COUNT(*) AS "Q3 COUNT"
+-- FROM (
+--   SELECT d."name"
+--   FROM "districts" d
+--   JOIN "schools" s ON s."district_id" = d."id"
+--   GROUP BY d."name"
+-- );
+
+.print 'the two columns we need'
+SELECT s."id" AS "school_id",
+       gr."graduated"
+FROM "schools" s
+JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+ORDER BY gr."graduated" DESC
+LIMIT 15;
+
+
+.print 'query 3 COUNT'
+SELECT COUNT(*) AS "Q4 COUNT"
 FROM (
-  SELECT d."name"
-  FROM "districts" d
-  JOIN "schools" s ON s."district_id" = d."id"
-  GROUP BY d."name"
-);
+  SELECT s."id"
+  FROM "schools" s
+  JOIN "graduation_rates" gr ON gr."school_id" = s."id"
+) ;
+
 
 .output stdout
 -- bash command sqlite3 dese.db < dese-q.sql
