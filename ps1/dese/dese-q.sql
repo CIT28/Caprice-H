@@ -62,7 +62,7 @@ WHERE "name" LIKE '%(non-op)';
 --     FROM "schools"
 --     WHERE "type" = '%Public School%'
 -- );
-.print '<----->'
+
 -- .print 'DESE query 1 Schools per type'
 
 -- SELECT "type", COUNT(*) AS "school_count"
@@ -184,6 +184,16 @@ WHERE "name" LIKE '%(non-op)';
 --   HAVING COUNT(s."id") >= 5
 -- ) ;
 
+.print 'The average district per-pupil expenditure last year'
+SELECT
+    AVG(per_pupil_expenditure) AS "Average District Per-Pupil Expenditure"
+FROM 
+    expenditures;
+
+SELECT
+    COUNT(*) AS "Number of Districts"
+FROM 
+    expenditures;
 
 
 .output stdout

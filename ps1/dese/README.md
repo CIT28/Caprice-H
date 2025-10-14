@@ -491,7 +491,7 @@ FROM "schools"
 WHERE "type" = 'Public School'
   AND "state" = 'MA';
 
-## Q2 Non-operational districts
+## Q2 Non operational districts
 ```
 *Find district names that end with “(non-op)”.
 sqlite> .print ‘districts no longer operational'
@@ -546,3 +546,16 @@ Freetown (non-op)
 Gill (non-op)
 Goshen (non-op)
 ```
+## Q3 average district Per Pupil Expenditure
+
+The goal is to find the average of district level averages, not a weighted average based on student population.
+
+sqlite> SELECT
+    AVG(per_pupil_expenditure) AS "Average District Per-Pupil Expenditure"
+FROM 
+    expenditures;
+19528.9900252525
+sqlite> 
+This method weights each district equally, regardless of how many students they have. That’s exactly what the Legislature asked for.
+
+## Q3 average district Per Pupil Expenditure
