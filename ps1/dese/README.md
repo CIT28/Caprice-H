@@ -473,3 +473,20 @@ Triton|5
 Watertown|5
 Weston|5
 ```
+
+# DESE Queries Q1–Q6 (POE)
+
+## Q1 – Public schools in MA
+
+.print '<----->'
+.print ‘names + cities of all PUBLIC schools in MA'
+SELECT "name", "city"
+FROM "schools"
+WHERE "type" = 'Public School'
+  AND "state" = 'MA';
+
+.print 'Q1 COUNT'
+SELECT COUNT(*) AS "Q1 COUNT"
+FROM "schools"
+WHERE "type" = 'Public School'
+  AND "state" = 'MA';

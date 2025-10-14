@@ -23,7 +23,18 @@
 -- SELECT * FROM "schools" LIMIT 10;
 
 -- .print '<----->'
+.print '<----->'
+.print 'names + cities of all PUBLIC schools in MA'
+SELECT "name", "city"
+FROM "schools"
+WHERE "type" = 'Public School'
+  AND "state" = 'MA';
 
+.print 'Q1 COUNT'
+SELECT COUNT(*) AS "Q1 COUNT"
+FROM "schools"
+WHERE "type" = 'Public School'
+  AND "state" = 'MA';
 
 
 -- .print 'query 1'
@@ -143,26 +154,26 @@
 --   GROUP BY "zip"
 -- );
 
-.print '<----->'
-.print 'districts that are with >=5 schools'
+-- .print '<----->'
+-- .print 'districts that are with >=5 schools'
 
-SELECT d."name" AS "district",
-       COUNT(s."id") AS "school_count"
-FROM "districts" d
-JOIN "schools" s ON s."district_id" = d."id"
-GROUP BY d."name"
-HAVING COUNT(s."id") >= 5
-ORDER BY "school_count" DESC, "district" ASC;
+-- SELECT d."name" AS "district",
+--        COUNT(s."id") AS "school_count"
+-- FROM "districts" d
+-- JOIN "schools" s ON s."district_id" = d."id"
+-- GROUP BY d."name"
+-- HAVING COUNT(s."id") >= 5
+-- ORDER BY "school_count" DESC, "district" ASC;
 
-.print 'Query 6 COUNT'
-SELECT COUNT(*) AS "Q6 COUNT"
-FROM (
-  SELECT d."name"
-  FROM "districts" d
-  JOIN "schools" s ON s."district_id" = d."id"
-  GROUP BY d."name"
-  HAVING COUNT(s."id") >= 5
-) ;
+-- .print 'Query 6 COUNT'
+-- SELECT COUNT(*) AS "Q6 COUNT"
+-- FROM (
+--   SELECT d."name"
+--   FROM "districts" d
+--   JOIN "schools" s ON s."district_id" = d."id"
+--   GROUP BY d."name"
+--   HAVING COUNT(s."id") >= 5
+-- ) ;
 
 
 
