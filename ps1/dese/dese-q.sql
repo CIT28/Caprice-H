@@ -59,23 +59,37 @@
 -- );
 
 
-.print 'Count schools per district, sort by count, show top 10'
-SELECT d."name" AS "district",
-       COUNT(s."id") AS "school_count"
-FROM "districts" d
-JOIN "schools"   s ON s."district_id" = d."id"
-GROUP BY d."name"
-ORDER BY "school_count" DESC, "district" ASC
+-- .print 'Count schools per district, sort by count, show top 10'
+-- SELECT d."name" AS "district",
+--        COUNT(s."id") AS "school_count"
+-- FROM "districts" d
+-- JOIN "schools"   s ON s."district_id" = d."id"
+-- GROUP BY d."name"
+-- ORDER BY "school_count" DESC, "district" ASC
+-- LIMIT 10;
+
+-- --  how many districts appear in the grouped result
+-- SELECT COUNT(*) AS "Q2 COUNT"
+-- FROM (
+--   SELECT d."name"
+--   FROM "districts" d
+--   JOIN "schools"   s ON s."district_id" = d."id"
+--   GROUP BY d."name"
+-- );
+
+
+.print '<----->'
+.print ' top cities by number of schools'
+SELECT "city", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "city"
+ORDER BY "school_count" DESC, "city" ASC
 LIMIT 10;
 
---  how many districts appear in the grouped result
+.print ‘query2 COUNT'
+
 SELECT COUNT(*) AS "Q2 COUNT"
-FROM (
-  SELECT d."name"
-  FROM "districts" d
-  JOIN "schools"   s ON s."district_id" = d."id"
-  GROUP BY d."name"
-);
+FROM ( SELECT "city" FROM "schools" GROUP BY "city" );
 
 .output stdout
 -- bash command sqlite3 dese.db < dese-q.sql

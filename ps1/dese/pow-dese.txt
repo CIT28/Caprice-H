@@ -1,35 +1,24 @@
 <----->
 <----->
-DESE query 1 Schools per type
-┌────────────────┬──────────────┐
-│      type      │ school_count │
-├────────────────┼──────────────┤
-│ Public School  │ 1761         │
-│ Charter School │ 76           │
-└────────────────┴──────────────┘
-DESE query 1 COUNT
-┌──────────┐
-│ Q1 COUNT │
-├──────────┤
-│ 2        │
-└──────────┘
-Count schools per district, sort by count, show top 10
+<----->
+ top cities by number of schools
 ┌─────────────┬──────────────┐
-│  district   │ school_count │
+│    city     │ school_count │
 ├─────────────┼──────────────┤
-│ Boston      │ 109          │
-│ Springfield │ 66           │
-│ Worcester   │ 46           │
-│ Lowell      │ 27           │
-│ Lynn        │ 27           │
-│ Lawrence    │ 26           │
-│ New Bedford │ 25           │
-│ Brockton    │ 24           │
-│ Newton      │ 22           │
-│ Quincy      │ 19           │
+│ Springfield │ 71           │
+│ Worcester   │ 49           │
+│ Dorchester  │ 29           │
+│ Lawrence    │ 29           │
+│ Lowell      │ 29           │
+│ Lynn        │ 28           │
+│ New Bedford │ 28           │
+│ Brockton    │ 25           │
+│ Cambridge   │ 20           │
+│ Fall River  │ 20           │
 └─────────────┴──────────────┘
+‘query2 COUNT'
 ┌──────────┐
 │ Q2 COUNT │
 ├──────────┤
-│ 399      │
+│ 381      │
 └──────────┘

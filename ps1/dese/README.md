@@ -99,3 +99,44 @@ JOIN "schools"   s ON s."district_id" = d."id"
 GROUP BY d."name"
 ORDER BY "school_count" DESC, "district" ASC
 LIMIT 10;
+
+## Query 3
+
+*find which cities have the most schools, ranked high to low.
+* Tried grouping by a non existent column districts so found and used the real column city.
+* Forgot the comma between selected columns, SQL needs SELECT "city", COUNT(*) ....
+* Verified column names with .schema and reran with proper GROUP BY "city".
+sqlite> SELECT "city", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY districts
+ORDER BY "school_count"
+LIMIT 10;
+Parse error: no such column: districts
+  OUNT(*) AS "school_count" FROM "schools" GROUP BY districts ORDER BY "school_c
+                                      error here ---^
+sqlite> 
+sqlite> SELECT "city" COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "city"
+ORDER BY "school_count" DESC, "city" ASC
+LIMIT 10;
+Parse error: near "(": syntax error
+  SELECT "city" COUNT(*) AS "school_count" FROM "schools" GROUP BY "city" ORDER 
+                     ^--- error here
+sqlite> 
+
+sqlite> SELECT "city", COUNT(*) AS "school_count"
+FROM "schools"
+GROUP BY "city"
+ORDER BY "school_count" DESC, "city" ASC
+LIMIT 10;
+Springfield|71
+Worcester|49
+Dorchester|29
+Lawrence|29
+Lowell|29
+Lynn|28
+New Bedford|28
+Brockton|25
+Cambridge|20
+Fall River|20
