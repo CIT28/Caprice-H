@@ -196,14 +196,21 @@ WHERE "name" LIKE '%(non-op)';
 --     expenditures;
 
 
-.print '<----->'
+-- .print '<----->'
+
+-- SELECT city, COUNT(*) AS number_of_public_schools
+-- FROM schools
+-- GROUP BY city
+-- ORDER BY number_of_public_schools DESC, city ASC
+-- LIMIT 10;
+
+.print 'cities with 3 or fewer public schools'
 
 SELECT city, COUNT(*) AS number_of_public_schools
 FROM schools
 GROUP BY city
 ORDER BY number_of_public_schools DESC, city ASC
 LIMIT 10;
-
 
 
 .output stdout

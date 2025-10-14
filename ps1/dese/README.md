@@ -616,3 +616,40 @@ This query calculates the total number of public schools in each city.
 This query builds on the first by sorting cities by the number of schools in descending order breaking ties alphabetically by city name. And limiting the result to the top 10 cities.
 
 ```
+
+## Q5 cities with <= public schools
+```
+We need cities with 3 or fewer public schools, show city name and number of schools and sort by school count desc, then alphabetically.
+
+SELECT city
+FROM schools;
+I need to understand what cities exist in the dataset.
+
+Group by city to remove duplicates and prepare for aggs.
+SELECT city
+FROM schools
+GROUP BY city;
+
+sqlite> SELECT 
+    city, 
+    COUNT(*) AS number_of_public_schools
+FROM 
+    schools;
+Worcester|1837
+
+sqlite> SELECT 
+    city, 
+    COUNT(*) AS number_of_public_schools
+FROM schools
+GROUP BY city
+HAVING 
+    COUNT(*) <= 3
+ORDER BY 
+    number_of_public_schools    
+WHERE city ASC;
+Parse error: near "WHERE": syntax error
+  ) <= 3 ORDER BY      number_of_public_schools     WHERE city ASC;
+                                      error here ---^
+
+```                                     
+## Q6 100% gradualtion schools
