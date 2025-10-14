@@ -204,14 +204,37 @@ WHERE "name" LIKE '%(non-op)';
 -- ORDER BY number_of_public_schools DESC, city ASC
 -- LIMIT 10;
 
-.print 'cities with 3 or fewer public schools'
+-- .print 'cities with 3 or fewer public schools'
 
-SELECT city, COUNT(*) AS number_of_public_schools
-FROM schools
-GROUP BY city
-ORDER BY number_of_public_schools DESC, city ASC
-LIMIT 10;
+-- SELECT city, COUNT(*) AS number_of_public_schools
+-- FROM schools
+-- GROUP BY city
+-- ORDER BY number_of_public_schools DESC, city ASC
+-- LIMIT 10;
 
+
+SELECT 
+    s.name
+FROM 
+    graduation_rates g
+JOIN 
+    schools s ON g.school_id = s.id
+WHERE 
+    g.dropped = 0 AND g.excluded = 0;
+
+
+
+SELECT COUNT(*) AS "O6 COUNT"
+FROM (
+    SELECT 
+        sch.name
+    FROM 
+        graduation_rates g
+    JOIN 
+        schools sch ON g.school_id = sch.id
+    WHERE 
+        g.dropped = 0 AND g.excluded = 0
+);
 
 .output stdout
 -- bash command sqlite3 dese.db < dese-q.sql

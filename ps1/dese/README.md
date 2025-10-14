@@ -653,3 +653,219 @@ Parse error: near "WHERE": syntax error
 
 ```                                     
 ## Q6 100% gradualtion schools
+```
+Find all schools public or charter that reported a 100% graduation rate.
+
+SELECT * FROM graduation_rates;
+*checking which columns exists before writing query
+sqlite> SELECT * FROM graduation_rates;
+1|1|98.8|1.2|0
+2|3|93.8|3.7|0
+3|7|93.2|0|0
+4|8|98.8|0.7|0
+5|19|98.6|0|0
+6|21|92.5|6.5|0
+7|30|93.6|2.8|0
+8|31|85.7|14.3|0
+9|37|92.1|1.7|0
+10|39|98|0.2|0
+11|49|68.6|2|0
+12|50|96.7|0.3|0
+13|63|95.9|3|0
+14|66|97.2|2.3|0
+15|71|98.5|1.1|0
+16|73|72.4|9.2|0
+17|76|96.5|1.2|0
+18|78|68|14|0
+19|79|94|3.4|0
+20|90|92.4|1.7|0
+21|94|80|2.2|0
+22|96|95.1|2.4|0
+23|101|82.5|5.3|0
+24|109|95.9|4.1|0
+25|110|98.4|1.6|0
+26|114|97.1|1.7|0
+27|120|94.7|1.3|0
+28|123|66.7|0|0
+29|125|99.7|0|0
+30|135|93.5|3.2|0
+31|136|91.3|7.1|0
+32|141|100|0|0
+33|143|92.9|1.6|0
+34|150|95.6|1.6|0
+35|158|99.7|0|0
+36|160|94.7|1.1|0
+37|164|98.5|0|0
+38|167|92.1|0|0
+SELECT school_name, graduation_rate FROM graduation_rates;
+
+sqlite> SELECT school_name, graduation_rate FROM graduation_rates;
+Parse error: no such column: school_name
+  SELECT school_name, graduation_rate FROM graduation_rates;
+         ^--- error here
+sqlite> 
+
+SELECT * FROM graduation_rates LIMIT 1;
+1|1|98.8|1.2|0
+
+
+SELECT school_id
+FROM graduation_rates
+WHERE dropped = 0 AND excluded = 0;
+* here I want to find school IDs where no students dropped or excluded
+This gives IDs of schools where all students graduated
+
+I want to join to get school names
+
+sqlite> SELECT name
+FROM graduation_rates
+JOIN schools ON school_id = s.id
+WHERE dropped = 0 AND excluded = 0;
+Parse error: no such column: s.id
+sqlite> 
+
+
+SELECT s.name
+FROM graduation_rates g
+JOIN schools s ON g.school_id = s.id
+WHERE g.dropped = 0 AND g.excluded = 0;
+Academy Of the Pacific Rim Charter Public School
+Advanced Math and Science Academy Charter School
+Keough Memorial Academy
+Belmont High
+Tahanto Regional High
+Blackstone Valley
+Blue Hills Regional Vocational Technical
+Another Course To College
+Boston Latin Academy
+O'Bryant School of Math & Science
+Quincy Upper School
+Cohasset High School
+Community Charter School of Cambridge
+Concord Carlisle High
+Dover-Sherborn Regional High
+Edward M. Kennedy Academy for Health Careers: A Horace Mann Charter Public School
+Excel Academy Charter School
+Francis W. Parker Charter Essential School
+Global Learning Charter Public School
+Groton Dunstable Regional
+Hanover High
+
+*when I get stuck I always like to refrenece the schema.
+sqlite> .schema
+CREATE TABLE IF NOT EXISTS "districts" (
+    "id" INTEGER,
+    "name" TEXT,
+    "type" TEXT,
+    "city" TEXT,
+    "state" TEXT,
+    "zip" TEXT,
+    PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "schools" (
+    "id" INTEGER,
+    "district_id" INTEGER,
+    "name" TEXT,
+    "type" TEXT,
+    "city" TEXT,
+    "state" TEXT,
+    "zip" TEXT,
+    PRIMARY KEY("id"),
+    FOREIGN KEY("district_id") REFERENCES "districts"("id")
+);
+CREATE TABLE IF NOT EXISTS "graduation_rates" (
+    "id" INTEGER,
+    "school_id" INTEGER,
+    "graduated" NUMERIC,
+    "dropped" NUMERIC,
+    "excluded" NUMERIC,
+    PRIMARY KEY("id"),
+    FOREIGN KEY("school_id") REFERENCES "schools"("id")
+);
+CREATE TABLE IF NOT EXISTS "expenditures" (
+    "id" INTEGER,
+    "district_id" INTEGER,
+    "pupils" INTEGER,
+    "per_pupil_expenditure" NUMERIC,
+    PRIMARY KEY("id"),
+    FOREIGN KEY("district_id") REFERENCES "districts"("id")
+);
+CREATE TABLE IF NOT EXISTS "staff_evaluations" (
+    "id" INTEGER,
+    "district_id" INTEGER,
+    "evaluated" NUMERIC,
+    "exemplary" NUMERIC,
+    "proficient" NUMERIC,
+    "needs_improvement" NUMERIC,
+    "unsatisfactory" NUMERIC,
+    PRIMARY KEY("id"),
+    FOREIGN KEY("district_id") REFERENCES "districts"("id")
+);
+
+We need school names and graduation rate which 100% means no students dropped or were excluded.
+
+sqlite> SELECT 
+    g.name
+FROM 
+    graduation_rates s
+JOIN 
+    schools ON g.school_id = s.id
+WHERE 
+    g.dropped = 0 AND g.excluded = 0;
+Parse error: no such column: g.name
+  SELECT      g.name FROM      graduation_rates s JOIN      schools ON g.school_
+              ^--- error here
+
+
+Combine both tables to return school names.
+
+SELECT 
+    s.name
+FROM 
+    graduation_rates g
+JOIN 
+    schools s ON g.school_id = s.id
+WHERE 
+    g.dropped = 0 AND g.excluded = 0;
+Academy Of the Pacific Rim Charter Public School
+Advanced Math and Science Academy Charter School
+Keough Memorial Academy
+Belmont High
+Tahanto Regional High
+Blackstone Valley
+Blue Hills Regional Vocational Technical
+Another Course To College
+Boston Latin Academy
+O'Bryant School of Math & Science
+Quincy Upper School
+Cohasset High School
+Community Charter School of Cambridge
+Concord Carlisle High
+Dover-Sherborn Regional High
+Edward M. Kennedy Academy for Health Careers: A Horace Mann Charter Public School
+Excel Academy Charter School
+Francis W. Parker Charter Essential School
+Global Learning Charter Public School
+Groton Dunstable Regional
+Hanover High
+Bromfield
+Hopkinton High
+Ipswich High
+Lenox Memorial High
+Center For Technical Education Innovation
+Lynnfield High
+Ma Academy for Math and Science School
+Map Academy Charter School
+New Heights Charter School of Brockton
+Paulo Freire Social Justice Charter School
+Pioneer Charter School of Science
+Pioneer Charter School of Science II
+Pioneer Valley Regional
+Salem Academy Charter School
+Sizer School: A North Central Charter Essential School
+Gateway to College at Springfield Technical Community College
+Upper Cape Cod Vocational Technical
+Weston High
+Westwood High
+University Pk Campus School
+```
