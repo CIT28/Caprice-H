@@ -3,33 +3,50 @@
 .mode box
 -- final query only
 
-.print '<--Query 2 Cal Ripken jr salary by year-->'
+.print '<--Query 3 Ken Griffey Jr and HR by year-->'
 SELECT
-  s."year"   AS "year",
-  s."salary" AS "salary"
-FROM "salaries" s
-JOIN "players" p ON p."id" = s."player_id"
-WHERE p."first_name" = 'Cal'
-  AND p."last_name"  = 'Ripken'
-  AND p."birth_year" = 1960
-ORDER BY s."year" DESC;
+  pf."year" AS "year",
+  pf."HR"   AS "home runs"
+FROM "performances" pf
+JOIN "players" p ON p."id" = pf."player_id"
+WHERE p."first_name" = 'Ken'
+  AND p."last_name"  = 'Griffey'
+  AND p."birth_year" = 1969
+ORDER BY pf."year" DESC;
 
-.print '<--Query 2 count-->'
+.print '<--Query 3 count-->'
 SELECT COUNT(*) FROM (
-  SELECT s."year"
-  FROM "salaries" s
-  JOIN "players" p ON p."id" = s."player_id"
-  WHERE p."first_name" = 'Cal'
-    AND p."last_name"  = 'Ripken'
-    AND p."birth_year" = 1960
+  SELECT pf."year"
+  FROM "performances" pf
+  JOIN "players" p ON p."id" = pf."player_id"
+  WHERE p."first_name" = 'Ken'
+    AND p."last_name"  = 'Griffey'
+    AND p."birth_year" = 1969
 );
 
 
 
 
+-- .print '<--Query 2 Cal Ripken jr salary by year-->'
+-- SELECT
+--   s."year"   AS "year",
+--   s."salary" AS "salary"
+-- FROM "salaries" s
+-- JOIN "players" p ON p."id" = s."player_id"
+-- WHERE p."first_name" = 'Cal'
+--   AND p."last_name"  = 'Ripken'
+--   AND p."birth_year" = 1960
+-- ORDER BY s."year" DESC;
 
-
-
+-- .print '<--Query 2 count-->'
+-- SELECT COUNT(*) FROM (
+--   SELECT s."year"
+--   FROM "salaries" s
+--   JOIN "players" p ON p."id" = s."player_id"
+--   WHERE p."first_name" = 'Cal'
+--     AND p."last_name"  = 'Ripken'
+--     AND p."birth_year" = 1960
+-- );
 
 
 -- .print '<--Query 1 avg salary by year-->'
