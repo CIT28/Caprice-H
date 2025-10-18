@@ -362,3 +362,112 @@ I switched the sort to DESC and returned exactly two columns: year and home runs
 # Problem 4
 
 # Problem 5
+
+
+
+
+
+# Week 11 — Independent Work (Attendance)
+
+## Query 1 - Players born in 1969
+```
+Thinking: just listing player names (first + last) where `birth_year = 1969`, sorted alphabetically by last name then first name.
+ — no joins, no aggregates, nothing fancy.
+- I only return the two columns I actually need: `first_name`, `last_name`.
+- Order looks clean (`last_name`, then `first_name`).
+
+- Kept the filter simple (`birth_year = 1969`), not a string.
+- Count uses the same subquery as the result, so it’s the same.
+
+sqlite> SELECT
+  p."first_name",
+  p."last_name",
+  s."year"
+FROM "salaries" s
+JOIN "players" p ON p."id" = s."player_id"
+LIMIT 10;
+Len|Barker|1985
+Steve|Bedrosian|1985
+Bruce|Benedict|1985
+Rick|Camp|1985
+Rick|Cerone|1985
+Chris|Chambliss|1985
+Jeff|Dedmon|1985
+Terry|Forster|1985
+Gene|Garber|1985
+Terry|Harper|1985
+
+
+## Query 2 — JOIN: first 10 player–year rows
+What I’m doing: a tiny join from `salaries` to `players` so I can show a player’s `first_name`, `last_name`, and the `year` from the salary row. I cap it at 10 rows with `LIMIT 10`.
+ — just a simple clean example of linking tables.
+
+- Having to make sure my join key is correct: `players.id` -`salaries.player_id`.
+- Remembered the `ON`.
+- Didn’t use `SELECT *`.
+- Count wrapper mirrors the same query/limit, so numbers line up.
+ 
+ 
+ Here I skimmed players to see the columns I’ll need (id, first_name, last_name).
+sqlite> SELECT
+  "id",
+  "first_name",
+  "last_name"
+FROM "players"
+LIMIT 10;
+2|Hank|Aaron
+3|Tommie|Aaron
+4|Don|Aase
+5|Andy|Abad
+7|John|Abadie
+8|Ed|Abbaticchio
+9|Bert|Abbey
+10|Charlie|Abbey
+13|Dan|Abbott
+14|Fred|Abbott
+I skimmed salaries to confirm the join key (player_id) and the year I want.
+sqlite> SELECT
+  "player_id",
+  "year"
+FROM "salaries"
+LIMIT 10;
+863|1985
+1171|1985
+1272|1985
+2758|1985
+3096|1985
+3123|1985
+4482|1985
+6056|1985
+6432|1985
+7747|1985
+Join on players.id = salaries.player_id, return only name + year, limit to 10, and wrap with the count.
+sqlite> SELECT
+  p."first_name",
+  p."last_name",
+  p.”year"
+FROM "salaries" p
+JOIN "players" s ON p."id" = s."player_id"
+LIMIT 10;
+"  ...> 
+Hick up on alias.
+sqlite> SELECT
+  p."first_name",
+  p."last_name",
+  s."year"
+FROM "salaries" s
+JOIN "players" p ON p."id" = s."player_id"
+LIMIT 10;
+Len|Barker|1985
+Steve|Bedrosian|1985
+Bruce|Benedict|1985
+Rick|Camp|1985
+Rick|Cerone|1985
+Chris|Chambliss|1985
+Jeff|Dedmon|1985
+Terry|Forster|1985
+Gene|Garber|1985
+Terry|Harper|1985
+
+
+```
