@@ -222,7 +222,143 @@ ORDER BY s."year" DESC;
 1985|800000
 ```
 # Problem 3
+```
+Goal- Year plus HR for Ken Griffey Jr sorted DESC, 2 columns, 13 rows.
+First I checked the players table for “Ken Griffey” and, sure enough, there are multiple matches. 
+That tells me I can’t rely on name alone or I’ll mix Jr. and Sr. together.
+sqlite> SELECT "id","first_name","last_name","birth_year"
+FROM "players"
+WHERE "first_name"='Ken' AND "last_name"='Griffey';
+7265|Ken|Griffey|1950
+7266|Ken|Griffey|1969
+Next I joined performances and players to peek at the HR rows for all Griffeys. 
+This was just a check to see what years exist and confirm the columns I’ll need like we done previously.
+sqlite> SELECT pf."player_id", pf."year"
+FROM "performances" pf
+JOIN "players" p ON p."id"=pf."player_id"
+WHERE p."first_name"='Ken' AND p."last_name"='Griffey'
+ORDER BY pf."year" ASC;
+7265|1973
+7265|1974
+7265|1975
+7265|1976
+7265|1977
+7265|1978
+7265|1979
+7265|1980
+7265|1981
+7265|1982
+7265|1983
+7265|1984
+7265|1985
+7265|1986
+7265|1986
+7265|1987
+7265|1988
+7265|1988
+7265|1989
+7266|1989
+7265|1990
+7265|1990
+7266|1990
+7265|1991
+7266|1991
+7266|1992
+7266|1993
+7266|1994
+7266|1995
+7266|1996
+7266|1997
+7266|1998
+7266|1999
+7266|2000
+7266|2001
+I have forgot the hr table!
+sqlite> SELECT pf."player_id", pf."year", pf."HR"
+FROM "performances" pf
+JOIN "players" p ON p."id"=pf."player_id"
+WHERE p."first_name"='Ken' AND p."last_name"='Griffey'
+ORDER BY pf."year" ASC;
+7265|1973|3
+7265|1974|2
+7265|1975|4
+7265|1976|6
+7265|1977|12
+7265|1978|10
+7265|1979|8
+7265|1980|13
+7265|1981|2
+7265|1982|12
+7265|1983|11
+7265|1984|7
+7265|1985|10
+7265|1986|9
+7265|1986|12
+7265|1987|14
+7265|1988|2
+7265|1988|2
+7265|1989|8
+7266|1989|16
+7265|1990|1
+7265|1990|3
+7266|1990|22
+7265|1991|1
+7266|1991|22
+7266|1992|27
+7266|1993|45
+7266|1994|40
+7266|1995|17
+7266|1996|49
+7266|1997|56
+7266|1998|56
+7266|1999|48
+7266|2000|40
+7266|2001|22
+To isolate Jr I filtered on birth_year = 1969. I ran it ascending first so I could scan the career timeline like we done with the previous problem, and made sure the numbers looked good. The count came out to 13 rows, which matches the question.
+sqlite> SELECT
+  pf."year" AS "year",
+  pf."HR"   AS "home runs"
+FROM "performances" pf
+JOIN "players" x ON p."id" = pf."player_id" 
+WHERE p."first_name"='Ken' AND p."last_name"='Griffey' AND p."birth_year"=1969
+ORDER BY pf."year" DESC;
+Parse error: no such column: p.first_name
+  OIN "players" x ON p."id" = pf."player_id"  WHERE p."first_name"='Ken' AND p."
+                                      error here ---^
+sqlite> SELECT
+  pf."year" AS year,
+  pf."HR"   AS home runs
+FROM "performances" pf
+JOIN "players" p ON p."id"=pf."player_id"
+WHERE p."first_name"='Ken' AND p."last_name"='Griffey' AND p."birth_year"=1969
+ORDER BY pf."year" DESC;
+Parse error: near "runs": syntax error
+  SELECT   pf."year" AS year,   pf."HR"   AS home runs FROM "performances" pf JO
+                                    error here ---^
 
+sqlite> SELECT
+  pf."year" AS "year",
+  pf."HR"   AS "home runs"
+FROM "performances" pf
+JOIN "players" p ON p."id"=pf."player_id"
+WHERE p."first_name"='Ken' AND p."last_name"='Griffey' AND p."birth_year"=1969
+ORDER BY pf."year" DESC;
+2001|22
+2000|40
+1999|48
+1998|56
+1997|56
+1996|49
+1995|17
+1994|40
+1993|45
+1992|27
+1991|22
+1990|22
+1989|16
+
+I switched the sort to DESC and returned exactly two columns: year and home runs. The final count is still 13, so it meets the requirement.
+```
 # Problem 4
 
 # Problem 5
