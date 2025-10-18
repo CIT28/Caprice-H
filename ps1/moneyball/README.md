@@ -1,5 +1,5 @@
 # Problem 1
-```
+
 make sure I'm grouping on the correct column and know the row count expectation.
 SELECT DISTINCT "year" FROM "salaries" ORDER BY "year" ASC;
 1985
@@ -95,9 +95,9 @@ SELECT
 FROM "salaries"
 GROUP BY "year"
 ORDER BY "year" DESC;
-```
+
 # Problem 2
-```
+
 I need to find all Cal Ripken records, identify candidates
 sqlite> SELECT "id","first_name","last_name"
 FROM "players"
@@ -220,9 +220,9 @@ ORDER BY s."year" DESC;
 1987|1350000
 1986|1150000
 1985|800000
-```
+
 # Problem 3
-```
+
 Goal- Year plus HR for Ken Griffey Jr sorted DESC, 2 columns, 13 rows.
 First I checked the players table for “Ken Griffey” and, sure enough, there are multiple matches. 
 That tells me I can’t rely on name alone or I’ll mix Jr. and Sr. together.
@@ -358,7 +358,7 @@ ORDER BY pf."year" DESC;
 1989|16
 
 I switched the sort to DESC and returned exactly two columns: year and home runs. The final count is still 13, so it meets the requirement.
-```
+
 # Problem 4
 
 # Problem 5

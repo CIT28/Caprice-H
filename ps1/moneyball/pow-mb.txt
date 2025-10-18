@@ -1,4 +1,4 @@
-<--Query 1 average player salary by year-->
+<--Query 1 avg salary by year-->
 ┌──────┬────────────────┐
 │ year │ average salary │
 ├──────┼────────────────┤
@@ -26,11 +26,3 @@
 ├────────────┤
 │ 17         │
 └────────────┘
-<--Query 1 count-->
-┌────────────┐
-│ P(2)_count │
-├────────────┤
-│ 17         │
-└────────────┘
-<--Query Variation-->
-<--Query variation count-->
