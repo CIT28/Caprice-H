@@ -1,55 +1,36 @@
-<--Tables-->
-performances  players       salaries      teams       
-<--Schema-->
-CREATE TABLE IF NOT EXISTS "players" (
-    "id" INTEGER,
-    "first_name" TEXT,
-    "last_name" TEXT,
-    "bats" TEXT,
-    "throws" TEXT,
-    "weight" INTEGER,
-    "height" INTEGER,
-    "debut" NUMERIC,
-    "final_game" NUMERIC,
-    "birth_year" INTEGER,
-    "birth_month" INTEGER,
-    "birth_day" INTEGER,
-    "birth_city" TEXT,
-    "birth_state" TEXT,
-    "birth_country" TEXT,
-    PRIMARY KEY("id")
-);
-CREATE TABLE IF NOT EXISTS "teams" (
-    "id" INTEGER,
-    "year" INTEGER,
-    "name" TEXT,
-    "park" TEXT,
-    PRIMARY KEY("id")
-);
-CREATE TABLE IF NOT EXISTS "salaries" (
-    "id" INTEGER,
-    "player_id" INTEGER,
-    "team_id" INTEGER,
-    "year" INTEGER,
-    "salary" INTEGER,
-    PRIMARY KEY("id"),
-    FOREIGN KEY("player_id") REFERENCES "players"("id"),
-    FOREIGN KEY("team_id") REFERENCES "teams"("id")
-);
-CREATE TABLE IF NOT EXISTS "performances" (
-    "id" INTEGER,
-    "player_id" INTEGER,
-    "team_id" INTEGER,
-    "year" INTEGER,
-    "G" INTEGER,
-    "AB" INTEGER,
-    "H" INTEGER,
-    "2B" INTEGER,
-    "3B" INTEGER,
-    "HR" INTEGER,
-    "RBI" INTEGER,
-    "SB" INTEGER,
-    PRIMARY KEY("id"),
-    FOREIGN KEY("player_id") REFERENCES "players"("id"),
-    FOREIGN KEY("team_id") REFERENCES "teams"("id")
-);
+<--Query 1 average player salary by year-->
+┌──────┬────────────────┐
+│ year │ average salary │
+├──────┼────────────────┤
+│ 2001 │ 2279841.06     │
+│ 2000 │ 1992984.57     │
+│ 1999 │ 1485316.85     │
+│ 1998 │ 1280844.56     │
+│ 1997 │ 1218687.44     │
+│ 1996 │ 1027909.29     │
+│ 1995 │ 964979.07      │
+│ 1994 │ 1049588.56     │
+│ 1993 │ 976966.56      │
+│ 1992 │ 1047520.58     │
+│ 1991 │ 894961.19      │
+│ 1990 │ 511973.69      │
+│ 1989 │ 506323.08      │
+│ 1988 │ 453171.08      │
+│ 1987 │ 434729.47      │
+│ 1986 │ 417147.04      │
+│ 1985 │ 476299.45      │
+└──────┴────────────────┘
+<--Query 1 count-->
+┌────────────┐
+│ P(1)_count │
+├────────────┤
+│ 17         │
+└────────────┘
+<--Query 1 count-->
+┌────────────┐
+│ P(2)_count │
+├────────────┤
+│ 17         │
+└────────────┘
+<--Query Variation-->
+<--Query variation count-->
