@@ -3,28 +3,51 @@
 .mode box
 -- final query only
 
-.print '<--Query 4 50 lowest-paid players in 2001-->'
+.print '<--Query 5 teams Satchel Paige played for-->'
 SELECT
-  p."first_name",
-  p."last_name",
-  s."salary"
-FROM "salaries" s
-JOIN "players"  p ON p."id" = s."player_id"
-WHERE s."year" = 2001
-ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
-LIMIT 50;
+  t."name" AS "team"
+FROM "teams" t
+JOIN "performances" pf ON pf."team_id" = t."id"
+JOIN "players"      p  ON p."id"       = pf."player_id"
+WHERE p."last_name" = 'Paige'
+  AND (p."first_name" = 'Satchel' OR p."first_name" = 'Leroy')
+GROUP BY t."name"
+ORDER BY t."name" ASC;
 
-.print '<--Query 4 count-->'
+.print '<--Query 5 count-->'
 SELECT COUNT(*) FROM (
-  SELECT 1
-  FROM "salaries" s
-  JOIN "players"  p ON p."id" = s."player_id"
-  WHERE s."year" = 2001
-  ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
-  LIMIT 50
+  SELECT t."name"
+  FROM "teams" t
+  JOIN "performances" pf ON pf."team_id" = t."id"
+  JOIN "players"      p  ON p."id"       = pf."player_id"
+  WHERE p."last_name" = 'Paige'
+    AND (p."first_name" = 'Satchel' OR p."first_name" = 'Leroy')
+  GROUP BY t."name"
 );
 
 
+
+
+-- .print '<--Query 4 50 lowest-paid players in 2001-->'
+-- SELECT
+--   p."first_name",
+--   p."last_name",
+--   s."salary"
+-- FROM "salaries" s
+-- JOIN "players"  p ON p."id" = s."player_id"
+-- WHERE s."year" = 2001
+-- ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
+-- LIMIT 50;
+
+-- .print '<--Query 4 count-->'
+-- SELECT COUNT(*) FROM (
+--   SELECT 1
+--   FROM "salaries" s
+--   JOIN "players"  p ON p."id" = s."player_id"
+--   WHERE s."year" = 2001
+--   ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
+--   LIMIT 50
+-- );
 
 -- .print '<--Query 3 Ken Griffey Jr and HR by year-->'
 -- SELECT

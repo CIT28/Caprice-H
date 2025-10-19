@@ -490,11 +490,63 @@ I joined salaries to players to list each 2001 salary with the player’s name, 
 Then I ordered by salary, first name, last name , player ID, applied LIMIT 50.
 ```
 # Problem 5
+Goal
+Make a one-column list of every team Satchel Paige played for.
+ The result should just be team names and it should come out to 3 rows.
+I want to find Satchel Paige in players
+sqlite> SELECT "id","first_name","last_name","birth_year"
+FROM "players"
+WHERE "first_name"='Satchel' AND "last_name"='Paige';
+14190|Satchel|Paige|1906
 
+sqlite> SELECT "player_id","team_id","year"
+FROM "salaries"
+WHERE "player_id" IN (
+  SELECT "id" FROM "players"
+  WHERE "first_name"='Satchel' AND "last_name"='Paige'
+)
+ORDER BY "year" ASC;
+Satchel doesn’t have salary rows, so joining through salaries returns nothing.
 
+sqlite> SELECT "player_id","team_id","year"
+FROM "performances"
+WHERE "player_id" IN (
+  SELECT "id" FROM "players"
+  WHERE "last_name"='Paige'
+);
+14189|46|1911
+14190|46|1948
+14190|46|1949
+14190|120|1951
+14190|120|1952
+14190|120|1953
+14190|64|1965
+Performances does have his seasons, so I pull the raw team_id + year here to confirm there’s data to map to teams.
+sqlite> SELECT
+  t."name" AS "team"
+FROM "teams" t
+JOIN "performances" pf ON pf."team_id" = t."id"
+JOIN "players"      p  ON t.”id"       = pf."player_id"
+WHERE p."last_name" = 'Paige'
+  AND (p."first_name" = 'Satchel' OR t.”first_name" = 'Leroy')
+GROUP BY t."name”;
+"  ...> 
+Forgot the order by and some hickups on the alias.
+sqlite> SELECT
+  t."name" AS "team"
+FROM "teams" t
+JOIN "performances" pf ON pf."team_id" = t."id"
+JOIN "players"      p  ON p."id"       = pf."player_id"
+WHERE p."last_name" = 'Paige'
+  AND (p."first_name" = 'Satchel' OR p."first_name" = 'Leroy')
+GROUP BY t."name"
+ORDER BY t."name" ASC;
+Cleveland Indians
+Kansas City Athletics
+St. Louis Browns
 
-
-
+I ended up joining performances, teams, players, filtered for Paige, and then grouped by team name so each team shows up once. 
+```
 # Week 11 — Independent Work (Attendance)
 
 ## Query 1 - Players born in 1969
