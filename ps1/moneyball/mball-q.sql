@@ -3,28 +3,49 @@
 .mode box
 -- final query only
 
-.print '<--Query 3 Ken Griffey Jr and HR by year-->'
+.print '<--Query 4 50 lowest-paid players in 2001-->'
 SELECT
-  pf."year" AS "year",
-  pf."HR"   AS "home runs"
-FROM "performances" pf
-JOIN "players" p ON p."id" = pf."player_id"
-WHERE p."first_name" = 'Ken'
-  AND p."last_name"  = 'Griffey'
-  AND p."birth_year" = 1969
-ORDER BY pf."year" DESC;
+  p."first_name",
+  p."last_name",
+  s."salary"
+FROM "salaries" s
+JOIN "players"  p ON p."id" = s."player_id"
+WHERE s."year" = 2001
+ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
+LIMIT 50;
 
-.print '<--Query 3 count-->'
+.print '<--Query 4 count-->'
 SELECT COUNT(*) FROM (
-  SELECT pf."year"
-  FROM "performances" pf
-  JOIN "players" p ON p."id" = pf."player_id"
-  WHERE p."first_name" = 'Ken'
-    AND p."last_name"  = 'Griffey'
-    AND p."birth_year" = 1969
+  SELECT 1
+  FROM "salaries" s
+  JOIN "players"  p ON p."id" = s."player_id"
+  WHERE s."year" = 2001
+  ORDER BY s."salary" ASC, p."first_name" ASC, p."last_name" ASC, p."id" ASC
+  LIMIT 50
 );
 
 
+
+-- .print '<--Query 3 Ken Griffey Jr and HR by year-->'
+-- SELECT
+--   pf."year" AS "year",
+--   pf."HR"   AS "home runs"
+-- FROM "performances" pf
+-- JOIN "players" p ON p."id" = pf."player_id"
+-- WHERE p."first_name" = 'Ken'
+--   AND p."last_name"  = 'Griffey'
+--   AND p."birth_year" = 1969
+-- ORDER BY pf."year" DESC;
+
+-- .print '<--Query 3 count-->'
+-- SELECT COUNT(*) FROM (
+--   SELECT pf."year"
+--   FROM "performances" pf
+--   JOIN "players" p ON p."id" = pf."player_id"
+--   WHERE p."first_name" = 'Ken'
+--     AND p."last_name"  = 'Griffey'
+--     AND p."birth_year" = 1969
+-- );
 
 
 -- .print '<--Query 2 Cal Ripken jr salary by year-->'

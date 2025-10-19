@@ -360,7 +360,135 @@ ORDER BY pf."year" DESC;
 I switched the sort to DESC and returned exactly two columns: year and home runs. The final count is still 13, so it meets the requirement.
 
 # Problem 4
+```
+Goal is to find the 50 lowest paid players in 2001, returning three columns first name, last name, salary. 
+Sort by salary ASC if salaries tie, sort by first name, then last name; if those also tie.
+I want to know what years exist in salaries?
 
+SELECT DISTINCT "year"
+FROM "salaries"
+ORDER BY "year" ASC;
+1985
+1986
+1987
+1988
+1989
+1990
+1991
+1992
+1993
+1994
+1995
+1996
+1997
+1998
+1999
+2000
+2001
+I want to now count salary rows for 2001
+SELECT COUNT(*) AS rows_2001
+FROM "salaries"
+WHERE "year" = 2001;
+860
+I want to see lowest 10 salaries in 2001
+SELECT "player_id", "salary"
+FROM "salaries"
+WHERE "year" = 2001
+ORDER BY "salary" ASC
+LIMIT 10;
+5260|200000
+9505|200000
+1455|200000
+16882|200000
+17609|200000
+19405|200000
+6689|200000
+15842|200000
+3963|200000
+8371|200000
+sqlite> SELECT COUNT(*) FROM (
+  SELECT s."player_id"
+  FROM "salaries" s
+  JOIN "players" p ON p."id" = p.”player_id"
+  WHERE p.”year" = 2001
+  ORDER BY
+    s."salary" ASC,
+    p."first_name" ASC,
+    p."last_name"  ASC,
+  LIMIT 50
+);
+Parse error: near ""
+  WHERE p.”year"": syntax error
+  s" s   JOIN "players" p ON p."id" = p.”player_id"   WHERE p.”year" = 2001 
+                                      error here ---^
+
+  Messup on the alias!
+  sqlite> SELECT
+  p."first_name",
+  p."last_name",
+  s."salary"
+FROM "salaries" s
+JOIN "players" p ON p."id" = s."player_id"
+WHERE s."year" = 2001
+ORDER BY
+  s."salary" ASC, 
+  p."first_name" ASC,
+  p."last_name"  ASC, 
+  p."id"         ASC 
+LIMIT 50;
+Albert|Pujols|200000
+Andy|Thompson|200000
+Ben|Sheets|200000
+Brad|Voyles|200000
+Brandon|Inge|200000
+Chris|Michalak|200000
+Chris|Reitsma|200000
+Chris|Seelbach|200000
+Christian|Parker|200000
+Courtney|Duncan|200000
+D'Angelo|Jimenez|200000
+Damian|Rolls|200000
+Damon|Minor|200000
+David|Eckstein|200000
+Donaldo|Mendez|200000
+Eddie|Oropesa|200000
+Gary|Glover|200000
+Hiram|Bocachica|200000
+Jack|Wilson|200000
+Jason|Grilli|200000
+Jay|Gibbons|200000
+Jermaine|Clark|200000
+Jimmy|Rollins|200000
+Joe|Beimel|200000
+John|Barnes|200000
+Jose|Nunez|200000
+Julio|Ramirez|200000
+Julio|Zuleta|200000
+Luis|Rivas|200000
+Luke|Prokopec|200000
+Luther|Hackman|200000
+Nate|Rolison|200000
+Nick|Bierbrodt|200000
+Paxton|Crawford|200000
+Randy|Choate|200000
+Ryan|Freel|200000
+Scott|Mullen|200000
+Scott|Seabol|200000
+Scott|Sobkowiak|200000
+Scott|Stewart|200000
+Shea|Hillenbrand|200000
+Tony|Cogan|200000
+Wally|Joyner|200000
+Willis|Roberts|200000
+Shawn|Wooten|200500
+Jose|Ortiz|201000
+Pedro|Feliz|201000
+Pablo|Ozuna|202000
+Scott|Winchester|202000
+Tim|Drew|202000
+I joined salaries to players to list each 2001 salary with the player’s name, returning only the three required columns first_name, last_name, and salary. 
+Then I ordered by salary, first name, last name , player ID, applied LIMIT 50.
+```
 # Problem 5
 
 
