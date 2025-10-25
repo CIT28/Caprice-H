@@ -91,3 +91,10 @@ CREATE TABLE IF NOT EXISTS "translated" (
     FOREIGN KEY("translator_id") REFERENCES "translators"("id"),
     FOREIGN KEY("book_id") REFERENCES "books"("id")
 );
+<------------>
+Schema for multiple table version of longlist.db
+CREATE TABLE IF NOT EXISTS "students" (
+    "id"
+    "firstname"
+    "lastname"
+);
