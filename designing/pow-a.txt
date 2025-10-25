@@ -1,0 +1,2 @@
+<------------>
+Schema for single table version of longlist.db
