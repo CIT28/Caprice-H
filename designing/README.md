@@ -20,3 +20,38 @@ Split data so each table holds one kind of thing (no mixed facts).
 - Give each table a primary key (like id) and use foreign keys to link them.
 - Many-to-many? Use a link/junction table
 - Benefit of normalization? fewer duplicates, better data quality, clearer queries.
+
+## Storage Classes
+
+- SQLite stores values using storage classes: NULL, INTEGER, REAL, TEXT, BLOB.
+- The storage class is chosen per value at insert time.
+- Data type vs storage class, data type is what I set in the schema, storage class is how SQLite actually stores each value.
+
+## My Answer
+Do we need to specify data types in our schema?  
+In SQLite its not required, but it’s good practice because it gives columns a useful type and makes it more clear.
+
+## Examples and Understanding
+- Setting INTEGER for a column means numeric looking text like 42 will be stored as an integer when possible.
+- Setting TEXT for a column nudges values to remain text.
+- Trade off flexibility makes imports easy, but setting types and constraints helps catch bad data early.
+
+## Type Affinities
+- Column level hints INTEGER, REAL, TEXT, NUMERIC, BLOB.
+- SQLite will try to convert incoming values to the column’s affinity when needed.
+- Differs from storage classes will be affinity = column hint, storage class = actual stored form for each value.
+
+## For Example
+```
+CREATE TABLE learning (
+  id INTEGER PRIMARY KEY,
+  qty INTEGER,
+  price REAL,
+  note TEXT
+);
+
+INSERT INTO learning (qty, price, note) VALUES ('7', '19.99', 123);
+qty:   '7'     
+price: '19.99'
+note:  123
+```
