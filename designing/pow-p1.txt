@@ -1,0 +1,14 @@
+<-- schema -->
+CREATE TABLE IF NOT EXISTS "riders" (
+  "id",
+  "name"
+);
+CREATE TABLE IF NOT EXISTS "stations" (
+    "id",
+    "name",
+    "line"
+);
+CREATE TABLE IF NOT EXISTS "visits" (
+  "rider_id",
+  "station_id"
+);
