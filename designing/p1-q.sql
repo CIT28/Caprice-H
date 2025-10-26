@@ -1,6 +1,5 @@
--- starting the pow workflow
+
 .output pow-p1.txt
-.headers on
 .mode box
 
 
