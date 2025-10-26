@@ -60,3 +60,11 @@ note:  123
 - A boolean is just true or false.
 - In SQLite there isn’t a strict BOOLEAN type. The common approach is to use an INTEGER with 0 = false and 1 = true.
 
+## Table Constraints
+
+A table constraint is a rule applied to the whole table. In this section we used two which were the PRIMARY KEY and FOREIGN KEY. A PRIMARY KEY uniquely identifies each row which must be unique, not null. A FOREIGN KEY says a column must match a primary key value in another table.
+
+How we used them!
+
+riders(id, PRIMARY KEY(id)) and stations(id, PRIMARY KEY(id)) mark each table’s id as the primary key. 
+In visits, we added our own id and then set two foreign keys which were rider_id, riders(id) and station_id, stations(id). That means I can’t insert a visit unless the rider and station exist which makes perfect since now looking at it from a design perspective.
