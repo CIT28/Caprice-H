@@ -55,3 +55,8 @@ qty:   '7'
 price: '19.99'
 note:  123
 ```
+## Boolean (true/false)
+
+- A boolean is just true or false.
+- In SQLite there isn’t a strict BOOLEAN type. The common approach is to use an INTEGER with 0 = false and 1 = true.
+
