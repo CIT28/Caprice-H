@@ -1,14 +1,17 @@
 <-- schema -->
 CREATE TABLE IF NOT EXISTS "riders" (
-  "id",
-  "name"
+    "id" INTEGER
+    "name" TEXT
+
 );
 CREATE TABLE IF NOT EXISTS "stations" (
-    "id",
-    "name",
-    "line"
+    "id" INTEGER,
+    "name" TEXT,
+    "line" TEXT
+
 );
 CREATE TABLE IF NOT EXISTS "visits" (
-  "rider_id",
-  "station_id"
+    "rider_id" INTEGER,
+    "station_id" INTEGER
+
 );

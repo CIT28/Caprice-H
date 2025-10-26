@@ -3,6 +3,16 @@
 .headers on
 .mode box
 
+
+-- 38:10  DROP TABLE
+-- DROP TABLE "riders";
+-- DROP TABLE "stations";
+-- DROP TABLE "visits";
+
+
+
+
+
 -- .print '<-- create riders -->'
 -- CREATE TABLE IF NOT EXISTS "riders" (
 --   "id",
