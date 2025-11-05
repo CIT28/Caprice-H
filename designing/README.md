@@ -141,3 +141,9 @@ I now keep a tiny reset block commented at the top and uncomment/run it only onc
 -table already exists here I forgot to recomment CREATEs after each run, I comment the block again.
 -POW didn’t update so I forgot to run the file after edits now I always keep this at the bottom
 # Summary
+-  I used `DROP TABLE IF EXISTS` to reset and then `.read schema.sql` to load Carter’s final schema cleanly.
+-  Added `PRIMARY KEY(id)` on all three tables to give each row a stable identity.
+- Foreign Keys `swipes.card_id - cards(id)` and `swipes.station_id - stations(id)` enforce valid references.
+- Column Constraints `NOT NULL`, `UNIQUE` (station names), and `CHECK` on `type` and `amount` prevent bad data.
+- `datetime` uses `DEFAULT CURRENT_TIMESTAMP` so each swipe has a time automatically.
+- I commented earlier experiments, ran `p2-q.sql` to regenerate the DB, and captured `.schema` to `pow-p2.txt` for grading.

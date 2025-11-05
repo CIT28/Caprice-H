@@ -1,25 +1,19 @@
-<-- column constraints example -->
-CREATE TABLE IF NOT EXISTS "riders" (
-    "id" INTEGER,
-    "name" TEXT
-);
-CREATE TABLE IF NOT EXISTS "visits" (
-    "rider_id" INTEGER,
-    "station_id" INTEGER
-);
-CREATE TABLE IF NOT EXISTS "cards" (
+CREATE TABLE "cards" (
     "id" INTEGER,
     PRIMARY KEY ("id")
 
 );
-CREATE TABLE IF NOT EXISTS "stations" (
+
+CREATE TABLE "stations" (
     "id" INTEGER,
     "name" TEXT NOT NULL UNIQUE,
     "line" TEXT NOT NULL,
     PRIMARY KEY ("id")
 
 );
-CREATE TABLE IF NOT EXISTS "swipes" (
+
+
+CREATE TABLE "swipes" (
     "id" INTEGER,
     "card_id" INTEGER,
     "station_id" INTEGER,
@@ -31,3 +25,4 @@ CREATE TABLE IF NOT EXISTS "swipes" (
     FOREIGN KEY ("station_id") REFERENCES "stations"("id")
 
 );
+
