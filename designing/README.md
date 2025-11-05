@@ -110,5 +110,34 @@ Foreign key = who are you talking to?
 
 
 ## Altering Tables
+Rename a table
+* Use when I want a clearer name.
+* Common mistake for me was renaming a table that doesn’t exist ends up telling me no such table.
+-- This one here is good
+ALTER TABLE "visits" RENAME TO "swipes";
+-- Fixed this error by recreating visits first, or I would check with .tables
+Add a new column
+* Use when: I need a new field later
+* Common mistake will have to be adding NOT NULL without a DEFAULT on a non-empty table → fails.
+-- Simple add
+ALTER TABLE "swipes" ADD COLUMN "type" TEXT;
+ALTER TABLE "swipes" ADD COLUMN "amount" NUMERIC NOT NULL DEFAULT 0;
+Rename a column
+* Use when: misspelled a name or want a clearer one.
+* Common mistake: Using a name that doesn’t exist or messing with an existing column.
 
+Drop a column
+* Use when: added the wrong column and want to remove it.
+* Common mistake: Trying to drop a column that doesn’t exist.
+ALTER TABLE "swipes" DROP COLUMN "type";
+Add columns with sensible defaults
+* Use when: You need values for existing rows without breaking NOT NULL.
+* Common mistake for me on this run was NOT NULL with no default causes failure if table has rows.
+ALTER TABLE "swipes" ADD COLUMN "ts" TEXT NOT NULL DEFAULT (CURRENT_TIMESTAMP);
+
+(things I messed up and fixed)
+* “no such table” on ALTER I hadn’t recreated the starter schema
+I now keep a tiny reset block commented at the top and uncomment/run it only once.
+-table already exists here I forgot to recomment CREATEs after each run, I comment the block again.
+-POW didn’t update so I forgot to run the file after edits now I always keep this at the bottom
 # Summary
