@@ -1,26 +1,14 @@
-creating donuts and ingredients tables from schema.sql
-verify tables
+customers          donuts             order_items      
 donut_ingredients  ingredients        orders           
-donuts             order_items      
-showing schema for donuts and ingredients
-CREATE TABLE IF NOT EXISTS "ingredients" (
+CREATE TABLE IF NOT EXISTS "customers" (
     "id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL UNIQUE,
-    "unit" TEXT NOT NULL,
-    "price_per_unit" NUMERIC NOT NULL CHECK ("price_per_unit" > 0)
+    "first_name" TEXT NOT NULL,
+    "last_name"  TEXT NOT NULL
 );
-CREATE TABLE IF NOT EXISTS "donuts" (
+CREATE TABLE IF NOT EXISTS "orders" (
     "id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL UNIQUE,
-    -- 0 = not glutenfree, 1 = glutenfree
-    "gluten_free" INTEGER NOT NULL CHECK ("gluten_free" IN (0, 1)),
-    "price" NUMERIC NOT NULL CHECK ("price" > 0)
+    "customer_id" INTEGER NOT NULL,
+    -- time of when the order was placed
+    "placed_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY ("customer_id") REFERENCES "customers"("id")
 );
-CREATE TABLE IF NOT EXISTS "donut_ingredients" (
-    "id" INTEGER PRIMARY KEY,
-    "donut_id" INTEGER NOT NULL,
-    "ingredient_id" INTEGER NOT NULL,
-    FOREIGN KEY ("donut_id") REFERENCES "donuts"("id"),
-    FOREIGN KEY ("ingredient_id") REFERENCES "ingredients"("id")
-);
-Running schema.sql to create donuts database tables

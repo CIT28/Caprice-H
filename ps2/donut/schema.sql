@@ -26,6 +26,7 @@ CREATE TABLE "donuts" (
     "price" NUMERIC NOT NULL CHECK ("price" > 0)
 );
 
+-- Donuts Ingredients
 -- Link the table so we can see which ingredients are used in each donut
 -- be able to look up the ingredients for each of the donuts
 CREATE TABLE "donut_ingredients" (
@@ -36,7 +37,15 @@ CREATE TABLE "donut_ingredients" (
     FOREIGN KEY ("ingredient_id") REFERENCES "ingredients"("id")
 );
 
+-- Customers
+-- store first and last name so we can identify who placed each order.
+CREATE TABLE "customers" (
+    "id" INTEGER PRIMARY KEY,
+    "first_name" TEXT NOT NULL,
+    "last_name"  TEXT NOT NULL
+);
 
+-- Orders
 --Order number for internal tracking.
 --Link each order to exactly one customer.
 CREATE TABLE "orders" (
