@@ -16,6 +16,18 @@ CREATE TABLE "ingredients" (
     "price_per_unit" NUMERIC NOT NULL CHECK ("price_per_unit" > 0)
 );
 
+-- the sample data
+--Cocoa: $5per lb
+--Sugar: $2per lb
+--Plus extra ingredients needed for donuts in examples.
+INSERT INTO "ingredients" ("id", "name", "unit", "price_per_unit") VALUES
+    (1, 'Cocoa',      'lb', 5.00),
+    (2, 'Sugar',      'lb', 2.00),
+    (3, 'Flour',      'lb', 1.00),
+    (4, 'Buttermilk', 'lb', 3.00),
+    (5, 'Sprinkles',  'lb', 4.00);
+
+
 -- Donuts
 -- name, gluten-free flag, and price per donut
 CREATE TABLE "donuts" (
@@ -26,6 +38,11 @@ CREATE TABLE "donuts" (
     "price" NUMERIC NOT NULL CHECK ("price" > 0)
 );
 
+-- Belgian Dark Chocolate not gluten-free $4
+-- Bts sprinkles not gluten-free $4
+INSERT INTO "donuts" ("id", "name", "gluten_free", "price") VALUES
+    (1, 'Belgian Dark Chocolate', 0, 4.00),
+    (2, 'Back-To-School Sprinkles', 0, 4.00);    
 -- Donuts Ingredients
 -- Link the table so we can see which ingredients are used in each donut
 -- be able to look up the ingredients for each of the donuts
@@ -37,6 +54,20 @@ CREATE TABLE "donut_ingredients" (
     FOREIGN KEY ("ingredient_id") REFERENCES "ingredients"("id")
 );
 
+-- BDark Chocolate ingredients
+INSERT INTO "donut_ingredients" ("id", "donut_id", "ingredient_id") VALUES
+    (1, 1, 1),
+    (2, 1, 3),
+    (3, 1, 4),
+    (4, 1, 2);
+
+-- BTS Sprinkles ingredients
+INSERT INTO "donut_ingredients" ("id", "donut_id", "ingredient_id") VALUES
+    (5, 2, 3),
+    (6, 2, 4),
+    (7, 2, 2),
+    (8, 2, 5); 
+
 -- Customers
 -- store first and last name so we can identify who placed each order.
 CREATE TABLE "customers" (
@@ -44,6 +75,10 @@ CREATE TABLE "customers" (
     "first_name" TEXT NOT NULL,
     "last_name"  TEXT NOT NULL
 );
+--sample data using luis singh
+INSERT INTO "customers" ("id", "first_name", "last_name") VALUES
+    (1, 'Luis', 'Singh');
+
 
 -- Orders
 --Order number for internal tracking.
@@ -55,6 +90,11 @@ CREATE TABLE "orders" (
     "placed_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY ("customer_id") REFERENCES "customers"("id")
 );
+
+-- order 1 from luis
+INSERT INTO "orders" ("id", "customer_id") VALUES
+    (1, 1);
+
 
 --(order_items) Track all donuts in each order.
 --Connect orders to donuts.
@@ -68,3 +108,8 @@ CREATE TABLE "order_items" (
     FOREIGN KEY ("order_id") REFERENCES "orders"("id"),
     FOREIGN KEY ("donut_id") REFERENCES "donuts"("id")
 );
+
+-- order 1, 3 BDC, 2 BTS
+INSERT INTO "order_items" ("id", "order_id", "donut_id", "quantity") VALUES
+    (1, 1, 1, 3),
+    (2, 1, 2, 2);
