@@ -1,5 +1,7 @@
 -- Donuts and Ingredients schema
-
+DROP TABLE IF EXISTS "order_items";
+DROP TABLE IF EXISTS "orders";
+DROP TABLE IF EXISTS "customers";
 DROP TABLE IF EXISTS "donut_ingredients";
 DROP TABLE IF EXISTS "donuts";
 DROP TABLE IF EXISTS "ingredients";
@@ -34,3 +36,26 @@ CREATE TABLE "donut_ingredients" (
     FOREIGN KEY ("ingredient_id") REFERENCES "ingredients"("id")
 );
 
+
+--Order number for internal tracking.
+--Link each order to exactly one customer.
+CREATE TABLE "orders" (
+    "id" INTEGER PRIMARY KEY,
+    "customer_id" INTEGER NOT NULL,
+    -- time of when the order was placed
+    "placed_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY ("customer_id") REFERENCES "customers"("id")
+);
+
+--(order_items) Track all donuts in each order.
+--Connect orders to donuts.
+--Store quantity of each donut in an order.
+
+CREATE TABLE "order_items" (
+    "id" INTEGER PRIMARY KEY,
+    "order_id" INTEGER NOT NULL,
+    "donut_id" INTEGER NOT NULL,
+    "quantity" INTEGER NOT NULL CHECK ("quantity" > 0),
+    FOREIGN KEY ("order_id") REFERENCES "orders"("id"),
+    FOREIGN KEY ("donut_id") REFERENCES "donuts"("id")
+);
