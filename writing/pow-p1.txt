@@ -1,6 +1,21 @@
-Runtime error near line 34: UNIQUE constraint failed: collections.accession_number (19)
-Runtime error near line 38: UNIQUE constraint failed: collections.accession_number (19)
-Runtime error near line 42: NOT NULL constraint failed: coinsert with accessionRuntime error nShow schema
+id Primary, title NOT NULl accession_number NOT NULL UNIQUE acquired TEXT
+INSERT multiple rows with one statement
+lets see if it worked
+┌────┬─────────────────────────┬──────────────────┬────────────┐
+│ id │          title          │ accession_number │  acquired  │
+├────┼─────────────────────────┼──────────────────┼────────────┤
+│ 1  │ Profusion of Flowers    │ 56.257           │ 1956-04-12 │
+│ 2  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │
+│ 3  │ Spring Outing           │ 14.76            │ 1914-01-08 │
+│ 4  │ Spring Outing           │ 14.76-NEW        │ 1914-01-08 │
+│ 5  │ Pro flowers             │ 20.123           │ 1920-05-10 │
+│ 6  │ farmers sky             │ 18.456           │ 1918-11-02 │
+│ 7  │ butterfuly and peonies  │ 99.777           │ 1999-07-21 │
+│ 8  │ Pro flowers             │ 21.100           │ 1921-06-01 │
+│ 9  │ farmers sky             │ 21.101           │ 1921-06-02 │
+│ 10 │ butterfuly and peonies  │ 21.102           │ 1921-06-03 │
+└────┴─────────────────────────┴──────────────────┴────────────┘
+Show schema
 CREATE TABLE IF NOT EXISTS "collections" (
   "id" INTEGER PRIMARY KEY,
   "title" TEXT NOT NULL,
