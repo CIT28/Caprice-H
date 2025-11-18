@@ -11,17 +11,30 @@
 --   extra TEXT
 -- );
 
-.print 'import mfa.csv into temp_mfa'
+
+
+
+.print 'import CSV without id into temp'
 .mode csv
-.import --csv --skip 1 /workspaces/Caprice-H/writing/mfa.csv temp_mfa
+.import --csv --skip 1 mfa.csv temp
 
-.print 'copy into collections'
-INSERT INTO collections (title, accession_number, acquired)
-SELECT title, accession_number, acquired FROM temp_mfa;
+.print 'check temp was created from header'
+.schema temp
 
-.print 'verify schema and sample rows'
-.schema collections
-SELECT * FROM collections LIMIT 10;
+.print 'show temp rows'
+SELECT * FROM temp LIMIT 10;
+
+-- .print 'import mfa.csv into temp_mfa'
+-- .mode csv
+-- .import --csv --skip 1 /workspaces/Caprice-H/writing/mfa.csv temp_mfa
+
+-- .print 'copy into collections'
+-- INSERT INTO collections (title, accession_number, acquired)
+-- SELECT title, accession_number, acquired FROM temp_mfa;
+
+-- .print 'verify schema and sample rows'
+-- .schema collections
+-- SELECT * FROM collections LIMIT 10;
 
 
 

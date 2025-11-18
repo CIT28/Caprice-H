@@ -1,17 +1,17 @@
-import mfa.csv into temp_mfa
-copy into collections (map title + accession_number; acquired = NULL)
-verify schema and sample rows
-CREATE TABLE IF NOT EXISTS "collections" (
-  "id" INTEGER PRIMARY KEY,
-  "title" TEXT NOT NULL,
-  "accession_number" TEXT NOT NULL UNIQUE,
-  "acquired" TEXT
-);
-1,1,"Profusion of flowers",56.257
-2,2,"Farmers working at dawn",11.6152
-3,3,"Spring outing",14.76
-4,4,"Imaginative landscape",56.496
-5,5,"Peonies and butterfly",06.1899
+import CSV without id into temp
+check temp was created from header
+CREATE TABLE IF NOT EXISTS "temp"(
+"Profusion of flowers" TEXT, "56.257" TEXT, "1956-04-12" TEXT);
+show temp rows
+"Farmers working at dawn",11.6152,1911-08-03
+"Spring outing",14.76,1914-01-08
+"Imaginative landscape",56.496,""
+"Peonies and butterfly",06.1899,1906-01-01
+"Profusion of flowers",56.257,1956-04-12
+"Farmers working at dawn",11.6152,1911-08-03
+"Spring outing",14.76,1914-01-08
+"Imaginative landscape",56.496,""
+"Peonies and butterfly",06.1899,1906-01-01
 Show schema
 CREATE TABLE IF NOT EXISTS "collections" (
   "id" INTEGER PRIMARY KEY,
