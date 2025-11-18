@@ -2,8 +2,42 @@
 .output pow-p1.txt
 
 
+-- .print 'setup temp_mfa table for import'
+-- DROP TABLE IF EXISTS temp_mfa;
+-- CREATE TABLE temp_mfa (
+--   title TEXT,
+--   accession_number TEXT,
+--   acquired TEXT,
+--   extra TEXT
+-- );
 
-.print 'id Primary, title NOT NULl accession_number NOT NULL UNIQUE acquired TEXT'
+.print 'import mfa.csv into temp_mfa'
+.mode csv
+.import --csv --skip 1 /workspaces/Caprice-H/writing/mfa.csv temp_mfa
+
+.print 'copy into collections'
+INSERT INTO collections (title, accession_number, acquired)
+SELECT title, accession_number, acquired FROM temp_mfa;
+
+.print 'verify schema and sample rows'
+.schema collections
+SELECT * FROM collections LIMIT 10;
+
+
+
+
+-- .print 'import mfa.csv into temp_mfa'
+-- .mode csv
+-- .import
+
+-- .print 'copy into collections'
+-- INSERT INTO collections (title, accession_number, acquired)
+-- SELECT title, accession_number, acquired
+-- FROM temp_mfa;
+
+-- .print 'verify'
+-- .schema collections
+-- SELECT * FROM collections LIMIT 10;
 
 
 -- CREATE TABLE "collections" (
@@ -46,15 +80,15 @@
 -- INSERT INTO "collections" ("title","accession_number","acquired")
 -- VALUES ('No accession',NULL,'2000-01-01');
 
-.print 'INSERT multiple rows with one statement'
-INSERT INTO "collections" ("title","accession_number","acquired")
-VALUES
-  ('Pro flowers','21.100','1921-06-01'),
-  ('farmers sky','21.101','1921-06-02'),
-  ('butterfuly and peonies','21.102','1921-06-03');
+-- .print 'INSERT multiple rows with one statement'
+-- INSERT INTO "collections" ("title","accession_number","acquired")
+-- VALUES
+--   ('Pro flowers','21.100','1921-06-01'),
+--   ('farmers sky','21.101','1921-06-02'),
+--   ('butterfuly and peonies','21.102','1921-06-03');
 
-.print 'lets see if it worked'
-SELECT * FROM "collections";
+-- .print 'lets see if it worked'
+-- SELECT * FROM "collections";
 
 .print 'Show schema'
 .schema collections
