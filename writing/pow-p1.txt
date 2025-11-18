@@ -1,34 +1,14 @@
-Delete the single row titled Spring outing
-Verify Spring outing is gone
+lets delete rows acquired before 1909
+We need to only compare the year portion of the acquired date string
+what are the remaining rows
 ┌────┬─────────────────────────┬──────────────────┬────────────┐
 │ id │          title          │ accession_number │  acquired  │
 ├────┼─────────────────────────┼──────────────────┼────────────┤
-│ 1  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │
-│ 2  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │
 │ 4  │ Imaginative landscape   │ 56.496           │            │
-│ 5  │ Peonies and butterfly   │ 06.1899          │ 1906-01-01 │
+│ 2  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │
+│ 3  │ Spring outing           │ 14.76            │ 1914-01-08 │
+│ 1  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │
 └────┴─────────────────────────┴──────────────────┴────────────┘
-Try deleting rows where acquired IS NULL
-Check for blanks vs real NULl
-┌────┬───────────────────────┬──────────────────┬──────────┬──────────────┐
-│ id │         title         │ accession_number │ acquired │ acquired_len │
-├────┼───────────────────────┼──────────────────┼──────────┼──────────────┤
-│ 4  │ Imaginative landscape │ 56.496           │          │ 0            │
-└────┴───────────────────────┴──────────────────┴──────────┴──────────────┘
-create temp with expected columns, then import CSV
-collections and load from temp
-Drop temp and verify
-CREATE TABLE IF NOT EXISTS "collections" (
-  "id" INTEGER PRIMARY KEY,
-  "title" TEXT NOT NULL,
-  "accession_number" TEXT NOT NULL UNIQUE,
-  "acquired" TEXT
-);
-1,"Profusion of flowers",56.257,1956-04-12
-2,"Farmers working at dawn",11.6152,1911-08-03
-3,"Spring outing",14.76,1914-01-08
-4,"Imaginative landscape",56.496,""
-5,"Peonies and butterfly",06.1899,1906-01-01
 Show schema
 CREATE TABLE IF NOT EXISTS "collections" (
   "id" INTEGER PRIMARY KEY,

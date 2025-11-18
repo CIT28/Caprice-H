@@ -1,51 +1,67 @@
 .mode box
 .output pow-p1.txt
 
-.print 'Delete the single row titled Spring outing'
+.print 'lets delete rows acquired before 1909'
+.print 'We need to only compare the year portion of the acquired date string'
 DELETE FROM "collections"
-WHERE "title" = 'Spring outing';
+WHERE "acquired" IS NOT NULL
+  AND "acquired" <> ''
+  AND substr("acquired", 1, 4) < '1909';
 
-.print 'Verify Spring outing is gone'
+.print 'what are the remaining rows'
 SELECT "id","title","accession_number","acquired"
-FROM "collections";
-
-.print 'Try deleting rows where acquired IS NULL'
-DELETE FROM "collections"
-WHERE "acquired" IS NULL;
-
-.print 'Check for blanks vs real NULl'
-SELECT "id","title","accession_number","acquired", LENGTH("acquired") AS acquired_len
 FROM "collections"
-WHERE "acquired" IS NULL OR "acquired" = '';
+ORDER BY "acquired" ASC
+LIMIT 10;
 
 
-.print 'create temp with expected columns, then import CSV'
-DROP TABLE IF EXISTS temp;
-CREATE TABLE temp (
-  title TEXT,
-  accession_number TEXT,
-  acquired TEXT
-);
 
-.mode csv
-.import --csv --skip 1 mfa.csv temp
 
-.print 'collections and load from temp'
-DROP TABLE IF EXISTS "collections";
-CREATE TABLE "collections" (
-  "id" INTEGER PRIMARY KEY,
-  "title" TEXT NOT NULL,
-  "accession_number" TEXT NOT NULL UNIQUE,
-  "acquired" TEXT
-);
+-- .print 'Delete the single row titled Spring outing'
+-- DELETE FROM "collections"
+-- WHERE "title" = 'Spring outing';
 
-INSERT INTO "collections" ("title","accession_number","acquired")
-SELECT "title","accession_number","acquired" FROM "temp";
+-- .print 'Verify Spring outing is gone'
+-- SELECT "id","title","accession_number","acquired"
+-- FROM "collections";
 
-.print 'Drop temp and verify'
-DROP TABLE IF EXISTS "temp";
-.schema collections
-SELECT * FROM "collections" LIMIT 10;
+-- .print 'Try deleting rows where acquired IS NULL'
+-- DELETE FROM "collections"
+-- WHERE "acquired" IS NULL;
+
+-- .print 'Check for blanks vs real NULl'
+-- SELECT "id","title","accession_number","acquired", LENGTH("acquired") AS acquired_len
+-- FROM "collections"
+-- WHERE "acquired" IS NULL OR "acquired" = '';
+
+
+-- .print 'create temp with expected columns, then import CSV'
+-- DROP TABLE IF EXISTS temp;
+-- CREATE TABLE temp (
+--   title TEXT,
+--   accession_number TEXT,
+--   acquired TEXT
+-- );
+
+-- .mode csv
+-- .import --csv --skip 1 mfa.csv temp
+
+-- .print 'collections and load from temp'
+-- DROP TABLE IF EXISTS "collections";
+-- CREATE TABLE "collections" (
+--   "id" INTEGER PRIMARY KEY,
+--   "title" TEXT NOT NULL,
+--   "accession_number" TEXT NOT NULL UNIQUE,
+--   "acquired" TEXT
+-- );
+
+-- INSERT INTO "collections" ("title","accession_number","acquired")
+-- SELECT "title","accession_number","acquired" FROM "temp";
+
+-- .print 'Drop temp and verify'
+-- DROP TABLE IF EXISTS "temp";
+-- .schema collections
+-- SELECT * FROM "collections" LIMIT 10;
 
 
 
