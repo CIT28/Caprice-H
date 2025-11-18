@@ -28,3 +28,6 @@ Runtime error near line 46: NOT NULL constraint failed: collections.accession_nu
 - Date compares work best in YYYY-MM-DD format.
 
 - Deletes are permanent so be sure row IDs aren’t reused, so gaps in id are normal.
+
+Why the FK error happens- I turned PRAGMA foreign_keys = ON, and SQLite blocked it because rows in created still referenced that artist.
+Twostep delete process for me was to first delete the artist’s rows from created (child), then delete the artist from artists parent.

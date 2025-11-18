@@ -1,20 +1,44 @@
 .mode box
 .output pow-p1.txt
 
-.print 'lets delete rows acquired before 1909'
-.print 'We need to only compare the year portion of the acquired date string'
-DELETE FROM "collections"
-WHERE "acquired" IS NOT NULL
-  AND "acquired" <> ''
-  AND substr("acquired", 1, 4) < '1909';
-
-.print 'what are the remaining rows'
-SELECT "id","title","accession_number","acquired"
-FROM "collections"
-ORDER BY "acquired" ASC
-LIMIT 10;
 
 
+
+.print 'dump tables'
+SELECT * FROM artists;
+SELECT * FROM collections;
+SELECT * FROM created;
+
+
+.print 'Try to delete the artist'
+
+DELETE FROM artists
+WHERE name = 'Unidentified artist';
+
+.print 'Why the error happened was that the created.artist_id still points to this artist'
+
+.print ' remove links from created, then delete from artists'
+DELETE FROM created
+WHERE artist_id = (SELECT id FROM artists WHERE name = 'Unidentified artist');
+
+DELETE FROM artists
+WHERE name = 'Unidentified artist';
+
+.print 'make sure artist gone and no leftover links'
+SELECT id, name FROM artists WHERE name = 'Unidentified artist';
+SELECT * FROM created WHERE artist_id IN (SELECT id FROM artists WHERE name = 'Unidentified artist');
+-- .print 'lets delete rows acquired before 1909'
+-- .print 'We need to only compare the year portion of the acquired date string'
+-- DELETE FROM "collections"
+-- WHERE "acquired" IS NOT NULL
+--   AND "acquired" <> ''
+--   AND substr("acquired", 1, 4) < '1909';
+
+-- .print 'what are the remaining rows'
+-- SELECT "id","title","accession_number","acquired"
+-- FROM "collections"
+-- ORDER BY "acquired" ASC
+-- LIMIT 10;
 
 
 -- .print 'Delete the single row titled Spring outing'
@@ -62,8 +86,6 @@ LIMIT 10;
 -- DROP TABLE IF EXISTS "temp";
 -- .schema collections
 -- SELECT * FROM "collections" LIMIT 10;
-
-
 
 
 
