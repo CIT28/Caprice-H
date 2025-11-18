@@ -1,0 +1,23 @@
+# Writing Part 1
+
+## INSERT INTO
+- MFA tracks the artwork in a collections table.
+- How INSERT INTO works INSERT INTO collections (title, accession_number, acquired) VALUES ('Title', '11.6152', '1911-08-03')
+- Why title cannot be NULL becuase every artwork must have a name to identify it.
+- Why accession_number cannot be NULL it’s the internal ID for the piece.
+- Why accession_number is UNIQUE no two artworks can share the same accession number
+- The INSERT INTO statement is used to insert new records in a table.
+- Here are the errors when trying to run
+Runtime error near line 38: UNIQUE constraint failed: collections.accession_number (19)
+Runtime error near line 42: NOT NULL constraint failed: collections.title (19)
+Runtime error near line 46: NOT NULL constraint failed: collections.accession_number (19)
+@Avabeast17 ➜ /workspaces/Caprice-H/writing (main) $ 
+
+## Importing CSV
+
+- What .import does it reads rows from a CSV file and puts them into a table in your SQLite database.
+
+- Why we use .mode csv it tells SQL to parse commas, quotes, and newlines the CSV way.
+
+
+- Delete notes, Deleting “Spring outing” by title worked. The IS NULL delete didn’t remove blank dates because the CSV imported them as empty strings, not real NULL. That’s why IS NULL might not match anything.

@@ -1,6 +1,24 @@
 .mode box
 .output pow-p1.txt
 
+.print 'Delete the single row titled Spring outing'
+DELETE FROM "collections"
+WHERE "title" = 'Spring outing';
+
+.print 'Verify Spring outing is gone'
+SELECT "id","title","accession_number","acquired"
+FROM "collections";
+
+.print 'Try deleting rows where acquired IS NULL'
+DELETE FROM "collections"
+WHERE "acquired" IS NULL;
+
+.print 'Check for blanks vs real NULl'
+SELECT "id","title","accession_number","acquired", LENGTH("acquired") AS acquired_len
+FROM "collections"
+WHERE "acquired" IS NULL OR "acquired" = '';
+
+
 .print 'create temp with expected columns, then import CSV'
 DROP TABLE IF EXISTS temp;
 CREATE TABLE temp (
