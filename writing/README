@@ -21,3 +21,10 @@ Runtime error near line 46: NOT NULL constraint failed: collections.accession_nu
 
 
 - Delete notes, Deleting “Spring outing” by title worked. The IS NULL delete didn’t remove blank dates because the CSV imported them as empty strings, not real NULL. That’s why IS NULL might not match anything.
+- Next will be the deletion notes and cautions
+
+- Always use WHERE with DELETE FROM. No WHERE = you wipe the whole table and we dont want this.
+
+- Date compares work best in YYYY-MM-DD format.
+
+- Deletes are permanent so be sure row IDs aren’t reused, so gaps in id are normal.
