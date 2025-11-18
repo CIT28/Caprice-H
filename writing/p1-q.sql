@@ -1,28 +1,38 @@
 .mode box
 .output pow-p1.txt
 
+.print 'create temp with expected columns, then import CSV'
+DROP TABLE IF EXISTS temp;
+CREATE TABLE temp (
+  title TEXT,
+  accession_number TEXT,
+  acquired TEXT
+);
 
--- .print 'setup temp_mfa table for import'
--- DROP TABLE IF EXISTS temp_mfa;
--- CREATE TABLE temp_mfa (
---   title TEXT,
---   accession_number TEXT,
---   acquired TEXT,
---   extra TEXT
--- );
-
-
-
-
-.print 'import CSV without id into temp'
 .mode csv
 .import --csv --skip 1 mfa.csv temp
 
-.print 'check temp was created from header'
-.schema temp
+.print 'collections and load from temp'
+DROP TABLE IF EXISTS "collections";
+CREATE TABLE "collections" (
+  "id" INTEGER PRIMARY KEY,
+  "title" TEXT NOT NULL,
+  "accession_number" TEXT NOT NULL UNIQUE,
+  "acquired" TEXT
+);
 
-.print 'show temp rows'
-SELECT * FROM temp LIMIT 10;
+INSERT INTO "collections" ("title","accession_number","acquired")
+SELECT "title","accession_number","acquired" FROM "temp";
+
+.print 'Drop temp and verify'
+DROP TABLE IF EXISTS "temp";
+.schema collections
+SELECT * FROM "collections" LIMIT 10;
+
+
+
+
+
 
 -- .print 'import mfa.csv into temp_mfa'
 -- .mode csv
