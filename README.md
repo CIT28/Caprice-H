@@ -34,3 +34,5 @@ git commit -m "commit message"
 ```bash
 git push
 ```
+
+# Writing Part 1
