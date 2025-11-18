@@ -1,0 +1,12 @@
+id Primary, title NOT NULl accession_number NOT NULL UNIQUE acquired TEXT
+INSERT rows
+profusion of flowers — 56.257
+farmers working at dawn 11.6152
+spring outing 14.76
+Show schema
+CREATE TABLE IF NOT EXISTS "collections" (
+  "id" INTEGER PRIMARY KEY,
+  "title" TEXT NOT NULL,
+  "accession_number" TEXT NOT NULL UNIQUE,
+  "acquired" TEXT
+);
