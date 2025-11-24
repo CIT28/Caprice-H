@@ -1,0 +1,47 @@
+tables
+artists      collections  created    
+schema: collections
+CREATE TABLE IF NOT EXISTS "collections" (
+  "id" INTEGER PRIMARY KEY,
+  "title" TEXT NOT NULL,
+  "accession_number" TEXT NOT NULL UNIQUE,
+  "acquired" NUMERIC
+);
+schema: artists
+CREATE TABLE IF NOT EXISTS "artists" (
+  "id" INTEGER PRIMARY KEY,
+  "name" TEXT NOT NULL UNIQUE
+);
+schema: created
+CREATE TABLE IF NOT EXISTS "created" (
+  "artist_id" INTEGER,
+  "collection_id" INTEGER,
+  PRIMARY KEY("artist_id","collection_id"),
+  FOREIGN KEY("artist_id") REFERENCES "artists"("id") ON DELETE CASCADE,
+  FOREIGN KEY("collection_id") REFERENCES "collections"("id") ON DELETE CASCADE
+);
+sample rows
+┌────┬─────────────────────────┬──────────────────┬────────────┐
+│ id │          title          │ accession_number │  acquired  │
+├────┼─────────────────────────┼──────────────────┼────────────┤
+│ 1  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │
+│ 2  │ Imaginative landscape   │ 56.496           │            │
+│ 3  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │
+│ 4  │ Spring outing           │ 14.76            │ 1914-01-08 │
+└────┴─────────────────────────┴──────────────────┴────────────┘
+┌────┬─────────────────────┐
+│ id │        name         │
+├────┼─────────────────────┤
+│ 1  │ Li Yin              │
+│ 2  │ Qian Weicheng       │
+│ 3  │ Unidentified artist │
+│ 4  │ Zhou Chen           │
+└────┴─────────────────────┘
+┌───────────┬───────────────┐
+│ artist_id │ collection_id │
+├───────────┼───────────────┤
+│ 1         │ 2             │
+│ 2         │ 3             │
+│ 3         │ 1             │
+│ 4         │ 4             │
+└───────────┴───────────────┘
