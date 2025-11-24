@@ -1,17 +1,51 @@
-.output pow-p2.txt
+.output pow-p1.txt
 .mode box
-PRAGMA foreign_keys = ON;
 
-.print 'reassign "Farmers working at dawn" to Li Yin in created'
--- UPDATE "created"
--- SET "artist_id" = (SELECT "id" FROM "artists" WHERE "name" = 'Li Yin')
--- WHERE "collection_id" = (SELECT "id" FROM "collections" WHERE "title" = 'Farmers working at dawn');
+.print "schema check"
+.schema votes
 
-.print 'confirm the update here dont forget to comment out the update when done'
-SELECT a.name AS artist, c.title AS work
-FROM created cr
-JOIN artists a     ON a.id = cr.artist_id
-JOIN collections c ON c.id = cr.collection_id
-WHERE c.title = 'Farmers working at dawn';
 
-.output stdout
+.print "clean titles with TRIM n UPPER"
+-- UPDATE votes
+-- SET title = UPPER(TRIM(title));
+
+
+.print "preview cleaned titles"
+SELECT title FROM votes LIMIT 15;
+
+
+.print "fix remaining titles"
+
+UPDATE votes
+SET title = 'FARMERS WORKING AT DAWN'
+WHERE title LIKE 'FARMESR%DAWN';
+
+UPDATE votes
+SET title = 'FARMERS WORKING AT DAWN'
+WHERE title = 'FARMERS WORKING';
+
+UPDATE votes
+SET title = 'IMAGINATIVE LANDSCAPE'
+WHERE title = 'IMAGINATIVE  LANDSCAPE';
+
+UPDATE votes
+SET title = 'PROFUSION OF FLOWERS'
+WHERE title = 'PROFUSION';
+
+
+.print "verify vote groups after fixes"
+SELECT title, COUNT(*) AS votes
+FROM votes
+GROUP BY title
+ORDER BY title;
+
+
+.print "confirm number of distinct groups (should be 4)"
+SELECT COUNT(DISTINCT title) AS distinct_titles
+FROM votes;
+
+
+.print "final distinct titles list"
+SELECT DISTINCT title
+FROM votes
+ORDER BY title;

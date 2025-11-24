@@ -1,12 +1,49 @@
-dump tables
-Try to delete the artist
-Why the error happened was that the created.artist_id still points to this artist
- remove links from created, then delete from artists
-make sure artist gone and no leftover links
-Show schema
-CREATE TABLE collections (
-  id               INTEGER PRIMARY KEY,
-  title            TEXT NOT NULL,
-  accession_number TEXT NOT NULL UNIQUE,
-  acquired         TEXT
-);
+schema check
+CREATE TABLE IF NOT EXISTS "votes"(
+"title" TEXT);
+clean titles with TRIM n UPPER
+preview cleaned titles
+┌─────────────────────────┐
+│          title          │
+├─────────────────────────┤
+│ FARMERS WORKING AT DAWN │
+│ FARMERS WORKING AT DAWN │
+│ IMAGINATIVE LANDSCAPE   │
+│ PROFUSION OF FLOWERS    │
+│ SPRING OUTING           │
+│ SPRING OUTING           │
+│ IMAGINATIVE LANDSCAPE   │
+│ FARMERS WORKING AT DAWN │
+│ FARMERS WORKING AT DAWN │
+│ PROFUSION OF FLOWERS    │
+│ IMAGINATIVE LANDSCAPE   │
+│ PROFUSION OF FLOWERS    │
+│ FARMERS WORKING AT DAWN │
+│ IMAGINATIVE LANDSCAPE   │
+│ IMAGINATIVE LANDSCAPE   │
+└─────────────────────────┘
+fix remaining titles
+verify vote groups after fixes
+┌─────────────────────────┬───────┐
+│          title          │ votes │
+├─────────────────────────┼───────┤
+│ FARMERS WORKING AT DAWN │ 6     │
+│ IMAGINATIVE LANDSCAPE   │ 5     │
+│ PROFUSION OF FLOWERS    │ 4     │
+│ SPRING OUTING           │ 5     │
+└─────────────────────────┴───────┘
+confirm number of distinct groups (should be 4)
+┌─────────────────┐
+│ distinct_titles │
+├─────────────────┤
+│ 4               │
+└─────────────────┘
+final distinct titles list
+┌─────────────────────────┐
+│          title          │
+├─────────────────────────┤
+│ FARMERS WORKING AT DAWN │
+│ IMAGINATIVE LANDSCAPE   │
+│ PROFUSION OF FLOWERS    │
+│ SPRING OUTING           │
+└─────────────────────────┘
