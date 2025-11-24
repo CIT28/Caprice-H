@@ -1,7 +1,23 @@
-reassign "Farmers working at dawn" to Li Yin in created
-confirm the update here dont forget to comment out the update when done
-┌────────┬─────────────────────────┐
-│ artist │          work           │
-├────────┼─────────────────────────┤
-│ Li Yin │ Farmers working at dawn │
-└────────┴─────────────────────────┘
+import votes.csv into table votes
+verify schema and sample rows
+CREATE TABLE IF NOT EXISTS "votes"(
+"title" TEXT);
+┌────────────┐
+│ total_rows │
+├────────────┤
+│ 20         │
+└────────────┘
+┌──────────────────────────┐
+│          title           │
+├──────────────────────────┤
+│ Farmers working at dawn  │
+│ Farmers Working at Dawn  │
+│ Imaginative landscape    │
+│ Profusion of flowers     │
+│ Spring outing            │
+│  Spring outing           │
+│ Imagintive landscape     │
+│ Farmesr working at dawn  │
+│ Famers working at dawn   │
+│ Profusion                │
+└──────────────────────────┘
