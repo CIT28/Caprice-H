@@ -77,25 +77,18 @@ PRAGMA foreign_keys = 1;
 -- .print 'lets see if it worked'
 -- SELECT * FROM "collections";
 
-.print 'tables'
-.tables
-
-.print 'schema: collections'
-.schema collections
-
-.print 'schema: artists'
-.schema artists
-
-.print 'schema: created'
+.print 'confirm ON DELETE CASCADE is on the created table'
 .schema created
 
-.print 'sample rows'
-SELECT * FROM collections LIMIT 5;
-SELECT * FROM artists LIMIT 5;
-SELECT * FROM created LIMIT 5;
+.print 'delete "Unidentified artist" hopefully here CASCADE should remove related rows in created'
+DELETE FROM "artists" WHERE "name" = 'Unidentified artist';
+
+.print 'final tables after cascade'
+SELECT * FROM "artists";
+SELECT * FROM "created";
+SELECT * FROM "collections";
 
 .output stdout
-
 
 
 
