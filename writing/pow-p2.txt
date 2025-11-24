@@ -1,4 +1,4 @@
-trim + upper titles in votes
+trim n upper titles in votes
 verify cleaned titles
 CREATE TABLE IF NOT EXISTS "votes"(
 "title" TEXT);
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS "votes"(
 │ SPRING OUTING           │
 │ IMAGINTIVE LANDSCAPE    │
 │ FARMESR WORKING AT DAWN │
-│ FAMERS WORKING AT DAWN  │
+│ FARMERS WORKING AT DAWN │
 │ PROFUSION               │
 │ IMAGINATIVE LANDSCAPE   │
 │ PROFUSION OF FLOWERS    │
@@ -21,3 +21,17 @@ CREATE TABLE IF NOT EXISTS "votes"(
 │ IMAGINATIVE LANDSCAPE   │
 │ IMAGINATIVE  LANDSCAPE  │
 └─────────────────────────┘
+fix typos with targeted LIKE patterns
+verify vote groups after typo fixes
+┌─────────────────────────┬───────┐
+│          title          │ votes │
+├─────────────────────────┼───────┤
+│ SPRING OUTING           │ 5     │
+│ IMAGINATIVE LANDSCAPE   │ 4     │
+│ FARMERS WORKING AT DAWN │ 4     │
+│ PROFUSION OF FLOWERS    │ 3     │
+│ PROFUSION               │ 1     │
+│ IMAGINATIVE  LANDSCAPE  │ 1     │
+│ FARMESR WORKING AT DAWN │ 1     │
+│ FARMERS WORKING         │ 1     │
+└─────────────────────────┴───────┘
