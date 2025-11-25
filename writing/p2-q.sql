@@ -1,51 +1,35 @@
-.output pow-p1.txt
+.output pow-p2.txt
 .mode box
 
-.print "schema check"
-.schema votes
 
 
-.print "clean titles with TRIM n UPPER"
--- UPDATE votes
--- SET title = UPPER(TRIM(title));
+.print "create transactions table"
+CREATE TABLE IF NOT EXISTS "transactions" (
+    "id" INTEGER,
+    "title" TEXT,
+    "action" TEXT,
+    PRIMARY KEY ("id")
+);
+
+.print "create sell trigger"
+CREATE TRIGGER IF NOT EXISTS "sell"
+BEFORE DELETE ON "collections"
+FOR EACH ROW
+BEGIN
+    INSERT INTO "transactions" ("title", "action")
+    VALUES (OLD."title", 'sold');
+END;
+
+.print "test trigger"
+-- DELETE FROM collections
+-- WHERE title = 'Profusion of flowers';
+
+.print "verify trigger results"
+SELECT * FROM collections;
+SELECT * FROM transactions;
+
+.print "schema proof"
+.schema
 
 
-.print "preview cleaned titles"
-SELECT title FROM votes LIMIT 15;
-
-
-.print "fix remaining titles"
-
-UPDATE votes
-SET title = 'FARMERS WORKING AT DAWN'
-WHERE title LIKE 'FARMESR%DAWN';
-
-UPDATE votes
-SET title = 'FARMERS WORKING AT DAWN'
-WHERE title = 'FARMERS WORKING';
-
-UPDATE votes
-SET title = 'IMAGINATIVE LANDSCAPE'
-WHERE title = 'IMAGINATIVE  LANDSCAPE';
-
-UPDATE votes
-SET title = 'PROFUSION OF FLOWERS'
-WHERE title = 'PROFUSION';
-
-
-.print "verify vote groups after fixes"
-SELECT title, COUNT(*) AS votes
-FROM votes
-GROUP BY title
-ORDER BY title;
-
-
-.print "confirm number of distinct groups (should be 4)"
-SELECT COUNT(DISTINCT title) AS distinct_titles
-FROM votes;
-
-
-.print "final distinct titles list"
-SELECT DISTINCT title
-FROM votes
-ORDER BY title;
+---bash sqlite3 mfa.db < p2-q.sql

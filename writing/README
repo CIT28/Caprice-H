@@ -31,3 +31,32 @@ Runtime error near line 46: NOT NULL constraint failed: collections.accession_nu
 
 Why the FK error happens- I turned PRAGMA foreign_keys = ON, and SQLite blocked it because rows in created still referenced that artist.
 Twostep delete process for me was to first delete the artist’s rows from created (child), then delete the artist from artists parent.
+
+# Writing Part 2
+* ON DELETE options
+    * CASCADE will delete the child rows automatically when the parent is deleted.
+    * SET NULL  set the FK column to NULL (only works if the column allows NULL).
+    * RESTRICT block the delete if child rows exist.
+    * NO ACTION also blocks the delete; in SQLite it behaves the same as RESTRICT.
+* Why CASCADE is handy
+    * Keeps data clean. Deleting an artist can also remove their rows in created automatically.
+* Default ID behavior
+    * INTEGER PRIMARY KEY picks the next id as max id + 1.
+    * If I delete the highest id, sql can reuse that id on the next insert.
+* With AUTOINCREMENT
+    * sql never reuses an old id it always goes higher than any id ever used.
+    
+## Final grouping and review
+
+- Cleaned vote titles using `UPDATE`:
+  - `TRIM` removed leading and the trailing spaces.
+  - `UPPER` standardized capitalization.
+  - Targeted `UPDATE ... WHERE` fixed typos.
+- After cleaning, `GROUP BY title` produced exactly what we wanted, four correct groups.    
+
+## CREATE TRIGGER
+* A trigger runs automatically before n after an INSERT, UPDATE, or DELETE.
+* FOR EACH ROW means the trigger runs once per row affected.
+* BEGIN END wraps the sql that the trigger executes.
+* OLD.column refers to the row being deleted or updated, which we used to log sales into transactions.
+
