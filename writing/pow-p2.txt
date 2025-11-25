@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS "collections" (
   "title" TEXT NOT NULL,
   "accession_number" TEXT NOT NULL UNIQUE,
   "acquired" NUMERIC
-);
+, deleted INTEGER DEFAULT 0);
 CREATE TABLE IF NOT EXISTS "artists" (
   "id" INTEGER PRIMARY KEY,
   "name" TEXT NOT NULL UNIQUE
@@ -42,29 +42,62 @@ BEGIN
     VALUES (NEW."title", 'bought');
 END;
 test buy trigger
+add deleted column
+verify deleted column exists
+CREATE TABLE IF NOT EXISTS "collections" (
+  "id" INTEGER PRIMARY KEY,
+  "title" TEXT NOT NULL,
+  "accession_number" TEXT NOT NULL UNIQUE,
+  "acquired" NUMERIC
+, deleted INTEGER DEFAULT 0);
+CREATE TRIGGER "sell"
+BEFORE DELETE ON "collections"
+FOR EACH ROW
+BEGIN
+    INSERT INTO "transactions" ("title", "action")
+    VALUES (OLD."title", 'sold');
+END;
+CREATE TRIGGER "buy"
+AFTER INSERT ON "collections"
+FOR EACH ROW
+BEGIN
+    
+    INSERT INTO "transactions" ("title", "action")
+    VALUES (NEW."title", 'bought');
+END;
+show collections with deleted values
+┌────┬─────────────────────────┬──────────────────┬────────────┬─────────┐
+│ id │          title          │ accession_number │  acquired  │ deleted │
+├────┼─────────────────────────┼──────────────────┼────────────┼─────────┤
+│ 1  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │ 1       │
+│ 2  │ Imaginative landscape   │ 56.496           │            │ 0       │
+│ 4  │ Spring outing           │ 14.76            │ 1914-01-08 │ 0       │
+│ 5  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │ 0       │
+│ 6  │ Test Purchase           │ 99.999           │            │ 0       │
+└────┴─────────────────────────┴──────────────────┴────────────┴─────────┘
+mark an item as deleted
 verify collections n transactions after test insert
-┌────┬─────────────────────────┬──────────────────┬────────────┐
-│ id │          title          │ accession_number │  acquired  │
-├────┼─────────────────────────┼──────────────────┼────────────┤
-│ 1  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │
-│ 2  │ Imaginative landscape   │ 56.496           │            │
-│ 4  │ Spring outing           │ 14.76            │ 1914-01-08 │
-│ 5  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │
-│ 6  │ Test Purchase           │ 99.999           │            │
-└────┴─────────────────────────┴──────────────────┴────────────┘
+┌────┬─────────────────────────┬──────────────────┬────────────┬─────────┐
+│ id │          title          │ accession_number │  acquired  │ deleted │
+├────┼─────────────────────────┼──────────────────┼────────────┼─────────┤
+│ 1  │ Farmers working at dawn │ 11.6152          │ 1911-08-03 │ 1       │
+│ 2  │ Imaginative landscape   │ 56.496           │            │ 0       │
+│ 4  │ Spring outing           │ 14.76            │ 1914-01-08 │ 0       │
+│ 5  │ Profusion of flowers    │ 56.257           │ 1956-04-12 │ 0       │
+│ 6  │ Test Purchase           │ 99.999           │            │ 0       │
+└────┴─────────────────────────┴──────────────────┴────────────┴─────────┘
 ┌────┬──────────────────────┬────────┐
 │ id │        title         │ action │
 ├────┼──────────────────────┼────────┤
 │ 1  │ Profusion of flowers │ sold   │
 │ 2  │ Test Purchase        │ bought │
 └────┴──────────────────────┴────────┘
-schema proof
 CREATE TABLE IF NOT EXISTS "collections" (
   "id" INTEGER PRIMARY KEY,
   "title" TEXT NOT NULL,
   "accession_number" TEXT NOT NULL UNIQUE,
   "acquired" NUMERIC
-);
+, deleted INTEGER DEFAULT 0);
 CREATE TABLE IF NOT EXISTS "artists" (
   "id" INTEGER PRIMARY KEY,
   "name" TEXT NOT NULL UNIQUE

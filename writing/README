@@ -60,3 +60,15 @@ Twostep delete process for me was to first delete the artist’s rows from creat
 * BEGIN END wraps the sql that the trigger executes.
 * OLD.column refers to the row being deleted or updated, which we used to log sales into transactions.
 
+
+**Triggers made
+- sell trigger logs a deleted artwork into transactions as sold.
+- buy trigger logs an inserted artwork into transactions as bought.
+
+## Soft Delete
+
+*Soft delete keeps the row but marks it as removed.
+* Added deleted column to collections with default 0.
+* Deleting” an item = `UPDATE collections SET deleted = 1...
+* This way the data stays in the table, just hidden/marked.
+

@@ -43,12 +43,25 @@ END;
 -- INSERT INTO "collections" ("title", "accession_number", "acquired")
 -- VALUES ('Profusion of flowers', 56.257, '1956-04-12');
 
+.print "add deleted column"
+-- ALTER TABLE collections
+-- ADD COLUMN deleted INTEGER DEFAULT 0;
+
+.print "verify deleted column exists"
+.schema collections
+
+.print "show collections with deleted values"
+SELECT * FROM collections;
+
+.print "mark an item as deleted"
+-- UPDATE collections
+-- SET deleted = 1
+-- WHERE title = 'Farmers working at dawn';
+
 .print "verify collections n transactions after test insert"
 SELECT * FROM "collections";
 SELECT * FROM "transactions";
 
-
-.print "schema proof"
 .schema
 
 
