@@ -1,7 +1,6 @@
 .output pow-p2.txt
 .mode box
-
-
+PRAGMA foreign_keys = ON;
 
 .print "create transactions table"
 CREATE TABLE IF NOT EXISTS "transactions" (
@@ -20,49 +19,48 @@ BEGIN
     VALUES (OLD."title", 'sold');
 END;
 
-.print "test trigger"
+.print "test sell trigger (one-time)"
 -- DELETE FROM collections
 -- WHERE title = 'Profusion of flowers';
 
+
 .print "create buy trigger to log purchases"
--- this trigger fires AFTER! a row is inserted into collections
+-- this trigger fires AFTER a row is inserted into collections
 CREATE TRIGGER IF NOT EXISTS "buy"
 AFTER INSERT ON "collections"
 FOR EACH ROW
 BEGIN
-    
     INSERT INTO "transactions" ("title", "action")
     VALUES (NEW."title", 'bought');
 END;
 
-.print "verify schema now includes buy trigger"
+.print "verify schema includes triggers n the transactions"
 .schema
 
-.print "test buy trigger"
--- Uncomment and run ONCE, then re-comment
--- INSERT INTO "collections" ("title", "accession_number", "acquired")
--- VALUES ('Profusion of flowers', 56.257, '1956-04-12');
 
 .print "add deleted column"
 -- ALTER TABLE collections
 -- ADD COLUMN deleted INTEGER DEFAULT 0;
-
-.print "verify deleted column exists"
-.schema collections
-
-.print "show collections with deleted values"
-SELECT * FROM collections;
 
 .print "mark an item as deleted"
 -- UPDATE collections
 -- SET deleted = 1
 -- WHERE title = 'Farmers working at dawn';
 
-.print "verify collections n transactions after test insert"
-SELECT * FROM "collections";
-SELECT * FROM "transactions";
+.print "verify deleted column current collections"
+.schema collections
+SELECT * FROM collections;
 
+.print "show only non deleted items"
+SELECT *
+FROM collections
+WHERE deleted != 1;
+
+
+
+.print "verify collections n transactions"
+SELECT * FROM collections;
+SELECT * FROM transactions;
+
+.print "final schema proof"
 .schema
-
-
----bash sqlite3 mfa.db < p2-q.sql

@@ -69,6 +69,23 @@ Twostep delete process for me was to first delete the artist’s rows from creat
 
 *Soft delete keeps the row but marks it as removed.
 * Added deleted column to collections with default 0.
-* Deleting” an item = `UPDATE collections SET deleted = 1...
-* This way the data stays in the table, just hidden/marked.
+* Deleting” an item = UPDATE collections SET deleted = 1
+* This way the data stays in the table, just hidden or marked.
+
+## Soft Deletion Pros and also the Cons
+
+**Benefits**
+- I don’t lose the data forever. If you delete something by mistake, you can bring it back.
+- Good for tracking history.
+
+**Concerns**
+- The data is still stored, just hidden.
+- For personal or user data, that can be a problem.
+- GDPR if im correct “right to be forgotten” says people can ask for their data to be fully removed, so soft delete might not be enough.
+- Ethically, if someone says “delete my info,” we shouldn’t secretly keep it thats always going to be a major problem.
+
+**True delete vs soft delete**
+- Soft delete is fine for the small stuff like inventory and such.
+- True delete is better for sensitive stuff.
+- Basically if it could hurt someone to keep it, you should truly delete it.
 
