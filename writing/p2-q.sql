@@ -24,9 +24,29 @@ END;
 -- DELETE FROM collections
 -- WHERE title = 'Profusion of flowers';
 
-.print "verify trigger results"
-SELECT * FROM collections;
-SELECT * FROM transactions;
+.print "create buy trigger to log purchases"
+-- this trigger fires AFTER! a row is inserted into collections
+CREATE TRIGGER IF NOT EXISTS "buy"
+AFTER INSERT ON "collections"
+FOR EACH ROW
+BEGIN
+    
+    INSERT INTO "transactions" ("title", "action")
+    VALUES (NEW."title", 'bought');
+END;
+
+.print "verify schema now includes buy trigger"
+.schema
+
+.print "test buy trigger"
+-- Uncomment and run ONCE, then re-comment
+-- INSERT INTO "collections" ("title", "accession_number", "acquired")
+-- VALUES ('Profusion of flowers', 56.257, '1956-04-12');
+
+.print "verify collections n transactions after test insert"
+SELECT * FROM "collections";
+SELECT * FROM "transactions";
+
 
 .print "schema proof"
 .schema
