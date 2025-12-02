@@ -22,22 +22,35 @@
 -- FROM user_logs ORDER BY id DESC LIMIT 5;
 
 
-.print 'update the trigger demo'
-.print 'show probe_user current password n last 5 logs'
-SELECT username, password FROM users WHERE username='probe_user';
+-- .print 'update the trigger demo'
+-- .print 'show probe_user current password n last 5 logs'
+-- SELECT username, password FROM users WHERE username='probe_user';
+-- SELECT id, type, old_username, new_username, old_password, new_password
+-- FROM user_logs ORDER BY id DESC LIMIT 5;
+
+-- .print 'update probe_user password to trigger update log'
+-- UPDATE users
+-- SET password = 'newpass!'
+-- WHERE username = 'probe_user';
+
+-- .print 'verify row changed and a new update log was written'
+-- SELECT username, password FROM users WHERE username='probe_user';
+-- SELECT id, type, old_username, new_username, old_password, new_password
+-- FROM user_logs ORDER BY id DESC LIMIT 5;
+
+.print 'delete trigger'
+.print 'ensure probe_user exists n last 5 logs'
+SELECT id, username FROM users WHERE username='probe_user';
 SELECT id, type, old_username, new_username, old_password, new_password
 FROM user_logs ORDER BY id DESC LIMIT 5;
 
-.print 'update probe_user password to trigger update log'
-UPDATE users
-SET password = 'newpass!'
-WHERE username = 'probe_user';
+.print 'delete probeuser to trigger delete log'
+DELETE FROM users WHERE username='probe_user';
 
-.print 'verify row changed and a new update log was written'
-SELECT username, password FROM users WHERE username='probe_user';
+.print 'user gone and delte log recorded'
+SELECT id, username FROM users WHERE username='probe_user';
 SELECT id, type, old_username, new_username, old_password, new_password
 FROM user_logs ORDER BY id DESC LIMIT 5;
-
 
 .output stdout
 
