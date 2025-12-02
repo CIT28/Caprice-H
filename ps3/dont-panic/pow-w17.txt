@@ -1,5 +1,5 @@
-update the trigger demo
-show probe_user current password n last 5 logs
+delete trigger
+ensure probe_user exists n last 5 logs
 ┌────┬────────┬──────────────┬──────────────┬──────────────────────────────────┬──────────────────────────────────┐
 │ id │  type  │ old_username │ new_username │           old_password           │           new_password           │
 ├────┼────────┼──────────────┼──────────────┼──────────────────────────────────┼──────────────────────────────────┤
@@ -9,8 +9,8 @@ show probe_user current password n last 5 logs
 │ 48 │ insert │              │ samuel8      │                                  │ 873cbddd95f9bc3f38763acf1a2fb42b │
 │ 47 │ insert │              │ michael14    │                                  │ 453e95ea5a1027d76585d74ba526bd94 │
 └────┴────────┴──────────────┴──────────────┴──────────────────────────────────┴──────────────────────────────────┘
-update probe_user password to trigger update log
-verify row changed and a new update log was written
+delete probeuser to trigger delete log
+user gone and delte log recorded
 ┌────┬────────┬──────────────┬──────────────┬──────────────────────────────────┬──────────────────────────────────┐
 │ id │  type  │ old_username │ new_username │           old_password           │           new_password           │
 ├────┼────────┼──────────────┼──────────────┼──────────────────────────────────┼──────────────────────────────────┤
