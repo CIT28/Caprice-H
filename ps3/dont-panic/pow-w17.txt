@@ -1,32 +1,22 @@
-query 1INSERT trigger demo
-show users count and last 5 user_logs
-┌────────────┐
-│ user_count │
-├────────────┤
-│ 51         │
-└────────────┘
-┌────┬────────┬──────────────┬──────────────┬──────────────┬──────────────────────────────────┐
-│ id │  type  │ old_username │ new_username │ old_password │           new_password           │
-├────┼────────┼──────────────┼──────────────┼──────────────┼──────────────────────────────────┤
-│ 51 │ insert │              │ probe_user   │              │ abc123                           │
-│ 50 │ insert │              │ adam1        │              │ 2136622ffb4269f1fdb6264266b4711b │
-│ 49 │ insert │              │ kyra13       │              │ 1ecf27e248c05f938bd5354e539b6d1f │
-│ 48 │ insert │              │ samuel8      │              │ 873cbddd95f9bc3f38763acf1a2fb42b │
-│ 47 │ insert │              │ michael14    │              │ 453e95ea5a1027d76585d74ba526bd94 │
-└────┴────────┴──────────────┴──────────────┴──────────────┴──────────────────────────────────┘
-insert a new throwaway user to trigger INSERT log
-confirm user exists and log row was written
-┌────┬────────────┐
-│ id │  username  │
-├────┼────────────┤
-│ 51 │ probe_user │
-└────┴────────────┘
-┌────┬────────┬──────────────┬──────────────┬──────────────┬──────────────────────────────────┐
-│ id │  type  │ old_username │ new_username │ old_password │           new_password           │
-├────┼────────┼──────────────┼──────────────┼──────────────┼──────────────────────────────────┤
-│ 51 │ insert │              │ probe_user   │              │ abc123                           │
-│ 50 │ insert │              │ adam1        │              │ 2136622ffb4269f1fdb6264266b4711b │
-│ 49 │ insert │              │ kyra13       │              │ 1ecf27e248c05f938bd5354e539b6d1f │
-│ 48 │ insert │              │ samuel8      │              │ 873cbddd95f9bc3f38763acf1a2fb42b │
-│ 47 │ insert │              │ michael14    │              │ 453e95ea5a1027d76585d74ba526bd94 │
-└────┴────────┴──────────────┴──────────────┴──────────────┴──────────────────────────────────┘
+update the trigger demo
+show probe_user current password n last 5 logs
+┌────┬────────┬──────────────┬──────────────┬──────────────────────────────────┬──────────────────────────────────┐
+│ id │  type  │ old_username │ new_username │           old_password           │           new_password           │
+├────┼────────┼──────────────┼──────────────┼──────────────────────────────────┼──────────────────────────────────┤
+│ 51 │ update │ jacob15      │ jacob15      │ 8d65e694c01878a543970fa134248db7 │ 5f4dcc3b5aa765d61d8327deb882cf99 │
+│ 50 │ insert │              │ adam1        │                                  │ 2136622ffb4269f1fdb6264266b4711b │
+│ 49 │ insert │              │ kyra13       │                                  │ 1ecf27e248c05f938bd5354e539b6d1f │
+│ 48 │ insert │              │ samuel8      │                                  │ 873cbddd95f9bc3f38763acf1a2fb42b │
+│ 47 │ insert │              │ michael14    │                                  │ 453e95ea5a1027d76585d74ba526bd94 │
+└────┴────────┴──────────────┴──────────────┴──────────────────────────────────┴──────────────────────────────────┘
+update probe_user password to trigger update log
+verify row changed and a new update log was written
+┌────┬────────┬──────────────┬──────────────┬──────────────────────────────────┬──────────────────────────────────┐
+│ id │  type  │ old_username │ new_username │           old_password           │           new_password           │
+├────┼────────┼──────────────┼──────────────┼──────────────────────────────────┼──────────────────────────────────┤
+│ 51 │ update │ jacob15      │ jacob15      │ 8d65e694c01878a543970fa134248db7 │ 5f4dcc3b5aa765d61d8327deb882cf99 │
+│ 50 │ insert │              │ adam1        │                                  │ 2136622ffb4269f1fdb6264266b4711b │
+│ 49 │ insert │              │ kyra13       │                                  │ 1ecf27e248c05f938bd5354e539b6d1f │
+│ 48 │ insert │              │ samuel8      │                                  │ 873cbddd95f9bc3f38763acf1a2fb42b │
+│ 47 │ insert │              │ michael14    │                                  │ 453e95ea5a1027d76585d74ba526bd94 │
+└────┴────────┴──────────────┴──────────────┴──────────────────────────────────┴──────────────────────────────────┘
